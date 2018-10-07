@@ -33,3 +33,4 @@
 		}
 	}
 ?>
+<div class="alert-error"><?= $_SESSION['message'] ?></div>
