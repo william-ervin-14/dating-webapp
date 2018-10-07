@@ -45,6 +45,8 @@
 			<p>Please fill in this form to create an account.</p>
 			<hr>
 			
+			<div class="alert alert-error"><?= $_SESSION['message'] ?></div>
+			
 			<label for="username"><b>Username</b></label>
 			<input type="text" placeholder="Enter Username" name="username" required>
 
