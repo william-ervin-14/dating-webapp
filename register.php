@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
+  <title></title>
   <link rel="stylesheet" type="text/css" href="css/register.css">
 </head>
 <body>
