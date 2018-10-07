@@ -6,13 +6,15 @@
   <link rel="stylesheet" type="text/css" href="css/register.css">
 </head>
 <body>
-  <div class="header">
-  	<h2>Register</h2>
-  </div>
 	
   <form method="post" action="register.php">
   	<?php include('errors.php'); ?>
   	<div class="container">
+	
+	  <h1>Sign Up</h1>
+	  <p>Please fill in this form to create an account.</p>
+	  <hr>
+	  
   	  <label>Username</label>
   	  <input type="text" placeholder="Enter Username" name="username" value="<?php echo $username; ?>">
   	
@@ -33,7 +35,7 @@
 	  </div>
 	  <p class="change_link">
         Already a member ?
-        <a href="index.html" class="to_register"> Go and log in </a>
+        <a href="index.php" class="to_register"> Go and log in </a>
       </p>
   	</div>
   </form>
