@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration system PHP and MySQL</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
   <div class="header">
@@ -12,20 +12,27 @@
 	 
   <form method="post" action="login.php">
   	<?php include('errors.php'); ?>
-  	<div class="input-group">
+  	<div class="container">
   		<label>Username</label>
-  		<input type="text" name="username" >
-  	</div>
-  	<div class="input-group">
+  		<input type="text" placeholder="Enter Username" name="username" >
+  	
   		<label>Password</label>
-  		<input type="password" name="password">
-  	</div>
-  	<div class="input-group">
+  		<input type="password" placeholder="Enter Password" name="password">
+  	
   		<button type="submit" class="btn" name="login_user">Login</button>
+		<label>
+			<input type="checkbox" checked="checked" name="remember"> Remember me
+		</label>
   	</div>
-  	<p>
-  		Not yet a member? <a href="register.php">Sign up</a>
-  	</p>
+  	<div class="container" style="background-color:#f1f1f1">
+		<button type="button" class="cancelbtn">Cancel</button>
+		<span class="psw">Forgot <a href="#">password?</a></span>
+	</div>
+		
+	<div class="container">
+		Not a member yet?
+		<a href="register.php" class="to_register">Join us</a>
+	</div>
   </form>
 </body>
 </html>
