@@ -31,7 +31,7 @@
  
   	  <div class="clearfix">
 			<button type="button" class="cancelbtn">Cancel</button>
-			<button type="submit" value="Register" name="register" class="signupbtn">Sign Up</button>
+			<button type="submit" name="reg_user" class="signupbtn">Sign Up</button>
 	  </div>
 	  <p class="change_link">
         Already a member ?
