@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration system PHP and MySQL</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Register</title>
+  <link rel="stylesheet" type="text/css" href="css/register.css">
 </head>
 <body>
   <div class="header">
@@ -12,28 +12,30 @@
 	
   <form method="post" action="register.php">
   	<?php include('errors.php'); ?>
-  	<div class="input-group">
+  	<div class="container">
   	  <label>Username</label>
-  	  <input type="text" name="username" value="<?php echo $username; ?>">
-  	</div>
-  	<div class="input-group">
+  	  <input type="text" placeholder="Enter Username" name="username" value="<?php echo $username; ?>">
+  	
   	  <label>Email</label>
-  	  <input type="email" name="email" value="<?php echo $email; ?>">
-  	</div>
-  	<div class="input-group">
+  	  <input type="email" name="email" placeholder="Enter Email" value="<?php echo $email; ?>">
+  
   	  <label>Password</label>
-  	  <input type="password" name="password_1">
-  	</div>
-  	<div class="input-group">
+  	  <input type="password" placeholder="Enter Password" name="password_1">
+  
   	  <label>Confirm password</label>
-  	  <input type="password" name="password_2">
+  	  <input type="password" placeholder="Repeat Password" name="password_2">
+	  
+	  <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+ 
+  	  <div class="clearfix">
+			<button type="button" class="cancelbtn">Cancel</button>
+			<button type="submit" value="Register" name="register" class="signupbtn">Sign Up</button>
+	  </div>
+	  <p class="change_link">
+        Already a member ?
+        <a href="index.html" class="to_register"> Go and log in </a>
+      </p>
   	</div>
-  	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user">Register</button>
-  	</div>
-  	<p>
-  		Already a member? <a href="login.php">Sign in</a>
-  	</p>
   </form>
 </body>
 </html>

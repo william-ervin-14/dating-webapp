@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Log In</title>
   <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
@@ -12,6 +12,9 @@
 	 
   <form method="post" action="login.php">
   	<?php include('errors.php'); ?>
+	<div class="imgcontainer">
+		<img src="images/login_avatar.png" alt="Avatar" class="avatar">
+	</div>
   	<div class="container">
   		<label>Username</label>
   		<input type="text" placeholder="Enter Username" name="username" >
