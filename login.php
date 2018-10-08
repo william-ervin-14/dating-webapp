@@ -5,8 +5,7 @@
   <title></title>
   <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
-<body>
-	 
+<body> 
   <form method="post" action="login.php">
   	<div class="container">
 		<h1>Log In</h1>
