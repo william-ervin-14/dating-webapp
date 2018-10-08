@@ -6,6 +6,7 @@ $username = "";
 $email    = "";
 $errors = array(); 
 $genderErr = "";
+$err = "";
 $gender = "";
 
 // connect to the database
@@ -83,13 +84,18 @@ if (isset($_POST['login_user'])) {
 }
 // QUESTIONS
 if (isset($_POST['questions_user'])) {
+	$uname = $_SESSION['username'];
 	if (empty($_POST["gender"])) {
 		$genderErr = "Gender is required";
 	} else {
 		$gender = mysqli_real_escape_string($db, $_POST["gender"]);
-		$uname = $_SESSION['username'];
 		$query = "UPDATE users SET gender='$gender' WHERE username='$uname'";
 		mysqli_query($db, $query);
+	}
+	if(empty($_POST["q1"])){ $err = "Answer the question";}
+	else{
+		$q1 = intval($_POST["q1"]);
+		$query = "UPDATE users SET q1='$q1' WHERE username='$uname'";
 	}
 }
 
