@@ -11,7 +11,6 @@
   <form method="post" action="questions.php">
   	
   	<div class="container">
-	  <?php include('errors.php'); ?>
 	  <h1>Sign Up</h1>
 	  <p>Please fill out these compatability questions to complete account.</p>
 	  <hr>
@@ -19,7 +18,7 @@
 		<input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
 		<input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
 		<input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
-		<span class="error">* <?php echo $genderErr;?></span>
+		<span class="error"><?php echo $genderErr;?></span>
 	  <br><br>
  
   	  <div class="clearfix">

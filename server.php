@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($_POST["gender"])) {
 		$genderErr = "Gender is required";
 	} else {
-		$gender = test_input($_POST["gender"]);
+		$gender = mysqli_real_escape_string($db, $_POST["gender"]);
 		$query = "INSERT INTO users (gender) 
   			  VALUES('$gender')";
 		mysqli_query($db, $query);
