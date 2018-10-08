@@ -82,12 +82,12 @@ if (isset($_POST['login_user'])) {
   }
 }
 // QUESTIONS
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['questions_user'])) {
 	if (empty($_POST["gender"])) {
 		$genderErr = "Gender is required";
 	} else {
 		$gender = mysqli_real_escape_string($db, $_POST["gender"]);
-		$query = "UPDATE 'users' SET 'gender' = '$gender' WHERE 'username' = '$username'";
+		$query = "UPDATE users SET gender='$gender' WHERE username='$username'";
 		mysqli_query($db, $query);
 	}
 }
