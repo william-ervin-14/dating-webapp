@@ -122,6 +122,7 @@ if (isset($_POST['questions_user'])) {
 		$query = "UPDATE users SET q5='$q5' WHERE username='$uname'";
 		mysqli_query($db, $query);
 	}
+	header('location: index.php');
 }
 
 ?>
