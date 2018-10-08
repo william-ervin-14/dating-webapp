@@ -9,10 +9,7 @@
 	 
   <form method="post" action="login.php">
   	<div class="container">
-	<div class="imgcontainer">
-		<img src="images/login_avatar.png" alt="Avatar" class="avatar">
-	</div>
-  	
+		<h1>Log In</h1>
 		<?php include('errors.php'); ?>
   		<label>Username</label>
   		<input type="text" placeholder="Enter Username" name="username" >
