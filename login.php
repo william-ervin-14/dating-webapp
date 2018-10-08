@@ -8,11 +8,12 @@
 <body>
 	 
   <form method="post" action="login.php">
-  	<?php include('errors.php'); ?>
+  	
 	<div class="imgcontainer">
 		<img src="images/login_avatar.png" alt="Avatar" class="avatar">
 	</div>
   	<div class="container">
+		<?php include('errors.php'); ?>
   		<label>Username</label>
   		<input type="text" placeholder="Enter Username" name="username" >
   	
