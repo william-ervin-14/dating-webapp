@@ -22,11 +22,11 @@
 		</label>
   	
   	<div class="container" style="background-color:#f1f1f1">
-		<button type="button" class="cancelbtn">Cancel</button>
 		<span class="psw">Forgot <a href="#">password?</a></span>
-	</div>
 		Not a member yet?
 		<a href="register.php" class="to_register">Join us</a>
+	</div>
+		
 	</div>
   </form>
 </body>
