@@ -8,11 +8,11 @@
 <body>
 	 
   <form method="post" action="login.php">
-  	
+  	<div class="container">
 	<div class="imgcontainer">
 		<img src="images/login_avatar.png" alt="Avatar" class="avatar">
 	</div>
-  	<div class="container">
+  	
 		<?php include('errors.php'); ?>
   		<label>Username</label>
   		<input type="text" placeholder="Enter Username" name="username" >
@@ -24,13 +24,11 @@
 		<label>
 			<input type="checkbox" checked="checked" name="remember"> Remember me
 		</label>
-  	</div>
+  	
   	<div class="container" style="background-color:#f1f1f1">
 		<button type="button" class="cancelbtn">Cancel</button>
 		<span class="psw">Forgot <a href="#">password?</a></span>
 	</div>
-		
-	<div class="container">
 		Not a member yet?
 		<a href="register.php" class="to_register">Join us</a>
 	</div>
