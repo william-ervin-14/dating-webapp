@@ -10,11 +10,10 @@
   <form method="post" action="register.php">
   	
   	<div class="container">
-	
+	  <?php include('errors.php'); ?>
 	  <h1>Sign Up</h1>
 	  <p>Please fill in this form to create an account.</p>
 	  <hr>
-	  <?php include('errors.php'); ?>
   	  <label>Username</label>
   	  <input type="text" placeholder="Enter Username" name="username" value="<?php echo $username; ?>">
   	
