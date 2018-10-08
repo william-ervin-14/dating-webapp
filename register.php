@@ -35,7 +35,7 @@
 	  </div>
 	  <p class="change_link">
         Already a member ?
-        <a href="index.php" class="to_register"> Go and log in </a>
+        <a href="login.php" class="to_register"> Go and log in </a>
       </p>
   	</div>
   </form>
