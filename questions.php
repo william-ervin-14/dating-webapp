@@ -20,11 +20,11 @@
 		<input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other 
 	  <br><br>
 	  Question one:
-		<input type="radio" name="q1" <?php if (isset($q1) && $q1=="one") echo "checked";?> value="one">One
-		<input type="radio" name="q1" <?php if (isset($q1) && $q1=="two") echo "checked";?> value="two">Two
-		<input type="radio" name="q1" <?php if (isset($q1) && $q1=="three") echo "checked";?> value="three">Three 
-		<input type="radio" name="q1" <?php if (isset($q1) && $q1=="four") echo "checked";?> value="four">Four
-		<input type="radio" name="q1" <?php if (isset($q1) && $q1=="five") echo "checked";?> value="five">Five 
+		<input type="radio" name="q1" <?php if (isset($q1) && $q1==1) echo "checked";?> value=1>One
+		<input type="radio" name="q1" <?php if (isset($q1) && $q1==2) echo "checked";?> value=2>Two
+		<input type="radio" name="q1" <?php if (isset($q1) && $q1==3) echo "checked";?> value=3>Three 
+		<input type="radio" name="q1" <?php if (isset($q1) && $q1==4) echo "checked";?> value=4>Four
+		<input type="radio" name="q1" <?php if (isset($q1) && $q1==5) echo "checked";?> value=5>Five 
 	  <br><br>
  
   	  <div class="clearfix">

@@ -94,8 +94,9 @@ if (isset($_POST['questions_user'])) {
 	}
 	if(empty($_POST["q1"])){ $err = "Answer the question";}
 	else{
-		$q1 = intval($_POST["q1"]);
+		$q1 = $_POST["q1"];
 		$query = "UPDATE users SET q1='$q1' WHERE username='$uname'";
+		mysqli_query($db, $query);
 	}
 }
 
