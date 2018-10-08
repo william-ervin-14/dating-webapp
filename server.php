@@ -5,6 +5,8 @@ session_start();
 $username = "";
 $email    = "";
 $errors = array(); 
+$genderErr = "";
+$gender = "";
 
 // connect to the database
 $db = mysqli_connect('cpsc498.c4gfuryc8w4w.us-east-1.rds.amazonaws.com', 'WillAdmin', 'C@pstone498', 'accounts');
@@ -51,7 +53,7 @@ if (isset($_POST['reg_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.php');
+  	header('location: questions.php');
   }
 }
 // LOGIN USER
@@ -78,6 +80,17 @@ if (isset($_POST['login_user'])) {
   		array_push($errors, "Wrong username/password combination");
   	}
   }
+}
+// QUESTIONS
+if (isset($_POST['questions_user'])) {
+	if (empty($_POST["gender"])) {
+		$genderErr = "Gender is required";
+	} else {
+		$gender = test_input($_POST["gender"]);
+		$query = "INSERT INTO users (gender) 
+  			  VALUES('gender')";
+		mysqli_query($db, $query);
+	}
 }
 
 ?>
