@@ -82,13 +82,13 @@ if (isset($_POST['login_user'])) {
   }
 }
 // QUESTIONS
-if (isset($_POST['questions_user'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($_POST["gender"])) {
 		$genderErr = "Gender is required";
 	} else {
 		$gender = test_input($_POST["gender"]);
 		$query = "INSERT INTO users (gender) 
-  			  VALUES('gender')";
+  			  VALUES('$gender')";
 		mysqli_query($db, $query);
 	}
 }
