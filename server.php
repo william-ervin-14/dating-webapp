@@ -98,6 +98,30 @@ if (isset($_POST['questions_user'])) {
 		$query = "UPDATE users SET q1='$q1' WHERE username='$uname'";
 		mysqli_query($db, $query);
 	}
+	if(empty($_POST["q2"])){ $err = "Answer the question";}
+	else{
+		$q2 = $_POST["q2"];
+		$query = "UPDATE users SET q2='$q2' WHERE username='$uname'";
+		mysqli_query($db, $query);
+	}
+	if(empty($_POST["q3"])){ $err = "Answer the question";}
+	else{
+		$q3 = $_POST["q3"];
+		$query = "UPDATE users SET q3='$q3' WHERE username='$uname'";
+		mysqli_query($db, $query);
+	}
+	if(empty($_POST["q4"])){ $err = "Answer the question";}
+	else{
+		$q4 = $_POST["q4"];
+		$query = "UPDATE users SET q4='$q4' WHERE username='$uname'";
+		mysqli_query($db, $query);
+	}
+	if(empty($_POST["q5"])){ $err = "Answer the question";}
+	else{
+		$q5 = $_POST["q5"];
+		$query = "UPDATE users SET q5='$q5' WHERE username='$uname'";
+		mysqli_query($db, $query);
+	}
 }
 
 ?>
