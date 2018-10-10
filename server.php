@@ -59,7 +59,7 @@ if (isset($_POST['reg_user'])) {
 }
 // LOGIN USER
 if (isset($_POST['login_user'])) {
-  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $email = $_POST['email'];
   $password = mysqli_real_escape_string($db, $_POST['password']);
 
   if (empty($email)) {

@@ -15,10 +15,10 @@
 	  <p>Please fill in this form to create an account.</p>
 	  <hr>
   	  <label>First Name</label>
-  	  <input type="text" placeholder="Enter First Name" name="firstname" value="<?php echo $username; ?>">
+  	  <input type="text" placeholder="Enter First Name" name="firstname" value="<?php echo $firstname; ?>">
 	  
 	  <label>Last Name</label>
-  	  <input type="text" placeholder="Enter Last Name" name="lastname" value="<?php echo $username; ?>">
+  	  <input type="text" placeholder="Enter Last Name" name="lastname" value="<?php echo $lastname; ?>">
   	
   	  <label>Email</label>
   	  <input type="email" name="email" placeholder="Enter Email" value="<?php echo $email; ?>">
