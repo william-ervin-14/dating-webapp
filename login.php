@@ -11,7 +11,7 @@
 		<h1>Log In</h1>
 		<?php include('errors.php'); ?>
   		<label>Email</label>
-  		<input type="email" placeholder="Enter email" name="email" >
+  		<input type="email" placeholder="Enter Email" name="email" >
 		
   		<label>Password</label>
   		<input type="password" placeholder="Enter Password" name="password">
