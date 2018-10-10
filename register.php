@@ -14,8 +14,11 @@
 	  <h1>Sign Up</h1>
 	  <p>Please fill in this form to create an account.</p>
 	  <hr>
-  	  <label>Username</label>
-  	  <input type="text" placeholder="Enter Username" name="username" value="<?php echo $username; ?>">
+  	  <label>First Name</label>
+  	  <input type="text" placeholder="Enter First Name" name="firstname" value="<?php echo $username; ?>">
+	  
+	  <label>Last Name</label>
+  	  <input type="text" placeholder="Enter Last Name" name="lastname" value="<?php echo $username; ?>">
   	
   	  <label>Email</label>
   	  <input type="email" name="email" placeholder="Enter Email" value="<?php echo $email; ?>">

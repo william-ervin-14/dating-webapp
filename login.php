@@ -10,9 +10,9 @@
   	<div class="container">
 		<h1>Log In</h1>
 		<?php include('errors.php'); ?>
-  		<label>Username</label>
-  		<input type="text" placeholder="Enter Username" name="username" >
-  	
+  		<label>Email</label>
+  		<input type="email" placeholder="Enter email" name="email" >
+		
   		<label>Password</label>
   		<input type="password" placeholder="Enter Password" name="password">
   	
