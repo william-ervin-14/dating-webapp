@@ -31,7 +31,7 @@
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #999999;">
-	
+	<form method="post" action="register.php">
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="login100-more" style="background-image: url('register/images/bg-01.jpg');"></div>
@@ -104,6 +104,7 @@
 			</div>
 		</div>
 	</div>
+	</form>
 	
 <!--===============================================================================================-->
 	<script src="register/vendor/jquery/jquery-3.2.1.min.js"></script>
