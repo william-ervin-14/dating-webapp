@@ -67,7 +67,7 @@
 					</div>
 
 					<div class="text-center w-full">
-						<a class="txt1" name="login_user" href="#register.php">
+						<a class="txt1" name="login_user" href="../Login_v13/register.php">
 							Create new account
 							<i class="fa fa-long-arrow-right"></i>						
 						</a>
