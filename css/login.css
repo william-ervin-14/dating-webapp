@@ -1,6 +1,6 @@
  /* Bordered form */
 body {
-	background-image: linear-gradient(blue, green);
+	background-image: linear-gradient(to bottom right, black, white);
 	width: 40%;
 	height: 55%;
 	margin-top: 5%;
