@@ -37,8 +37,8 @@
 		<div class="row">
 			<div class="side">
 				<img src="images/login_avatar.png" alt="Avatar" class="avatar">
-				<?php  if (isset($_SESSION['username'])) : ?>
-					<center><h2><?php echo $_SESSION['username']; ?></h2></center>
+				<?php  if (isset($_SESSION['firstname'])) : ?>
+					<center><h2><?php echo $_SESSION['firstname']; ?></h2></center>
 				<?php endif ?>
 			</div>			
 			<div class="main">
