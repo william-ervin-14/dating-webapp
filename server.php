@@ -15,14 +15,16 @@ $db = mysqli_connect('cpsc498.c4gfuryc8w4w.us-east-1.rds.amazonaws.com', 'WillAd
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
   // receive all input values from the form
-  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+  $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
-  if (empty($username)) { array_push($errors, "Username is required"); }
+  if (empty($firstname)) { array_push($errors, "First Name is required"); }
+  if (empty($lastname)) { array_push($errors, "Last Name is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
   if ($password_1 != $password_2) {
@@ -31,15 +33,11 @@ if (isset($_POST['reg_user'])) {
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
-  $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
+  $user_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
   if ($user) { // if user exists
-    if ($user['username'] === $username) {
-      array_push($errors, "Username already exists");
-    }
-
     if ($user['email'] === $email) {
       array_push($errors, "email already exists");
     }
@@ -49,21 +47,23 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password) 
-  			  VALUES('$username', '$email', '$password')";
+  	$query = "INSERT INTO users (firstname, lastname, email, password) 
+  			  VALUES('$firstname', '$lastname', '$email', '$password')";
   	mysqli_query($db, $query);
-  	$_SESSION['username'] = $username;
+  	$_SESSION['firstname'] = $firstname;
+	$_SESSION['lastname'] = $lastname;
+	$_SESSION['email'] = $email;
   	$_SESSION['success'] = "You are now logged in";
   	header('location: questions.php');
   }
 }
 // LOGIN USER
 if (isset($_POST['login_user'])) {
-  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $username = mysqli_real_escape_string($db, $_POST['email']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
 
-  if (empty($username)) {
-  	array_push($errors, "Username is required");
+  if (empty($email)) {
+  	array_push($errors, "Email is required");
   }
   if (empty($password)) {
   	array_push($errors, "Password is required");
@@ -71,55 +71,55 @@ if (isset($_POST['login_user'])) {
 
   if (count($errors) == 0) {
   	$password = md5($password);
-  	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+  	$query = "SELECT * FROM users WHERE username='$email' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['username'] = $username;
+  	  $_SESSION['email'] = $email;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
   	}else {
-  		array_push($errors, "Wrong username/password combination");
+  		array_push($errors, "Wrong email/password combination");
   	}
   }
 }
 // QUESTIONS
 if (isset($_POST['questions_user'])) {
-	$uname = $_SESSION['username'];
+	$email = $_SESSION['email'];
 	if (empty($_POST["gender"])) {
 		$genderErr = "Gender is required";
 	} else {
 		$gender = mysqli_real_escape_string($db, $_POST["gender"]);
-		$query = "UPDATE users SET gender='$gender' WHERE username='$uname'";
+		$query = "UPDATE users SET gender='$gender' WHERE email='$email'";
 		mysqli_query($db, $query);
 	}
 	if(empty($_POST["q1"])){ $err = "Answer the question";}
 	else{
 		$q1 = $_POST["q1"];
-		$query = "UPDATE users SET q1='$q1' WHERE username='$uname'";
+		$query = "UPDATE users SET q1='$q1' WHERE email='$email'";
 		mysqli_query($db, $query);
 	}
 	if(empty($_POST["q2"])){ $err = "Answer the question";}
 	else{
 		$q2 = $_POST["q2"];
-		$query = "UPDATE users SET q2='$q2' WHERE username='$uname'";
+		$query = "UPDATE users SET q2='$q2' WHERE email='$email'";
 		mysqli_query($db, $query);
 	}
 	if(empty($_POST["q3"])){ $err = "Answer the question";}
 	else{
 		$q3 = $_POST["q3"];
-		$query = "UPDATE users SET q3='$q3' WHERE username='$uname'";
+		$query = "UPDATE users SET q3='$q3' WHERE email='$email'";
 		mysqli_query($db, $query);
 	}
 	if(empty($_POST["q4"])){ $err = "Answer the question";}
 	else{
 		$q4 = $_POST["q4"];
-		$query = "UPDATE users SET q4='$q4' WHERE username='$uname'";
+		$query = "UPDATE users SET q4='$q4' WHERE email='$email'";
 		mysqli_query($db, $query);
 	}
 	if(empty($_POST["q5"])){ $err = "Answer the question";}
 	else{
 		$q5 = $_POST["q5"];
-		$query = "UPDATE users SET q5='$q5' WHERE username='$uname'";
+		$query = "UPDATE users SET q5='$q5' WHERE email='$email'";
 		mysqli_query($db, $query);
 	}
 	header('location: index.php');
