@@ -8,8 +8,9 @@
 <body> 
   <form method="post" action="login.php">
   	<div class="container">
-		<h1>Log In</h1>
 		<?php include('errors.php'); ?>
+		<h1>Log In</h1>
+		
 		<hr>
   		<label>Email</label>
   		<input type="email" placeholder="Enter Email" name="email" >
