@@ -25,7 +25,7 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
+	<form method="post" action="login.php">
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('login/images/img-01.jpg');">
 			<div class="wrap-login100 p-t-190 p-b-30">
@@ -76,7 +76,7 @@
 			</div>
 		</div>
 	</div>
-	
+	</form>
 	
 
 	
