@@ -10,6 +10,7 @@
   	<div class="container">
 		<h1>Log In</h1>
 		<?php include('errors.php'); ?>
+		<hr>
   		<label>Email</label>
   		<input type="email" placeholder="Enter Email" name="email" >
 		
