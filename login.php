@@ -6,8 +6,6 @@
   <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body> 
-<div class="aurora-outer">
- <div class="aurora-inner">
   <form method="post" action="login.php">
   	<div class="container">
 		<?php include('errors.php'); ?>
@@ -33,7 +31,5 @@
 		
 	</div>
   </form>
- </div>
-</div>
 </body>
 </html>
