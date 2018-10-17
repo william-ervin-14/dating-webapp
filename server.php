@@ -2,7 +2,8 @@
 session_start();
 
 // initializing variables
-$username = "";
+$firstname = "";
+$lastname = "";
 $email    = "";
 $errors = array(); 
 $genderErr = "";
