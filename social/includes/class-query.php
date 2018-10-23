@@ -79,8 +79,8 @@
 				
 				foreach ( $users as $user ) { ?>
 					<div class="directory_item">
-						<h3><a href="/social/profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo $user->user_nicename; ?></a></h3>
-						<p><?php echo $user->user_email; ?></p>
+						<h3><a href="/social/profile-view.php?uid=<?php echo $user->user_id; ?>"><?php echo $user->firstname; ?></a></h3>
+						<p><?php echo $user->email; ?></p>
 					</div>
 				<?php
 				}
@@ -93,25 +93,13 @@
 								
 				foreach ( $users as $user ) { ?>
 					<div class="directory_item">
-						<h3><a href="/social/profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo $user->user_nicename; ?></a></h3>
-						<p><?php echo $user->user_email; ?></p>
+						<h3><a href="/social/profile-view.php?uid=<?php echo $user->user_id; ?>"><?php echo $user->firstname; ?></a></h3>
+						<p><?php echo $user->email; ?></p>
 					</div>
 				<?php
 				}
 			}
 			
-			public function do_news_feed($user_id) {
-				$status_objects = $this->get_status_objects($user_id);
-				
-				foreach ( $status_objects as $status ) {?>
-					<div class="status_item">
-						<?php $user = $this->load_user_object($status->user_id); ?>
-						<h3><a href="/social/profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo $user->user_nicename; ?></a></h3>
-						<p><?php echo $status->status_content; ?></p>
-					</div>
-				<?php
-				}
-			}
 			
 			public function do_inbox($user_id) {
 				$message_objects = $this->get_message_objects($user_id);
@@ -119,8 +107,7 @@
 				foreach ( $message_objects as $message ) {?>
 					<div class="status_item">
 						<?php $user = $this->load_user_object($message->message_sender_id); ?>
-						<h3>From: <a href="/social/profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo $user->user_nicename; ?></a></h3>
-						<p><?php echo $message->message_subject; ?></p>
+						<h3>From: <a href="/social/profile-view.php?uid=<?php echo $user->user_id; ?>"><?php echo $user->firstname; ?></a></h3>
 						<p><?php echo $message->message_content; ?></p>
 					</div>
 				<?php

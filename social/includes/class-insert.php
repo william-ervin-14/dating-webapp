@@ -47,7 +47,7 @@
 			public function send_message($_POST) {
 				global $db;
 				
-				$table = 's_messages';
+				$table = 'messages';
 				
 				$query = "
 								INSERT INTO $table (message_time, message_sender_id, message_recipient_id, message_content)
