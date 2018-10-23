@@ -30,10 +30,19 @@
 	<div id="Settings" class="navBarTabs">
 					
 		<div class="verticalTabs">
-			<button class="tablinks" onclick="openVerticalTab(event, 'Change password')" id="defaultOpen">Change password</button>
+			<button class="tablinks" onclick="openVerticalTab(event, 'View Profile')" id="defaultOpen">View Profile</button>
+			<button class="tablinks" onclick="openVerticalTab(event, 'Change password')" >Change password</button>
 			<button class="tablinks" onclick="openVerticalTab(event, 'Compatibility questions')">Compatibility questions</button>
 		</div>	
 				
+		<div id="View Profile" class="tabcontent">
+			<p>View Profile</p>
+			<hr>
+			<h4>Name:</h4>
+			<hr>
+			<h4>Email:</h4>
+		</div>
+		
 		<div id="Change password" class="tabcontent">
 			<p>Update account.</p>
 			<hr>
