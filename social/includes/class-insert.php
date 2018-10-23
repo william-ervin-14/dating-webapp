@@ -44,27 +44,14 @@
 				return $db->insert($query);
 			}
 			
-			public function add_status($user_id, $_POST) {
-				global $db;
-				
-				$table = 's_status';
-				
-				$query = "
-								INSERT INTO $table (user_id, status_time, status_content)
-								VALUES ($user_id, '$_POST[status_time]', '$_POST[status_content]')
-							";
-				
-				return $db->insert($query);
-			}
-			
 			public function send_message($_POST) {
 				global $db;
 				
 				$table = 's_messages';
 				
 				$query = "
-								INSERT INTO $table (message_time, message_sender_id, message_recipient_id, message_subject, message_content)
-								VALUES ('$_POST[message_time]', '$_POST[message_sender_id]', '$_POST[message_recipient_id]', '$_POST[message_subject]', '$_POST[message_content]')
+								INSERT INTO $table (message_time, message_sender_id, message_recipient_id, message_content)
+								VALUES ('$_POST[message_time]', '$_POST[message_sender_id]', '$_POST[message_recipient_id]', '$_POST[message_content]')
 							";
 				
 				return $db->insert($query);

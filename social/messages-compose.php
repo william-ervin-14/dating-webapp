@@ -44,13 +44,9 @@
 					<select name="message_recipient_id">
 						<option value="">--Select a Friend--</option>
 						<?php foreach ( $friend_objects as $friend ) : ?>
-							<option value="<?php echo $friend->ID; ?>"><?php echo $friend->user_nicename; ?></option>
+							<option value="<?php echo $friend->ID; ?>"><?php echo $friend->firstname; ?></option>
 						<?php endforeach; ?>
 					</select>
-				</p>
-				<p>
-					<label class="labels" for="message_subject">Subject:</label>
-					<input name="message_subject" type="text" />
 				</p>
 				<p>
 					<label for="message_content">Message:</label>

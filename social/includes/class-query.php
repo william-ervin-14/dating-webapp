@@ -6,7 +6,7 @@
 			public function load_user_object($user_id) {
 				global $db;
 				
-				$table = 's_users';
+				$table = 'users';
 				
 				$query = "
 								SELECT * FROM $table
@@ -25,7 +25,7 @@
 			public function load_all_user_objects() {
 				global $db;
 				
-				$table = 's_users';
+				$table = 'users';
 				
 				$query = "
 								SELECT * FROM $table
@@ -43,7 +43,7 @@
 			public function get_friends($user_id) {
 				global $db;
 				
-				$table = 's_friends';
+				$table = 'friends';
 				
 				$query = "
 								SELECT ID, friend_id FROM $table
@@ -59,36 +59,10 @@
 				return $friend_ids;
 			}
 			
-			public function get_status_objects($user_id) {
-				global $db;
-				
-				$table = 's_status';
-				
-				$friend_ids = $this->get_friends($user_id);
-				
-				if ( !empty ( $friend_ids ) ) {
-					array_push($friend_ids, $user_id);
-				} else {
-					$friend_ids = array($user_id);
-				}
-				
-				$accepted_ids = implode(', ', $friend_ids);
-				
-				$query = "
-								SELECT * FROM $table
-								WHERE user_id IN ($accepted_ids)
-								ORDER BY status_time DESC
-							";
-				
-				$status_objects = $db->select($query);
-				
-				return $status_objects;
-			}
-			
 			public function get_message_objects($user_id) {
 				global $db;
 				
-				$table = 's_messages';
+				$table = 'messages';
 				
 				$query = "
 								SELECT * FROM $table
