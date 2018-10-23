@@ -6,11 +6,11 @@
 			public function update_user($user_id, $postdata) {
 				global $db;
 				
-				$table = 's_users';
+				$table = 'users';
 				
 				$query = "
 								UPDATE $table
-								SET user_email='$postdata[user_email]', user_pass='$postdata[user_pass]', user_nicename='$postdata[user_nicename]'
+								SET email='$postdata[email]', password='$postdata[password]', firstname='$postdata[firstname]'
 								WHERE ID=$user_id
 							";
 
@@ -20,7 +20,7 @@
 			public function add_friend($user_id, $friend_id) {
 				global $db;
 				
-				$table = 's_friends';
+				$table = 'friends';
 				
 				$query = "
 								INSERT INTO $table (user_id, friend_id)
@@ -33,7 +33,7 @@
 			public function remove_friend($user_id, $friend_id) {
 				global $db;
 				
-				$table = 's_friends';
+				$table = 'friends';
 				
 				$query = "
 								DELETE FROM $table 

@@ -34,16 +34,16 @@
 		<div class="content">
 			<form method="post">
 				<p>
-					<label class="labels" for="name">Full Name:</label>
-					<input name="user_nicename" type="text" value="<?php echo $user->user_nicename; ?>" />
+					<label class="labels" for="name">Name:</label>
+					<input name="firstname" type="text" value="<?php echo $user->firstname; ?>" />
 				</p>
 				<p>
 					<label class="labels" for="email">Email Address:</label>
-					<input name="user_email" type="text" value="<?php echo $user->user_email; ?>" />
+					<input name="email" type="text" value="<?php echo $user->email; ?>" />
 				</p>
 				<p>
 					<label class="labels" for="password">Password:</label>
-					<input name="user_pass" type="password" value="<?php echo $user->user_pass; ?>" />
+					<input name="password" type="password" value="<?php echo $user->password; ?>" />
 				</p>
 				<p>
 					<input type="submit" value="Submit" />
