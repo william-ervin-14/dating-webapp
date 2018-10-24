@@ -2,6 +2,8 @@
 	require_once('includes/class-query.php');
 	require_once('includes/class-insert.php');
 	
+	$mine = false;
+	
 	if ( !empty ( $_POST ) ) {
 		if ( $_POST['type'] == 'add' ) {
 			$add_friend = $insert->add_friend($_POST['user_id'], $_POST['friend_id']);
