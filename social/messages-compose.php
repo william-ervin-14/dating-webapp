@@ -23,7 +23,7 @@
 	<body>
 		<div id="navigation">
 			<ul>
-				<li><a href="/social">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<li><a href="profile-view.php">View Profile</a></li>
 				<li><a href="profile-edit.php">Edit Profile</a></li>
 				<li><a href="friends-directory.php">Member Directory</a></li>
