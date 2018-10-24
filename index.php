@@ -9,11 +9,12 @@
   	unset($_SESSION['email']);
   	header("location: login.php");
   }
-  
+  $table = 'users';
+  $user_email = $_SESSION['email']);
   
   $query = "
 		SELECT ID FROM $table
-		WHERE email = $_SESSION['email'])
+		WHERE email = $user_email
 		";
 				
   $obj = $db->select($query);
