@@ -4,7 +4,7 @@
 	require_once('includes/class-insert.php');
 	require_once('includes/class-query.php');
 	
-	//$logged_user_id = 45;
+	$logged_user_id = 45;
 	
 	if ( !empty ( $_POST ) ) {
 		$send_message = $insert->send_message($_POST);

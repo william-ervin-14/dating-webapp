@@ -3,7 +3,7 @@
 	
 	require_once('includes/class-query.php');
 	
-	//$logged_user_id = 45;
+	$logged_user_id = 45;
 ?>
 <!DOCTYPE html>
 <html>

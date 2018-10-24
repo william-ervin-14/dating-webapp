@@ -4,7 +4,7 @@
 	require_once('includes/class-query.php');
 	require_once('includes/class-insert.php');
 	
-	//$logged_user_id = 45;
+	$logged_user_id = 45;
 	
 	$friends = $query->get_friends($logged_user_id);
 ?>

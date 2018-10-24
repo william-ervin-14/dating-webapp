@@ -3,7 +3,7 @@
 	
 	require_once('includes/class-insert.php');
 	
-	//$logged_user_id = 1;
+	$logged_user_id = 1;
 	
 	if ( !empty ( $_POST ) ) {
 		$add_status = $insert->add_status($logged_user_id, $_POST);

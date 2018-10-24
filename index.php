@@ -13,16 +13,8 @@
   	unset($_SESSION['email']);
   	header("location: login.php");
   }
-  $table = 'users';
-  $user_email = $_SESSION['email'];
-  
-  $query = "
-		SELECT ID FROM $table
-		WHERE email = $user_email
-		";
-				
-  $obj = $db->select($query);
-  $logged_user_id = $obj;
+
+  $logged_user_id = 45;
 ?>
 <!DOCTYPE html>
 <html>
