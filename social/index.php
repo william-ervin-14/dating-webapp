@@ -27,6 +27,7 @@
 				<li><a href="feed-post.php">Post Status</a></li>
 				<li><a href="messages-inbox.php">Inbox</a></li>
 				<li><a href="messages-compose.php">Compose</a></li>
+				<li><a href="login.php" name="logout">Log out</a></li>
 			</ul>
 		</div>
 		<h1>Home</h1>
