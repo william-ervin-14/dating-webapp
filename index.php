@@ -1,5 +1,9 @@
 <?php 
   session_start();
+  
+  require_once('includes/class-insert.php');
+  require_once('includes/class-query.php');
+  
   if (!isset($_SESSION['email'])) {
   	$_SESSION['msg'] = "You must log in first";
   	header('location: login.php');
