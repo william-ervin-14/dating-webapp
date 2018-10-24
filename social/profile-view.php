@@ -51,8 +51,8 @@
 		</div>
 		<h1>View Profile</h1>
 		<div class="content">
-			<p>Name: <?php echo $user->user_nicename; ?></p>
-			<p>Email Address: <?php echo $user->user_email; ?></p>
+			<p>Name: <?php echo $user->firstname; ?></p>
+			<p>Email Address: <?php echo $user->email; ?></p>
 			<?php if ( !$mine ) : ?>
 				<?php if ( !in_array($user_id, $friends) ) : ?>
 					<p>
