@@ -10,7 +10,7 @@
   	header("location: login.php");
   }
   $table = 'users';
-  $user_email = $_SESSION['email']);
+  $user_email = $_SESSION['email'];
   
   $query = "
 		SELECT ID FROM $table
