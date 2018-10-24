@@ -44,7 +44,7 @@
 				return $db->insert($query);
 			}
 			
-			public function send_message($_POST) {
+			public function send_message() {
 				global $db;
 				
 				$table = 'messages';
