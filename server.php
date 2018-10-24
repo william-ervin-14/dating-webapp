@@ -15,15 +15,13 @@ $db = mysqli_connect('cpsc498.c4gfuryc8w4w.us-east-1.rds.amazonaws.com', 'WillAd
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
-  // receive all input values from the form
+	
   $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
   $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
-  // form validation: ensure that the form is correctly filled ...
-  // by adding (array_push()) corresponding error unto $errors array
   if (empty($firstname)) { array_push($errors, "First Name is required"); }
   if (empty($lastname)) { array_push($errors, "Last Name is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
@@ -32,8 +30,6 @@ if (isset($_POST['reg_user'])) {
 	array_push($errors, "The two passwords do not match");
   }
 
-  // first check the database to make sure 
-  // a user does not already exist with the same username and/or email
   $user_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
@@ -44,9 +40,9 @@ if (isset($_POST['reg_user'])) {
     }
   }
 
-  // Finally, register user if there are no errors in the form
+  //register user if there are no errors in the form
   if (count($errors) == 0) {
-  	$password = md5($password_1);//encrypt the password before saving in the database
+  	$password = md5($password_1);//encrypt the password
 
   	$query = "INSERT INTO users (firstname, lastname, email, password) 
   			  VALUES('$firstname', '$lastname', '$email', '$password')";
@@ -55,7 +51,7 @@ if (isset($_POST['reg_user'])) {
 	$_SESSION['lastname'] = $lastname;
 	$_SESSION['email'] = $email;
   	$_SESSION['success'] = "You are now logged in";
-  	header('location: questions.php');
+  	header('location: index.php');
   }
 }
 // LOGIN USER

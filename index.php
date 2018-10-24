@@ -1,51 +1,51 @@
-<?php 
-  session_start(); 
-
-  if (!isset($_SESSION['email'])) {
-  	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
-  }
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['email']);
-  	header("location: login.php");
-  }
-?>
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="stylesheet" href="css/profilepage.css">
-	<title>profile page</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
-<div class="navbar">
-		<a href="index.php">Home</a>
-		<a href="messages.php">Messages</a>
-		<div class="dropdown">
-			<button class="dropbtn">Settings</button>
-			<div class="dropdown-content">
-				<a href="settings.php">Account</a>
-				<a href="login.php" name="logout">Log out</a>
-			</div>
+	<head>
+		<title>Home</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div id="navigation">
+			<ul>
+				<li><a href="/social">Home</a></li>
+				<li><a href="profile-view.php">View Profile</a></li>
+				<li><a href="profile-edit.php">Edit Profile</a></li>
+				<li><a href="friends-directory.php">Member Directory</a></li>
+				<li><a href="friends-list.php">Friends List</a></li>
+				<li><a href="feed-view.php">View Feed</a></li>
+				<li><a href="feed-post.php">Post Status</a></li>
+				<li><a href="messages-inbox.php">Inbox</a></li>
+				<li><a href="messages-compose.php">Compose</a></li>
+			</ul>
 		</div>
-	</div>
-	
-	<div id="Home" class="navBarTabs">
-		<div class="row">
-			<div class="side">
-				<img src="images/login_avatar.png" alt="Avatar" class="avatar">
-				<?php  if (isset($_SESSION['firstname'])) : ?>
-					<center><h2><?php echo $_SESSION['firstname']; ?></h2></center>
-				<?php endif ?>
-			</div>			
-			<div class="main">
-				<h2>Main content</h2>
-			</div>
+		<h1>Home</h1>
+		<div class="square">
+		<h3>Profile</h3>
+		<ul>
+			<li><a href="profile-view.php">View Profile</a></li>
+			<li><a href="profile-edit.php">Edit Profile</a></li>
+		</ul>
 		</div>
-	</div>	
-
-</body>
+		<div class="square">
+		<h3>Friends</h3>
+			<ul>
+			<li><a href="friends-directory.php">Member Directory</a></li>
+			<li><a href="friends-list.php">Friends List</a></li>
+		</ul>
+		</div>
+		<div class="square">
+		<h3>News Feed</h3>
+			<ul>
+			<li><a href="feed-view.php">View Feed</a></li>
+			<li><a href="feed-post.php">Post Status</a></li>
+		</ul>
+		</div>
+		<div class="square">
+		<h3>Messages</h3>
+			<ul>
+			<li><a href="messages-inbox.php">Inbox</a></li>
+			<li><a href="messages-compose.php">Compose</a></li>
+		</ul>
+		</div>
+	</body>
 </html>
