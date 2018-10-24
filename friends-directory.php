@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 	require_once('includes/class-query.php');
 ?>
 <!DOCTYPE html>

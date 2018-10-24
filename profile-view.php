@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 	require_once('includes/class-query.php');
 	require_once('includes/class-insert.php');
 	
@@ -12,7 +14,7 @@
 		}
 	}
 	
-	//$logged_user_id = 45;
+	$logged_user_id = 45;
 	
 	if ( !empty ( $_GET['uid'] ) ) {
 		$user_id = $_GET['uid'];

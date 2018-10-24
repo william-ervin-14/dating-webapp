@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 	require_once('includes/class-insert.php');
 	
 	$logged_user_id = 1;
