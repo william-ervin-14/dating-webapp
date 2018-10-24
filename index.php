@@ -1,3 +1,14 @@
+<?php 
+  if (!isset($_SESSION['email'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,6 +27,7 @@
 				<li><a href="feed-post.php">Post Status</a></li>
 				<li><a href="messages-inbox.php">Inbox</a></li>
 				<li><a href="messages-compose.php">Compose</a></li>
+				<li><a href="login.php" name="logout">Log out</a></li>
 			</ul>
 		</div>
 		<h1>Home</h1>
