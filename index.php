@@ -13,8 +13,8 @@
   	unset($_SESSION['email']);
   	header("location: login.php");
   }
-  $email = $_GET['email'];
-  $users = $this->load_all_user_objects();
+  $email = $_SESSION['email'];
+  $user = $query->load_user_object($email);
   $logged_user_id = $user->ID;
 ?>
 <!DOCTYPE html>
