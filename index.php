@@ -15,6 +15,7 @@
   }
   $email = $_SESSION['email'];
   $ID = $query->load_user_id($email);
+  $_SESSION['user_id'] = $ID;
   $logged_user_id = $ID;
 ?>
 <!DOCTYPE html>
