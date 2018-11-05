@@ -1,8 +1,6 @@
-<?php 
-  if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+<?php  
+  session_start(); 
+  
   require_once('server.php');
   require_once('includes/class-insert.php');
   require_once('includes/class-query.php');
