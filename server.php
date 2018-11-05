@@ -1,5 +1,5 @@
 <?php
-class Server(){
+
 if(!isset($_SESSION)) 
     { 
         session_start(); 
@@ -125,5 +125,5 @@ if (isset($_POST['questions_user'])) {
 	}
 	header('location: index.php');
 }
-}
+
 ?>
