@@ -13,7 +13,8 @@
   	unset($_SESSION['email']);
   	header("location: login.php");
   }
-
+  
+  $user = $query->get_friends($_SESSION['email']);
   $logged_user_id = 45;
 ?>
 <!DOCTYPE html>
