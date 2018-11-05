@@ -68,6 +68,6 @@
 			<li><a href="messages-compose.php">Compose</a></li>
 		</ul>
 		</div>
-		<h2><?php echo $_SESSION['email']; ?></h2>
+		<h2><?php echo $email; ?></h2>
 	</body>
 </html>
