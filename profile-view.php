@@ -4,6 +4,16 @@
 	require_once('includes/class-query.php');
 	require_once('includes/class-insert.php');
 	
+	if (!isset($_SESSION['email'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: login.php");
+  }
+	
 	if ( !empty ( $_POST ) ) {
 		if ( $_POST['type'] == 'add' ) {
 			$add_friend = $insert->add_friend($_POST['user_id'], $_POST['friend_id']);
@@ -14,7 +24,8 @@
 		}
 	}
 	
-	$logged_user_id = 45;
+	$user = $query->load_user_id($_SESSION['email']);
+    $logged_user_id = $user;
 	
 	if ( !empty ( $_GET['uid'] ) ) {
 		$user_id = $_GET['uid'];
