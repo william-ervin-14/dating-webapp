@@ -27,7 +27,7 @@
 				$table = 'users';
 				
 				$query = "
-								SELECT ID FROM $table
+								SELECT * FROM $table
 								WHERE email = '$email'
 							";
 				
