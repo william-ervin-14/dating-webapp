@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-require_once('includes/class-query.php');
-require_once('includes/class-insert.php');
 // initializing variables
 $firstname = "";
 $lastname = "";
