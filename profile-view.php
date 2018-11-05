@@ -24,9 +24,9 @@
 		}
 	}
 	
-	$userID = $query->load_user_id("$_SESSION['email']");
-    $logged_user_id = $userID;
-	/*/
+	//$userID = $query->load_user_id("$_SESSION['email']");
+    $logged_user_id = 45;
+	
 	if ( !empty ( $_GET['uid'] ) ) {
 		$user_id = $_GET['uid'];
 		$user = $query->load_user_object($user_id);
@@ -38,7 +38,7 @@
 		$user = $query->load_user_object($logged_user_id);
 		$mine = true;
 	}
-	/*/
+	
 	$friends = $query->get_friends($logged_user_id);
 ?>
 
