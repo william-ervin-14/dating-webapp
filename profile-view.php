@@ -7,12 +7,12 @@
 	if (!isset($_SESSION['email'])) {
   	$_SESSION['msg'] = "You must log in first";
   	header('location: login.php');
-  }
-  if (isset($_GET['logout'])) {
+    }
+    if (isset($_GET['logout'])) {
   	session_destroy();
   	unset($_SESSION['email']);
   	header("location: login.php");
-  }
+    }
 	
 	if ( !empty ( $_POST ) ) {
 		if ( $_POST['type'] == 'add' ) {
@@ -24,9 +24,9 @@
 		}
 	}
 	
-	$user = $query->load_user_id($_SESSION['email']);
-    $logged_user_id = $user;
-	
+	$userID = $query->load_user_id($_SESSION['email']);
+    $logged_user_id = $userID;
+	/*/
 	if ( !empty ( $_GET['uid'] ) ) {
 		$user_id = $_GET['uid'];
 		$user = $query->load_user_object($user_id);
@@ -38,7 +38,7 @@
 		$user = $query->load_user_object($logged_user_id);
 		$mine = true;
 	}
-
+	/*/
 	$friends = $query->get_friends($logged_user_id);
 ?>
 
