@@ -1,4 +1,5 @@
 <?php
+class Server{
 session_start();
 
 // initializing variables
@@ -9,6 +10,7 @@ $errors = array();
 $genderErr = "";
 $err = "";
 $gender = "";
+public $user;
 
 // connect to the database
 $db = mysqli_connect('cpsc498.c4gfuryc8w4w.us-east-1.rds.amazonaws.com', 'WillAdmin', 'C@pstone498', 'accounts');
@@ -121,5 +123,5 @@ if (isset($_POST['questions_user'])) {
 	}
 	header('location: index.php');
 }
-
+}
 ?>
