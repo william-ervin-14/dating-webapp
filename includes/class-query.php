@@ -21,7 +21,24 @@
 				
 				return $obj[0];
 			}
-			
+			public function load_user_id($email) {
+				global $db;
+				
+				$table = 'users';
+				
+				$query = "
+								SELECT ID FROM $table
+								WHERE email = $email
+							";
+				
+				$obj = $db->select($query);
+				
+				if ( !$obj ) {
+					return "No user found";
+				}
+				
+				return $obj[0];
+			}
 			public function load_all_user_objects() {
 				global $db;
 				

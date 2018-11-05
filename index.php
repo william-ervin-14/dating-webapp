@@ -14,8 +14,8 @@
   	header("location: login.php");
   }
   
-  $user = $query->get_friends($_SESSION['email']);
-  $logged_user_id = 45;
+  $user = $query->load_user_id($_SESSION['email']);
+  $logged_user_id = $user;
 ?>
 <!DOCTYPE html>
 <html>
