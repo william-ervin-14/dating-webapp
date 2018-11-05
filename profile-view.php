@@ -24,8 +24,8 @@
 		}
 	}
 	
-	//$userID = $query->load_user_id("$_SESSION['email']");
-    $logged_user_id = 45;
+	$userID = $query->load_user_id($_SESSION['email']);
+    $logged_user_id = userID;
 	
 	if ( !empty ( $_GET['uid'] ) ) {
 		$user_id = $_GET['uid'];
