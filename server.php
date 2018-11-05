@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once('includes/class-query.php');
+require_once('includes/class-insert.php');
 // initializing variables
 $firstname = "";
 $lastname = "";
@@ -50,6 +52,8 @@ if (isset($_POST['reg_user'])) {
   	$_SESSION['firstname'] = $firstname;
 	$_SESSION['lastname'] = $lastname;
 	$_SESSION['email'] = $email;
+	$user_id = $query->load_user_id($email);
+	$_SESSION['uid'] = $user_id;
   	$_SESSION['success'] = "You are now logged in";
   	header('location: index.php');
   }
