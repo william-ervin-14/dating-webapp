@@ -28,7 +28,7 @@
 				
 				$query = "
 								SELECT ID FROM $table
-								WHERE email = $email
+								WHERE email = '$email'
 							";
 				
 				$obj = $db->select($query);
