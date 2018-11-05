@@ -1,5 +1,8 @@
 <?php
-	session_start();
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 	
 	require_once('server.php');
 	require_once('includes/class-query.php');

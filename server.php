@@ -1,8 +1,8 @@
 <?php
-
-
-session_start();
-
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 // initializing variables
 $firstname = "";
 $lastname = "";
