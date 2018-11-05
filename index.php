@@ -68,5 +68,6 @@
 		</ul>
 		</div>
 		<h2><?php echo $logged_user_id; ?></h2>
+		<h2><?php echo $_SESSION['email']; ?></h2>
 	</body>
 </html>
