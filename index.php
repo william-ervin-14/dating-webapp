@@ -14,7 +14,7 @@
   	header("location: login.php");
   }
   
-  $user = $query->load_user_id($_SESSION['email']);
+  $user = $query->load_user_id("$_SESSION['email']");
   $logged_user_id = $user;
 ?>
 <!DOCTYPE html>
