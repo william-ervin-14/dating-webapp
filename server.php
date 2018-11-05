@@ -52,8 +52,6 @@ if (isset($_POST['reg_user'])) {
   	$_SESSION['firstname'] = $firstname;
 	$_SESSION['lastname'] = $lastname;
 	$_SESSION['email'] = $email;
-	$user_id = $query->load_user_id($email);
-	$_SESSION['uid'] = $user_id;
   	$_SESSION['success'] = "You are now logged in";
   	header('location: index.php');
   }
@@ -76,8 +74,6 @@ if (isset($_POST['login_user'])) {
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['email'] = $email;
-	  $user_id = $query->load_user_id($email);
-	  $_SESSION['uid'] = $user_id;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
   	}else {
