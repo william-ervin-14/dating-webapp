@@ -24,7 +24,7 @@
 			public function load_user_id($email) {
 				global $db;
 				
-				$table = 'users';
+				$table = 'accounts.users';
 				
 				$query = "
 								SELECT ID FROM $table
