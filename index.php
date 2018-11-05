@@ -69,5 +69,6 @@
 		</ul>
 		</div>
 		<h2><?php echo $email; ?></h2>
+		<h2><?php echo $ID; ?></h2>
 	</body>
 </html>
