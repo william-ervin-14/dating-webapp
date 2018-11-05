@@ -24,7 +24,7 @@
 		}
 	}
 	
-    $logged_user_id = $_GET['user_id'];
+    $logged_user_id = $_SESSION['uid'];
 	
 	if ( !empty ( $_GET['uid'] ) ) {
 		$user_id = $_GET['uid'];

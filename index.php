@@ -15,7 +15,7 @@
   }
   $email = $_SESSION['email'];
   $ID = $query->load_user_id($email);
-  $_SESSION['user_id'] = $ID;
+  $_SESSION['uid'] = $ID;
   $logged_user_id = $ID;
 ?>
 <!DOCTYPE html>
@@ -69,6 +69,5 @@
 		</ul>
 		</div>
 		<h2><?php echo $email; ?></h2>
-		<h2><?php echo $ID; ?></h2>
 	</body>
 </html>
