@@ -1,10 +1,6 @@
 <?php
  require_once('load.php') 
  
- if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	 $register_status = $login->verify_login($_POST);
- }
- 
  ?>
 <!DOCTYPE html>
 <html lang="en">
