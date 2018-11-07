@@ -5,7 +5,7 @@ require_once('load.php');
 if ( !class_exists('Login') ){
 	class Login{
 		public $user;
-		public $email;
+		public $email = "";
 		
 		public function __construct(){
 			global $users;
