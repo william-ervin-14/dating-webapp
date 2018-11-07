@@ -1,6 +1,9 @@
 <?php
 
-require_once('load.php');
+	require_once('class-login.php');
+	require_once('class-query.php');
+	require_once('class-insert.php');
+	require_once('class-db.php');
 
 if ( !class_exists('Login') ){
 	class Login{
