@@ -58,7 +58,7 @@
 					</div>
 
 					<div class="container-login100-form-btn p-t-10">
-						<button class="login100-form-btn" name="login_user">
+						<button class="login100-form-btn" name="login_user" value="Submit">
 							Login
 						</button>
 					</div>
