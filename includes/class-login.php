@@ -6,7 +6,6 @@
 if ( !class_exists('Login') ){
 	class Login{
 		public $user;
-		public $email;
 		
 		public function __construct(){
 			global $db;
