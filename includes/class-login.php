@@ -1,6 +1,4 @@
 <?php
-
-	require_once('class-login.php');
 	require_once('class-query.php');
 	require_once('class-insert.php');
 	require_once('class-db.php');
