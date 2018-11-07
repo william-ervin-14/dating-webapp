@@ -1,4 +1,11 @@
-<?php include('server.php') ?>
+<?php
+ require_once('load.php') 
+ 
+ if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	 $register_status = $login->register($_POST);
+ }
+ 
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +48,12 @@
 					<span class="login100-form-title p-b-59">
 						Sign Up
 					</span>
-
+					<?php if(isset($register_status)): ?>
+					<?php ($register_status['status'] == true ? $class = 'success' : $class = 'error'); ?>
+					<div class = "message <?php echo $class; ?>">
+						<p> <?php echo $register_status['message']; ?></p>
+					</div>
+					<?php endif; ?>
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">First Name</span>
 						<input class="input100" type="text" name="firstname" placeholder="First Name">

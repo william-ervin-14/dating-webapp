@@ -2,9 +2,7 @@
     session_start(); 
 
 	
-	require_once('server.php');
-	require_once('includes/class-query.php');
-	require_once('includes/class-insert.php');
+	require_once('load.php');
 	
 	if (!isset($_SESSION['email'])) {
   	$_SESSION['msg'] = "You must log in first";
@@ -52,7 +50,7 @@
 	<body>
 		<div id="navigation">
 			<ul>
-				<li><a href="index.php">Home</a></li>
+				<li><a href="home.php">Home</a></li>
 				<li><a href="profile-view.php">View Profile</a></li>
 				<li><a href="profile-edit.php">Edit Profile</a></li>
 				<li><a href="friends-directory.php">Member Directory</a></li>
