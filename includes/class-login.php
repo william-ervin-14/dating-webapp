@@ -53,7 +53,7 @@ if ( !class_exists('Login') ){
 			return array('status'=>0, 'messages'=>'An unknown error has occured.');
 		}
 		private function user_exists($email){
-			$user = $query->load_user_object_by_email($email);
+			$user = $QUERY->load_user_object_by_email($email);
 		
 			if($user !== false){
 				return $user[0];
