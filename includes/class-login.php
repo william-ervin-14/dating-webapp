@@ -8,9 +8,9 @@ if ( !class_exists('Login') ){
 		public $email = "";
 		
 		public function __construct(){
-			global $users;
+			global $db;
 			session_start(); 
-			$this->users = $users;
+			$this->db = $db;
 		} 
 		public function verify_login($post){
 			if( ! isset($post['email'] ) || ! isset($post['password'] )) {

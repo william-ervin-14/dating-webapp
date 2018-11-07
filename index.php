@@ -5,7 +5,7 @@
 	  $login_status = $login->verify_login($_POST);
   }
   if($login->verify_session() ){
-	  $user = $login-> user;
+	  $user = $login->user;
 	  
 	  include( 'home.php' );
   } else {
