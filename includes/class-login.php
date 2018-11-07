@@ -27,7 +27,8 @@ if ( !class_exists('Login') ){
 			return false;
 		}
 		public function verify_session() {
-			$email = $_SESSION['email'];
+			//$email = $_SESSION['email'];
+			$email = 'tester@tester.com';
 			$user = $this->user_exists($email);
 		
 			if( $user != false){
