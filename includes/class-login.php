@@ -18,7 +18,7 @@ if ( !class_exists('Login') ){
 			}
 			$user = $this->user_exists($post['email']);
 		
-			if( $user != false ){
+			if( $user !== false ){
 				if( $post['password'] == $user['password']) {
 					$_SESSION['email'] = $user['email'];
 					return true;
