@@ -28,7 +28,7 @@ if ( !class_exists('Login') ){
 		}
 		public function verify_session() {
 			$email = $_SESSION['email'];
-			$user = $this->user_exists($email);
+			//$user = $this->user_exists($email);
 		
 			if( $user != false){
 				$this->user = $user;
@@ -53,7 +53,7 @@ if ( !class_exists('Login') ){
 			return array('status'=>0, 'messages'=>'An unknown error has occured.');
 		}
 		private function user_exists($email){
-			$user = $QUERY->load_user_object_by_email($email);
+			$user = $query->load_user_object_by_email($email);
 		
 			if($user !== false){
 				return $user[0];
