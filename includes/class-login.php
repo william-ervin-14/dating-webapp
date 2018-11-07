@@ -1,6 +1,6 @@
 <?php
 
-require_once('class-db.php');
+require_once('load.php');
 
 if ( !class_exists('Login') ){
 	class Login{
@@ -51,7 +51,7 @@ if ( !class_exists('Login') ){
 			return array('status'=>0, 'messages'=>'An unknown error has occured.');
 		}
 		private function user_exists($email){
-			$user = $this->db->get_results("SELECT * FROM users WHERE email='$email' LIMIT 1");
+			$user = $query->load_user_object_by_email($email);
 		
 			if($user !== false){
 				return $user[0];
