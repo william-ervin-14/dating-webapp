@@ -41,7 +41,9 @@ if ( !class_exists('Login') ){
                 $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
                 $results = mysqli_query($this->db->connection, $query);
                 if (mysqli_num_rows($results) == 1) {
-                    $_SESSION['email'] = $email;
+                    if (!isset($_SESSION['email'])) {
+                        $_SESSION['email'] = $email;
+                    }
                     return true;
                 }
                 return false;
