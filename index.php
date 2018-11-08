@@ -4,7 +4,7 @@
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	  $login_status = $login->verify_login($_POST);
 
-	  if( false !== login_status){
+	  if( false !== $login_status){
 
           if($login->verify_session() ){
               $user = $login->user;
