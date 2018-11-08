@@ -10,10 +10,9 @@
               $user = $login->user;
 
               include( 'home.php' );
-          } else {
-              include( 'login.php' );
           }
-
+      } else {
+          include( 'login.php' );
       }
   }
 
