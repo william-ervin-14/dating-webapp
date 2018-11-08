@@ -16,28 +16,30 @@ if ( !class_exists('Login') ){
             $this->query = $query;
 		} 
 		public function verify_login($post){
-			if( ! isset($post['email'] ) || ! isset($post['password'] )) {
-				return false;
-			}
-			$user = $this->user_exists($post['email']);
+            if (isset($_POST['login_user'])) {
+                if (!isset($post['email']) || !isset($post['password'])) {
+                    return false;
+                }
+                $user = $this->user_exists($post['email']);
 
-			if( $user !== false ){
-				if(($post['password']) == $user['password']) {
-					$_SESSION['email'] = $user['email'];
-					return true;
-				}
-			}
-            $email = mysqli_real_escape_string($this->db->connection, $post['email']);
-            $password = mysqli_real_escape_string($this->db->connection, $post['password']);
+                if ($user !== false) {
+                    if (($post['password']) == $user['password']) {
+                        $_SESSION['email'] = $user['email'];
+                        return true;
+                    }
+                }
+                $email = mysqli_real_escape_string($this->db->connection, $post['email']);
+                $password = mysqli_real_escape_string($this->db->connection, $post['password']);
 
-           // $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-            //$results = mysqli_query($this->db->connection, $query);
-           // if (mysqli_num_rows($results) == 1) {
-               // $_SESSION['email'] = $email;
+                // $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+                //$results = mysqli_query($this->db->connection, $query);
+                // if (mysqli_num_rows($results) == 1) {
+                // $_SESSION['email'] = $email;
                 //return true;
-           // }
-			return false;
-		}
+                // }
+                return false;
+            }
+        }
 		public function verify_session() {
             if (isset($_SESSION['email'])) {
                 $email = $_SESSION['email'];
