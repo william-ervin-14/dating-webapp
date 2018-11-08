@@ -39,15 +39,15 @@ if ( !class_exists('Login') ){
 			return false;
 		}
 		public function verify_session() {
+            if (isset($_SESSION['email'])) {
+                $email = $_SESSION['email'];
+                $user = $this->user_exists($email);
 
-		    $email = $_SESSION['email'];
-		    $user = $this->user_exists($email);
-		
-		    if( $user != false){
-		        $this->user = $user;
-		        return true;
-		    }
-
+                if ($user != false) {
+                    $this->user = $user;
+                    return true;
+                }
+            }
 			return false;
 		}
 		public function register($post){
