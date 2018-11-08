@@ -45,7 +45,7 @@ if ( !class_exists('Login') ){
 			}
 		
 			$query = "INSERT INTO users (firstname, lastname, email, password) 
-					VALUES('$postdata[firstname]', '$post[lastname]', '$post[email]', '$post[password]')";
+					VALUES('$post[firstname]', '$post[lastname]', '$post[email]', '$post[password]')";
 			
 			$insert = $db->insert($query);
 		
