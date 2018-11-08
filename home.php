@@ -1,5 +1,5 @@
 <?php  
-  //session_start();
+  session_start();
   
   require_once('load.php');
   
@@ -12,8 +12,9 @@
   	unset($_SESSION['email']);
   	header("location: login.php");
   }
-  $email = "bleh";
-  $logged_user_id = 45;
+  $email = $_SESSION['email'];
+  $userID = $query->load_user_id($email);
+  $logged_user_id = $userID;
 ?>
 <!DOCTYPE html>
 <html>
