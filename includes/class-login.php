@@ -6,11 +6,14 @@
 if ( !class_exists('Login') ){
 	class Login{
 		public $user;
-		
+		public $db;
+        public $query;
 		public function __construct(){
 			global $db;
+			global $query;
 			session_start(); 
 			$this->db = $db;
+            $this->query = $query;
 		} 
 		public function verify_login($post){
 			if( ! isset($post['email'] ) || ! isset($post['password'] )) {
@@ -47,7 +50,7 @@ if ( !class_exists('Login') ){
 			$query = "INSERT INTO users (firstname, lastname, email, password) 
 					VALUES('$post[firstname]', '$post[lastname]', '$post[email]', '$post[password]')";
 			
-			$insert = $db->insert($query);
+			$insert = $this->db->insert($query);
 		
 			if($insert == true){
 				return array('status'=>1, 'messages'=>'Account created successfully');
@@ -55,7 +58,7 @@ if ( !class_exists('Login') ){
 			return array('status'=>0, 'messages'=>'An unknown error has occured.');
 		}
 		private function user_exists($email){
-			$user = $query->load_user_object_by_email($email);
+			$user = $this->query->load_user_object_by_email($email);
 		
 			if($user !== false){
 				return $user[0];
@@ -64,6 +67,4 @@ if ( !class_exists('Login') ){
 		}
 	}
 }
-
 $login = new Login;
-?>
