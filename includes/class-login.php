@@ -22,7 +22,7 @@ if ( !class_exists('Login') ){
 			$user = $this->user_exists($post['email']);
 		
 			if( $user !== false ){
-				if( md5($post['password']) == $user['password']) {
+				if(($post['password']) == $user['password']) {
 					$_SESSION['email'] = $user['email'];
 					return true;
 				}
