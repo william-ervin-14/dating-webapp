@@ -14,8 +14,6 @@
       } else {
           include( 'login.php' );
       }
-  }else{
-      include( 'config.php' );
   }
 
 
