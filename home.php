@@ -9,10 +9,10 @@
   if (isset($_GET['logout'])) {
       unset($_SESSION['email']);
       session_destroy();
-  	header("location: config.php");
+  	  header("location: config.php");
   }
-  //$email = $_SESSION['email'];
-  //$uid = $query->load_user_id($email);
+  $email = $_SESSION['email'];
+  $uid = $query->load_user_id($email);
   $logged_user_id = $uid;
 ?>
 <!DOCTYPE html>
