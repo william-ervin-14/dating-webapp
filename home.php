@@ -12,10 +12,8 @@
   	unset($_SESSION['email']);
   	header("location: login.php");
   }
-  $email = $_SESSION['email'];
-  $ID = $query->load_user_id($email);
-  $_SESSION['uid'] = $ID;
-  $logged_user_id = $ID;
+
+  $logged_user_id = 45;
 ?>
 <!DOCTYPE html>
 <html>
