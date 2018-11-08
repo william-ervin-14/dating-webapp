@@ -11,9 +11,8 @@
       session_destroy();
   	header("location: login.php");
   }
-  $email = $_SESSION['email'];
-  $userID = $query->load_user_id($email);
-  $logged_user_id = $userID;
+
+  $logged_user_id = 45;
 ?>
 <!DOCTYPE html>
 <html>
