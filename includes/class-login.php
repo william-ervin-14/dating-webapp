@@ -31,7 +31,7 @@ if ( !class_exists('Login') ){
             $password = mysqli_real_escape_string($this->db, $post['password']);
 
             $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-            $results = mysqli_query($this->db, $query);
+            $results = mysqli_query($this->db->connection, $query);
             if (mysqli_num_rows($results) == 1) {
                 $_SESSION['email'] = $email;
                 return true;
