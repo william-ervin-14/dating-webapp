@@ -8,11 +8,12 @@
 
           if($login->verify_session() ){
               $user = $login->user;
-
-              include( 'home.php' );
+              header('location: home.php');
+              //include( 'home.php' );
           }
       } else {
-          include( 'login.php' );
+          header('location: login.php');
+          //include( 'login.php' );
       }
   }
 

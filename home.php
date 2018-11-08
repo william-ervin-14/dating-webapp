@@ -65,6 +65,6 @@
 		</ul>
 		</div>
         <h2><?php echo $logged_user_id; ?></h2>
-        
+
 	</body>
 </html>
