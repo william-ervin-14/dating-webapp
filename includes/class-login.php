@@ -50,22 +50,25 @@ if ( !class_exists('Login') ){
             }
 			return false;
 		}
-		public function register($post){
-	
-			if( false !== $this->user_exists($post['email'])){
-				return array('status'=>0, 'messages'=>'Email already exists');
-			}
-		
-			$query = "INSERT INTO users (firstname, lastname, email, password) 
+		public function register($post) {
+            if (isset($_POST['reg_user'])) {
+                if (false !== $this->user_exists($post['email'])) {
+                    return array('status' => 0, 'messages' => 'Email already exists');
+                }
+                if ($post['password_1'] != $post['password_2']) {
+                    return array('status' => 0, 'messages' => 'The two passwords do not match.');
+                }
+                $query = "INSERT INTO users (firstname, lastname, email, password) 
 					VALUES('$post[firstname]', '$post[lastname]', '$post[email]', '$post[password]')";
-			
-			$insert = $this->db->insert($query);
-		
-			if($insert == true){
-				return array('status'=>1, 'messages'=>'Account created successfully');
-			}
-			return array('status'=>0, 'messages'=>'An unknown error has occured.');
-		}
+
+                $insert = $this->db->insert($query);
+
+                if ($insert == true) {
+                    return array('status' => 1, 'messages' => 'Account created successfully');
+                }
+                return array('status' => 0, 'messages' => 'An unknown error has occured.');
+            }
+        }
 		private function user_exists($email){
 			$user = $this->query->load_user_object_by_email($email);
 		
