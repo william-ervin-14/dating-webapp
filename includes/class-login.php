@@ -17,9 +17,9 @@ if ( !class_exists('Login') ){
 		} 
 		public function verify_login($post){
             if (isset($_POST['login_user'])) {
-               // if (!isset($post['email']) || !isset($post['password'])) {
-                   // return false;
-                //}
+                if (!isset($post['email']) || !isset($post['password'])) {
+                    return false;
+                }
                 //$user = $this->user_exists($post['email']);
 
                // if ($user !== false) {
@@ -28,22 +28,14 @@ if ( !class_exists('Login') ){
                         //return true;
                     //}
                // }
-
-
                 $email = mysqli_real_escape_string($this->db->connection, $post['email']);
                 $password = mysqli_real_escape_string($this->db->connection, $post['password']);
-                if (empty($email)) {
-                    return false;
-                }
-                if (empty($password)) {
-                    return false;
-                }
-                $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+                $encrypt_password = md5($password);
+
+                $query = "SELECT * FROM users WHERE email='$email' AND password='$encrypt_password'";
                 $results = mysqli_query($this->db->connection, $query);
                 if (mysqli_num_rows($results) == 1) {
-                    if (!isset($_SESSION['email'])) {
-                        $_SESSION['email'] = $email;
-                    }
+                    $_SESSION['email'] = $email;
                     return true;
                 }
                 return false;
