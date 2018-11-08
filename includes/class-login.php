@@ -16,7 +16,7 @@ if ( !class_exists('Login') ){
             $this->query = $query;
 		} 
 		public function verify_login($post){
-            if (isset($_POST['login_user'])) {
+           // if (isset($_POST['login_user'])) {
                 if (!isset($post['email']) || !isset($post['password'])) {
                     return false;
                 }
@@ -38,7 +38,7 @@ if ( !class_exists('Login') ){
                     return true;
                 }
                 return false;
-            }
+           // }
         }
 		public function verify_session() {
             if (isset($_SESSION['email'])) {
