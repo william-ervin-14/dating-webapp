@@ -27,8 +27,8 @@ if ( !class_exists('Login') ){
 					//return true;
 				//}
 			//}
-            $email = $post['email'];
-            $password = $post['password'];
+            $email = mysqli_real_escape_string($this->db, $post['email']);
+            $password = mysqli_real_escape_string($this->db, $post['password']);
 
             $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
             $results = mysqli_query($this->db, $query);
