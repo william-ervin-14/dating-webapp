@@ -7,8 +7,8 @@
   	header('location: login.php');
   }
   if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['email']);
+      unset($_SESSION['email']);
+      session_destroy();
   	header("location: login.php");
   }
   $email = $_SESSION['email'];
