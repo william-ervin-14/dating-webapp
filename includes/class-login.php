@@ -19,14 +19,23 @@ if ( !class_exists('Login') ){
 			if( ! isset($post['email'] ) || ! isset($post['password'] )) {
 				return false;
 			}
-			$user = $this->user_exists($post['email']);
-		
-			if( $user !== false ){
-				if(($post['password']) == $user['password']) {
-					$_SESSION['email'] = $user['email'];
-					return true;
-				}
-			}
+			//$user = $this->user_exists($post['email']);
+
+			//if( $user !== false ){
+				//if(($post['password']) == $user['password']) {
+					//$_SESSION['email'] = $user['email'];
+					//return true;
+				//}
+			//}
+            $email = $post['email'];
+            $password = $post['password'];
+
+            $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+            $results = mysqli_query($this->db, $query);
+            if (mysqli_num_rows($results) == 1) {
+                $_SESSION['email'] = $email;
+                return true;
+            }
 			return false;
 		}
 		public function verify_session() {

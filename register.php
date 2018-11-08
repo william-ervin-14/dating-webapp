@@ -1,7 +1,7 @@
 <?php
  require_once('load.php');
  
- if(isset($_POST['reg_user'])){
+ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	 $register_status = $login->register($_POST);
  }
  
@@ -48,7 +48,7 @@
 					<span class="login100-form-title p-b-59">
 						Sign Up
 					</span>
-					<?php if(isset($register_status)): ?>
+                    <?php if(isset($register_status)): ?>
 					<?php ($register_status['status'] == true ? $class = 'success' : $class = 'error'); ?>
 					<div class = "message <?php echo $class; ?>">
 						<p> <?php echo $register_status['message']; ?></p>
