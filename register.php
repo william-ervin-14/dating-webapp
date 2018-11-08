@@ -1,7 +1,7 @@
 <?php
  require_once('load.php');
  
- if($_SERVER['REQUEST_METHOD'] == 'POST'){
+ if(isset($_POST['reg_user'])){
 	 $register_status = $login->register($_POST);
  }
  
