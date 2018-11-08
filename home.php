@@ -12,7 +12,7 @@
   	unset($_SESSION['email']);
   	header("location: login.php");
   }
-
+  $email = "bleh";
   $logged_user_id = 45;
 ?>
 <!DOCTYPE html>
