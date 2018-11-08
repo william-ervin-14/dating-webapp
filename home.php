@@ -11,8 +11,9 @@
       session_destroy();
   	header("location: config.php");
   }
-
-  $logged_user_id = 45;
+  $email = $_SESSION['email'];
+  $uid = $query->load_user_id($email);
+  $logged_user_id = $uid;
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,6 +66,6 @@
 		</ul>
 		</div>
         <h2><?php echo $logged_user_id; ?></h2>
-
+        <h2><?php echo $email; ?></h2>
 	</body>
 </html>

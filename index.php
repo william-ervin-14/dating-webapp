@@ -10,8 +10,6 @@
               $user = $login->user;
               header('location: home.php');
               //include( 'home.php' );
-          } else {
-              header('location: config.php');
           }
       } else {
           header('location: login.php');
