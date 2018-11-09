@@ -56,11 +56,11 @@ if ( !class_exists('Login') ){
 		public function register($post) {
             if (isset($_POST['reg_user'])) {
                 if (false !== $this->user_exists($post['email'])) {
-                    return false;
+                    return "email already exists";
                     //return array('status' => 0, 'messages' => 'Email already exists');
                 }
                 if ($post['password_2'] !== $post['password_1']) {
-                    return false;
+                    return "two passwords do not match";;
                     //return array('status' => 0, 'messages' => 'The two passwords do not match.');
                 }
                 $firstname = $post['firstname'];
@@ -74,11 +74,11 @@ if ( !class_exists('Login') ){
                 $insert = $this->db->insert($query);
 
                 if ($insert == true) {
-                    return false;
+                    return true;
                     //return array('status' => 1, 'messages' => 'Account created successfully');
                 }
-                return false;
-                //return array('status' => 0, 'messages' => 'An unknown error has occured.');
+                return "An unknown error has occurred";
+                //return array('status' => 0, 'messages' => 'An unknown error has occurred.');
             }
         }
 		private function user_exists($email){
