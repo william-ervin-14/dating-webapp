@@ -14,14 +14,14 @@
 				$this->connection =  $mysqli;
 			}
 			
-			public function insert($query) {				
-				$result = $this->connection->query($query);
+			public function insert($query) {
+                $result = mysqli_query($this->connection, $query);
 				
 				return $result;
 			}
 			
 			public function update($query) {
-				$result = $this->connection->query($query);
+                $result = mysqli_query($this->connection, $query);
 				
 				return $result;
 			}
