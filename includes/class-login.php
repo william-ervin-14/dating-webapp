@@ -61,10 +61,10 @@ if ( !class_exists('Login') ){
                 if ($post['password_2'] !== $post['password_1']) {
                     return array('status' => 0, 'messages' => 'The two passwords do not match.');
                 }
-                $firstname = $post[firstname];
-                $lastname =$post[lastname];
-                $email =$post[email];
-                $password =$post[password];
+                $firstname = $post['firstname'];
+                $lastname =$post['lastname'];
+                $email =$post['email'];
+                $password =$post['password'];
 
                 $query = "INSERT INTO users (firstname, lastname, email, password) 
 					VALUES('$firstname', '$lastname', '$email', '$password')";
