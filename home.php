@@ -4,12 +4,12 @@
   
   if (!isset($_SESSION['email'])) {
   	$_SESSION['msg'] = "You must log in first";
-  	header('location: config.php');
+  	header('location: login.php');
   }
-  if (isset($_POST['logout'])) {
+  if (isset($_GET['logout'])) {
       unset($_SESSION['email']);
       session_destroy();
-  	  header("location: config.php");
+  	  header("location: login.php");
   }
   $email = $_SESSION['email'];
   $uid = $query->load_user_id($email);
