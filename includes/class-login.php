@@ -59,9 +59,11 @@ if ( !class_exists('Login') ){
                     return "two passwords do not match";;
                     //return array('status' => 0, 'messages' => 'The two passwords do not match.');
                 }
-                if (false !== $this->user_exists($post['email'])) {
-                    return "email already exists";
-                    //return array('status' => 0, 'messages' => 'Email already exists');
+                $email = $post['email'];
+                $query = "SELECT * FROM users WHERE email='$email'";
+                $results = mysqli_query($this->db->connection, $query);
+                if (mysqli_num_rows($results) == 1) {
+                    return "Email already exists";
                 }
                 $firstname = $post['firstname'];
                 $lastname =$post['lastname'];
