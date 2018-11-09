@@ -1,7 +1,8 @@
 <?php
 	if ( !class_exists ('DB') ) {
 		class DB {
-
+            public $connection;
+            public $results;
 
 			public function __construct() {
 				$mysqli = new mysqli('cpsc498.c4gfuryc8w4w.us-east-1.rds.amazonaws.com', 'WillAdmin', 'C@pstone498', 'accounts');
