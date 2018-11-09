@@ -6,7 +6,7 @@
   	$_SESSION['msg'] = "You must log in first";
   	header('location: config.php');
   }
-  if (isset($_GET['logout'])) {
+  if (isset($_POST['logout'])) {
       unset($_SESSION['email']);
       session_destroy();
   	  header("location: config.php");
