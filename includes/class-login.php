@@ -69,7 +69,7 @@ if ( !class_exists('Login') ){
                 $query = "INSERT INTO users (firstname, lastname, email, password) 
 					VALUES('$firstname', '$lastname', '$email', '$password')";
 
-                $insert = $this->db->insert($query);
+                $insert = mysqli_query($this->db->connection, $query);
 
                 if ($insert == true) {
                     return array('status' => 1, 'messages' => 'Account created successfully');
