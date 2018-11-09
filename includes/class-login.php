@@ -56,10 +56,12 @@ if ( !class_exists('Login') ){
 		public function register($post) {
             if (isset($_POST['reg_user'])) {
                 if (false !== $this->user_exists($post['email'])) {
-                    return array('status' => 0, 'messages' => 'Email already exists');
+                    return false;
+                    //return array('status' => 0, 'messages' => 'Email already exists');
                 }
                 if ($post['password_2'] !== $post['password_1']) {
-                    return array('status' => 0, 'messages' => 'The two passwords do not match.');
+                    return false;
+                    //return array('status' => 0, 'messages' => 'The two passwords do not match.');
                 }
                 $firstname = $post['firstname'];
                 $lastname =$post['lastname'];
@@ -69,12 +71,14 @@ if ( !class_exists('Login') ){
                 $query = "INSERT INTO users (firstname, lastname, email, password) 
 					VALUES('$firstname', '$lastname', '$email', '$password')";
 
-                $insert = mysqli_query($this->db->connection, $query);
+                $insert = $this->db->insert($query);
 
                 if ($insert == true) {
-                    return array('status' => 1, 'messages' => 'Account created successfully');
+                    return false;
+                    //return array('status' => 1, 'messages' => 'Account created successfully');
                 }
-                return array('status' => 0, 'messages' => 'An unknown error has occured.');
+                return false;
+                //return array('status' => 0, 'messages' => 'An unknown error has occured.');
             }
         }
 		private function user_exists($email){

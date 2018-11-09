@@ -3,6 +3,9 @@
  
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	 $register_status = $login->register($_POST);
+	 if( false !== $register_status){
+         header('location: login.php');
+     }
  }
  
  ?>
