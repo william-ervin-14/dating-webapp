@@ -5,7 +5,7 @@
             public $results;
 
 			public function __construct() {
-				$mysqli = new mysqli('cpsc498.c4gfuryc8w4w.us-east-1.rds.amazonaws.com', 'WillAdmin', 'C@pstone498', 'accounts');
+				$mysqli = new mysqli_connect('cpsc498.c4gfuryc8w4w.us-east-1.rds.amazonaws.com', 'WillAdmin', 'C@pstone498', 'accounts');
 				
 				if ($mysqli->connect_errno) {
 					printf("Connect failed %s\n", $mysqli->connect_error);
