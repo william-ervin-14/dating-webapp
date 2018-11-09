@@ -53,7 +53,7 @@
 					<span class="login100-form-title p-b-59">
 						Sign Up
 					</span>
-                    <h2><?php echo $result; ?></h2>
+                    <h4><?php echo $result; ?></h4>
 
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">First Name</span>
