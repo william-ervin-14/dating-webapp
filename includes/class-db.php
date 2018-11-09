@@ -27,7 +27,7 @@
 			}
 			
 			public function select($query) {							
-				$result = $this->connection->query($query);
+				$result = mysqli_query($this->connection, $query);
 				
 				if ( !$result ) {
 					return false;
