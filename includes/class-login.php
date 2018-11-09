@@ -73,8 +73,8 @@ if ( !class_exists('Login') ){
 
                 $insert = $this->db->insert($query);
 
-                if ($insert == true) {
-                    return true;
+                if (false !== $insert) {
+                    return "Account created successfully";
                     //return array('status' => 1, 'messages' => 'Account created successfully');
                 }
                 return "An unknown error has occurred";

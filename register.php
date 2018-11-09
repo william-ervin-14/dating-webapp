@@ -3,11 +3,6 @@
  
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	 $register_status = $login->register($_POST);
-	 if( false !== $register_status){
-         $result = "account created successfully";
-     } else {
-         $result = $register_status;
-     }
  }
  
  ?>
@@ -53,7 +48,7 @@
 					<span class="login100-form-title p-b-59">
 						Sign Up
 					</span>
-                    <h4><?php echo $result; ?></h4>
+                    <h4><?php echo $register_status; ?></h4>
 
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">First Name</span>
