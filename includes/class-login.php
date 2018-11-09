@@ -58,7 +58,7 @@ if ( !class_exists('Login') ){
                 if (false !== $this->user_exists($post['email'])) {
                     return array('status' => 0, 'messages' => 'Email already exists');
                 }
-                if ($post['password_1'] != $post['password_2']) {
+                if ($post['password_2'] !== $post['password_1']) {
                     return array('status' => 0, 'messages' => 'The two passwords do not match.');
                 }
                 $query = "INSERT INTO users (firstname, lastname, email, password) 
