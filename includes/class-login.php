@@ -66,9 +66,9 @@ if ( !class_exists('Login') ){
                     return "Email already exists";
                 }
                 $firstname = $post['firstname'];
-                $lastname =$post['lastname'];
-                $email =$post['email'];
-                $password =$post['password'];
+                $lastname  = $post['lastname'];
+                $email     = $post['email'];
+                $password  = $post['password_1'];
 
                 $query = "INSERT INTO users (firstname, lastname, email, password) 
 					VALUES('$firstname', '$lastname', '$email', '$password')";
