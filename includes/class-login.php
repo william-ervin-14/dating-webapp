@@ -55,13 +55,13 @@ if ( !class_exists('Login') ){
 		}
 		public function register($post) {
             if (isset($_POST['reg_user'])) {
-                if (false !== $this->user_exists($post['email'])) {
-                    return "email already exists";
-                    //return array('status' => 0, 'messages' => 'Email already exists');
-                }
                 if ($post['password_2'] !== $post['password_1']) {
                     return "two passwords do not match";;
                     //return array('status' => 0, 'messages' => 'The two passwords do not match.');
+                }
+                if (false !== $this->user_exists($post['email'])) {
+                    return "email already exists";
+                    //return array('status' => 0, 'messages' => 'Email already exists');
                 }
                 $firstname = $post['firstname'];
                 $lastname =$post['lastname'];
