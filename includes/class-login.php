@@ -68,7 +68,7 @@ if ( !class_exists('Login') ){
                 $firstname = $post['firstname'];
                 $lastname  = $post['lastname'];
                 $email     = $post['email'];
-                $password  = $post['password_1'];
+                $password  = md5($post['password_1']);
 
                 $query = "INSERT INTO users (firstname, lastname, email, password) 
 					VALUES('$firstname', '$lastname', '$email', '$password')";
@@ -76,7 +76,7 @@ if ( !class_exists('Login') ){
                 $insert = $this->db->insert($query);
 
                 if (false !== $insert) {
-                    return "Account created successfully";
+                    return "Account created successfully.";
                     //return array('status' => 1, 'messages' => 'Account created successfully');
                 }
                 return "An unknown error has occurred";
