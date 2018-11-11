@@ -72,10 +72,10 @@ if ( !class_exists('Login') ){
             }
         }
 		private function user_exists($email){
-			$user = $this->query->load_single_user_by_email($email);
+			$user = $this->query->load_user_objects_by_email($email);
 		
 			if(false !== $user){
-				return $user[0];
+				return $user;
 			}
 			return false;
 		}
