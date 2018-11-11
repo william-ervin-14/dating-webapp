@@ -13,8 +13,7 @@
   	  header("location: login.php");
   }
   $email = $_SESSION['email'];
-  $uid = $query->load_user_id($email);
-  $logged_user_id = $uid;
+  $logged_user_id = $query->load_user_id($email);
 ?>
 
 		<h1>Home</h1>
