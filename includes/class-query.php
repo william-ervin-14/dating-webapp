@@ -10,7 +10,7 @@
 				
 				$query = "
 								SELECT * FROM $table
-								WHERE ID = $user_id
+								WHERE ID = '$user_id'
 							";
 				
 				$obj = $db->select($query);
@@ -28,7 +28,7 @@
 
                 $query = "
 								SELECT * FROM $table
-								WHERE email = $email
+								WHERE email = '$email'
 							";
 
                 $obj = $db->select($query);
