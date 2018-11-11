@@ -86,7 +86,7 @@
 					return "No user found";
 				}
 				
-				return $obj[0];
+				return $obj;
 			}
 			public function load_all_user_objects() {
 				global $db;
