@@ -15,7 +15,7 @@
   $email = $_SESSION['email'];
   //$logged_user_id = $query->load_user_id($email);
   $user = $query->load_single_user_by_email($email);
-  $logged_user_id = $user->ID;
+  $logged_user_id = ($user->ID);
 
 
 ?>

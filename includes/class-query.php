@@ -80,7 +80,7 @@
 								WHERE email = '$email'
 							";
 				
-				$obj = $db->select_one($query);
+				$obj = $db->select($query);
 				
 				if ( !$obj ) {
 					return "No user found";
