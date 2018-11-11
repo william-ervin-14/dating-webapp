@@ -35,8 +35,9 @@ if ( !class_exists('Login') ){
                 $password = mysqli_real_escape_string($this->db->connection, $post['password']);
                 $encrypt_password = md5($password);
 
-                $query = "SELECT * FROM users WHERE email='$email' AND password='$encrypt_password'";
-                $results = mysqli_query($this->db->connection, $query);
+                //$query = "SELECT * FROM users WHERE email='$email' AND password='$encrypt_password'";
+                //$results = mysqli_query($this->db->connection, $query);
+                $results = $this->query->load_single_user_by_email_password($email, $encrypt_password);
                 if (mysqli_num_rows($results) == 1) {
                     $_SESSION['email'] = $email;
                     return true;
@@ -64,7 +65,7 @@ if ( !class_exists('Login') ){
                 $email = $post['email'];
                 //$query = "SELECT * FROM users WHERE email='$email'";
                 //$results = mysqli_query($this->db->connection, $query);
-                $results = $this->query->select_user($email);
+                $results = $this->query->load_single_user_by_email($email);
                 if (mysqli_num_rows($results) == 1) {
                     return "Email already exists";
                 }
@@ -81,7 +82,7 @@ if ( !class_exists('Login') ){
             }
         }
 		private function user_exists($email){
-			$user = $this->query->load_user_object_by_email($email);
+			$user = $this->query->load_user_objects_by_email($email);
 		
 			if(false !== $user){
 				return $user[0];

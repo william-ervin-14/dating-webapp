@@ -21,7 +21,25 @@
 				
 				return $obj[0];
 			}
-			public function select_user($email) {
+            public function load_user_objects_by_email($email) {
+                global $db;
+
+                $table = 'users';
+
+                $query = "
+								SELECT * FROM $table
+								WHERE email = $email
+							";
+
+                $obj = $db->select($query);
+
+                if ( !$obj ) {
+                    return "No user found";
+                }
+
+                return $obj[0];
+            }
+			public function load_single_user_by_email($email) {
 				global $db;
 				
 				$table = 'users';
@@ -36,6 +54,22 @@
 				
 				return $result;
 			}
+            public function load_single_user_by_email_password($email, $password) {
+                global $db;
+
+                $table = 'users';
+
+                $query = "
+								SELECT * FROM $table
+								WHERE email = '$email'
+								AND password = '$password'
+							";
+
+                $result = $db->select_one($query);
+
+
+                return $result;
+            }
 			public function load_user_id($email) {
 				global $db;
 				
