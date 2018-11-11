@@ -22,8 +22,10 @@
 			$remove_friend = $insert->remove_friend($_POST['user_id'], $_POST['friend_id']);
 		}
 	}
-	
-    $logged_user_id = $_SESSION['uid'];
+
+	$email = $_SESSION['email'];
+    $user = $query->load_user_objects_by_email ($email);
+    $logged_user_id = ($user->ID);
 	
 	if ( !empty ( $_GET['uid'] ) ) {
 		$user_id = $_GET['uid'];
