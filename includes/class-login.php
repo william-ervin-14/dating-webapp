@@ -56,8 +56,7 @@ if ( !class_exists('Login') ){
 		public function register($post) {
             if (isset($_POST['reg_user'])) {
                 if ($post['password_2'] !== $post['password_1']) {
-                    return "two passwords do not match";;
-                    //return array('status' => 0, 'messages' => 'The two passwords do not match.');
+                    return "two passwords do not match";
                 }
                 $email = $post['email'];
                 $query = "SELECT * FROM users WHERE email='$email'";
@@ -77,10 +76,8 @@ if ( !class_exists('Login') ){
 
                 if (false !== $insert) {
                     return "Account created successfully.";
-                    //return array('status' => 1, 'messages' => 'Account created successfully');
                 }
                 return "An unknown error has occurred";
-                //return array('status' => 0, 'messages' => 'An unknown error has occurred.');
             }
         }
 		private function user_exists($email){
