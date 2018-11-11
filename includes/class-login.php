@@ -62,9 +62,9 @@ if ( !class_exists('Login') ){
                     return "two passwords do not match";
                 }
                 $email = $post['email'];
-                $query = "SELECT * FROM users WHERE email='$email'";
-                $results = mysqli_query($this->db->connection, $query);
-
+                //$query = "SELECT * FROM users WHERE email='$email'";
+                //$results = mysqli_query($this->db->connection, $query);
+                $results = $this->query->select_user($email);
                 if (mysqli_num_rows($results) == 1) {
                     return "Email already exists";
                 }
@@ -72,10 +72,6 @@ if ( !class_exists('Login') ){
                 $lastname  = $post['lastname'];
                 $password  = md5($post['password_1']);
 
-                //$query = "INSERT INTO users (firstname, lastname, email, password)
-				//	VALUES('$firstname', '$lastname', '$email', '$password')";
-
-                //$insert = $this->db->insert($query);
                 $insert = $this->insert->register_user($firstname, $lastname, $email, $password);
 
                 if (false !== $insert) {

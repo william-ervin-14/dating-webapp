@@ -21,7 +21,7 @@
 				
 				return $obj[0];
 			}
-			public function load_user_object_by_email($email) {
+			public function select_user($email) {
 				global $db;
 				
 				$table = 'users';
@@ -31,13 +31,10 @@
 								WHERE email = '$email'
 							";
 				
-				$obj = $db->select($query);
+				$result = $db->select_one($query);
+
 				
-				if ( !$obj ) {
-					return "No user found";
-				}
-				
-				return $obj[0];
+				return $result;
 			}
 			public function load_user_id($email) {
 				global $db;
