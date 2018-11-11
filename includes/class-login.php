@@ -23,21 +23,11 @@ if ( !class_exists('Login') ){
                 if (!isset($post['email']) || !isset($post['password'])) {
                     return false;
                 }
-                //$user = $this->user_exists($post['email']);
 
-               // if ($user !== false) {
-                    //if (($post['password']) == $user['password']) {
-                       // $_SESSION['email'] = $user['email'];
-                        //return true;
-                    //}
-               // }
                 $email = mysqli_real_escape_string($this->db->connection, $post['email']);
-                $password = mysqli_real_escape_string($this->db->connection, $post['password']);
-                $encrypt_password = md5($password);
+                $password = md5(mysqli_real_escape_string($this->db->connection, $post['password']));
 
-                //$query = "SELECT * FROM users WHERE email='$email' AND password='$encrypt_password'";
-                //$results = mysqli_query($this->db->connection, $query);
-                $results = $this->query->load_single_user_by_email_password($email, $encrypt_password);
+                $results = $this->query->load_single_user_by_email_password($email, $password);
                 if (mysqli_num_rows($results) == 1) {
                     $_SESSION['email'] = $email;
                     return true;
