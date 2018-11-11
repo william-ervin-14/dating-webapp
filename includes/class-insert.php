@@ -16,7 +16,16 @@
 
 				return $db->update($query);
 			}
-			
+            public function register_user($firstname, $lastname, $email, $password) {
+                global $db;
+
+                $table = 'users';
+
+                $query = "INSERT INTO $table (firstname, lastname, email, password) 
+					VALUES('$firstname', '$lastname', '$email', '$password')";
+
+                return $db->insert($query);
+            }
 			public function add_friend($user_id, $friend_id) {
 				global $db;
 				

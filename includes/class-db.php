@@ -27,9 +27,9 @@
 				return $result;
 			}
 			
-			public function select($query) {							
+			public function select($query) {
 				$result = mysqli_query($this->connection, $query);
-				
+
 				if ( !$result ) {
 					return false;
 				}
@@ -37,9 +37,14 @@
 				while ( $obj = $result->fetch_object() ) {
 					$results[] = $obj;
 				}
-				
+
 				return $this->results;
 			}
+            public function select_one($query) {
+                $result = mysqli_query($this->connection, $query);
+
+                return $result;
+            }
 		}
 	}
 	

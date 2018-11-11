@@ -8,12 +8,15 @@ if ( !class_exists('Login') ){
 		public $user;
 		public $db;
         public $query;
+        public $insert;
 		public function __construct(){
 			global $db;
 			global $query;
+            global $insert;
 			session_start(); 
 			$this->db = $db;
             $this->query = $query;
+            $this->insert = $insert;
 		} 
 		public function verify_login($post){
             if (isset($_POST['login_user'])) {
@@ -59,20 +62,21 @@ if ( !class_exists('Login') ){
                     return "two passwords do not match";
                 }
                 $email = $post['email'];
-                $query = "SELECT * FROM users WHERE email='$email'";
-                $results = mysqli_query($this->db->connection, $query);
+                //$query = "SELECT * FROM users WHERE email='$email'";
+                //$results = mysqli_query($this->db->connection, $query);
+                $results = $this->query->load_user_object_by_email($email);
                 if (mysqli_num_rows($results) == 1) {
                     return "Email already exists";
                 }
                 $firstname = $post['firstname'];
                 $lastname  = $post['lastname'];
-                $email     = $post['email'];
                 $password  = md5($post['password_1']);
 
-                $query = "INSERT INTO users (firstname, lastname, email, password) 
-					VALUES('$firstname', '$lastname', '$email', '$password')";
+                //$query = "INSERT INTO users (firstname, lastname, email, password)
+				//	VALUES('$firstname', '$lastname', '$email', '$password')";
 
-                $insert = $this->db->insert($query);
+                //$insert = $this->db->insert($query);
+                $insert = $this->insert->register_user($firstname, $lastname, $email, $password);
 
                 if (false !== $insert) {
                     return "Account created successfully.";
