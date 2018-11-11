@@ -1,6 +1,5 @@
 <?php
-	session_start();
-	
+    include('includes/header.php');
 	require_once('includes/class-query.php');
 ?>
 		<h1>Members Directory</h1>
