@@ -35,7 +35,7 @@
 				}
 
 				while ( $obj = $result->fetch_object() ) {
-					$results[] = $obj;
+					$this->results[] = $obj;
 				}
 
 				return $this->results;
