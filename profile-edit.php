@@ -2,9 +2,7 @@
     include('includes/header.php');
 	require_once('load.php');
 
-    $email = $_SESSION['email'];
-    $user_temp = $query->load_user_objects_by_email ($email);
-    $logged_user_id = ($user_temp->ID);
+
 	
 	if ( !empty ( $_POST ) ) {
 		$update = $insert->update_user($logged_user_id, $_POST);

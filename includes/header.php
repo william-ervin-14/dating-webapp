@@ -1,13 +1,19 @@
 <?php
-require_once('class-login.php');
-require_once('class-query.php');
-require_once('class-insert.php');
-require_once('class-db.php');
 
+if (!isset($_SESSION['email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+if (isset($_GET['logout'])) {
+    unset($_SESSION['email']);
+    session_destroy();
+    header("location: login.php");
+}
 $email = $_SESSION['email'];
-$user_temp = $query->load_user_objects_by_email ($email);
-$logged_user_id = ($user_temp->ID);
+$user = $query->load_user_objects_by_email ($email);
+$logged_user_id = ($user->ID);
 ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
