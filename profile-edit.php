@@ -23,11 +23,11 @@
 		<div class="content">
 			<form method="post">
 				<p>
-					<label class="labels" for="name">Name:</label>
+					<label class="labels" for="name">First name:</label>
 					<input name="firstname" type="text" value="<?php echo $user->firstname; ?>" />
 				</p>
                 <p>
-                    <label class="labels" for="name">Name:</label>
+                    <label class="labels" for="name">Last name:</label>
                     <input name="lastname" type="text" value="<?php echo $user->lastname; ?>" />
                 </p>
 				<p>
