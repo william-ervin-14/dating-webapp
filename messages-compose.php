@@ -21,7 +21,7 @@
 		$friend_objects[] = $query->load_user_object($friend_id);
 	}
     if ( !empty ( $_POST ) ) {
-        $send_message = $insert->send_message($_POST);
+        $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
     }
 ?>
 		<h1>Compose Message</h1>

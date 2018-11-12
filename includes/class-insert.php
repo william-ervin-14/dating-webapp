@@ -53,14 +53,14 @@
 				return $db->insert($query);
 			}
 			
-			public function send_message($post) {
+			public function send_message($message_time, $message_sender_id, $message_recipient_id, $message_content) {
 				global $db;
 				
 				$table = 'messages';
 				
 				$query = "
 								INSERT INTO $table (message_time, message_sender_id, message_recipient_id, message_content)
-								VALUES ('$post[message_time]', '$post[message_sender_id]', '$post[message_recipient_id]', '$post[message_content]')
+								VALUES ('$message_time', '$message_sender_id', '$message_recipient_id', '$message_content')
 							";
 				
 				return $db->insert($query);
