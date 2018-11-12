@@ -1,6 +1,6 @@
 <?php
     include('includes/header.php');
-	require_once('includes/class-query.php');
+	require_once('includes/load.php');
 
     if (!isset($_SESSION['email'])) {
      $_SESSION['msg'] = "You must log in first";
