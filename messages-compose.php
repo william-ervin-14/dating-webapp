@@ -11,10 +11,7 @@
         unset($_SESSION['email']);
         header("location: login.php");
     }
-	
-	if ( !empty ( $_POST ) ) {
-		$send_message = $insert->send_message($_POST);
-	}
+
     $email = $_SESSION['email'];
     $user = $query->load_user_objects_by_email ($email);
     $logged_user_id = ($user->ID);
@@ -23,6 +20,9 @@
 	foreach ( $friend_ids as $friend_id ) {
 		$friend_objects[] = $query->load_user_object($friend_id);
 	}
+    if ( !empty ( $_POST ) ) {
+        $send_message = $insert->send_message($_POST);
+    }
 ?>
 		<h1>Compose Message</h1>
 		<div class="content">
