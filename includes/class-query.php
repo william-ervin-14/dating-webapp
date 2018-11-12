@@ -3,8 +3,8 @@
 
 	if ( !class_exists('QUERY') ) {
 		class QUERY {
-            public $friend_ids;
-            public $users;
+
+
 			public function load_user_object($user_id) {
 				global $db;
 				
@@ -121,10 +121,10 @@
 				$friends = $db->select($query);
 				
 				foreach ( $friends as $friend ) {
-					$this->friend_ids[] = $friend->friend_id;
+					$friend_ids[] = $friend->friend_id;
 				}
 				
-				return $this->friend_ids;
+				return $friend_ids;
 			}
 			
 			public function get_message_objects($user_id) {
@@ -156,10 +156,10 @@
 			
 			public function do_friends_list($friends_array) {
 				foreach ( $friends_array as $friend_id ) {
-					$this->users[] = $this->load_user_object($friend_id);
+					$users[] = $this->load_user_object($friend_id);
 				}
 								
-				foreach ( $this->users as $user ) { ?>
+				foreach ( $users as $user ) { ?>
 					<div class="directory_item">
 						<h3><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo $user->firstname; ?></a></h3>
 						<p><?php echo $user->email; ?></p>
