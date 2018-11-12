@@ -34,7 +34,7 @@
 					<select name="message_recipient_id">
 						<option value="">--Select a Friend--</option>
 						<?php foreach ( $friend_objects as $friend ) : ?>
-							<option value="<?php echo $friend->ID; ?>"><?php echo $friend->firstname; ?></option>
+							<option value="<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></option>
 						<?php endforeach; ?>
 					</select>
 				</p>
