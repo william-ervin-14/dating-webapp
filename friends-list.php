@@ -2,9 +2,15 @@
     include('includes/header.php');
 	require_once('load.php');
 
-    $email = $_SESSION['email'];
-    $user_temp = $query->load_user_objects_by_email ($email);
-    $logged_user_id = ($user_temp->ID);
+    if (!isset($_SESSION['email'])) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+    }
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['email']);
+        header("location: login.php");
+    }
 	
 	$friends = $query->get_friends($logged_user_id);
 ?>
