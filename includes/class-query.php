@@ -147,7 +147,7 @@
 				
 				foreach ( $users as $user ) { ?>
 					<div class="directory_item">
-						<h3><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo $user->firstname; ?></a></h3>
+						<h3><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}"; ?></a></h3>
 						<p><?php echo $user->email; ?></p>
 					</div>
 				<?php
@@ -161,7 +161,7 @@
 								
 				foreach ( $users as $user ) { ?>
 					<div class="directory_item">
-						<h3><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo $user->firstname; ?></a></h3>
+						<h3><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}"; ?></a></h3>
 						<p><?php echo $user->email; ?></p>
 					</div>
 				<?php

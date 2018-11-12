@@ -10,7 +10,7 @@
 				
 				$query = "
 								UPDATE $table
-								SET email='$postdata[email]', password='$postdata[password]', firstname='$postdata[firstname]'
+								SET email='$postdata[email]', password='$postdata[password]', firstname='$postdata[firstname]', lastname='$postdata[lastname]'
 								WHERE ID=$user_id
 							";
 

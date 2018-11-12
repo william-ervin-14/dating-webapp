@@ -26,6 +26,10 @@
 					<label class="labels" for="name">Name:</label>
 					<input name="firstname" type="text" value="<?php echo $user->firstname; ?>" />
 				</p>
+                <p>
+                    <label class="labels" for="name">Name:</label>
+                    <input name="lastname" type="text" value="<?php echo $user->lastname; ?>" />
+                </p>
 				<p>
 					<label class="labels" for="email">Email Address:</label>
 					<input name="email" type="text" value="<?php echo $user->email; ?>" />
