@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dda1d095-7e6a-4fd6-9b08-2f152731ee88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/friends-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/friends-list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/class-query.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-query.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -195,8 +195,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/includes/class-query.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="901">
-                  <caret line="158" column="36" lean-forward="true" selection-start-line="158" selection-start-column="36" selection-end-line="158" selection-end-column="36" />
+                <state relative-caret-position="306">
+                  <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
                 </state>
               </provider>
             </entry>
@@ -217,7 +217,6 @@
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/includes/class-db.php" />
         <option value="$PROJECT_DIR$/home.php" />
-        <option value="$PROJECT_DIR$/includes/class-query.php" />
         <option value="$PROJECT_DIR$/feed-view.php" />
         <option value="$PROJECT_DIR$/profile-view.php" />
         <option value="$PROJECT_DIR$/friends-directory.php" />
@@ -228,6 +227,7 @@
         <option value="$PROJECT_DIR$/profile-edit.php" />
         <option value="$PROJECT_DIR$/includes/class-login.php" />
         <option value="$PROJECT_DIR$/friends-list.php" />
+        <option value="$PROJECT_DIR$/includes/class-query.php" />
       </list>
     </option>
   </component>
@@ -302,12 +302,12 @@
       <workItem from="1541711390842" duration="17513000" />
       <workItem from="1541966412483" duration="17083000" />
       <workItem from="1541989568646" duration="6000" />
-      <workItem from="1542051270576" duration="2321000" />
+      <workItem from="1542051270576" duration="2480000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41686000" />
+    <option name="totallyTimeSpent" value="41845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -447,13 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/class-query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="158" column="36" lean-forward="true" selection-start-line="158" selection-start-column="36" selection-end-line="158" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profile-edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -472,6 +465,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class-query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
         </state>
       </provider>
     </entry>

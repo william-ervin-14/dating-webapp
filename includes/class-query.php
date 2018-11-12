@@ -114,14 +114,14 @@
 				$table = 'friends';
 				
 				$query = "
-								SELECT ID, friend_id FROM $table
+								SELECT friend_id FROM $table
 								WHERE user_id = '$user_id'
 							";
 				
 				$friends = $db->select($query);
 				
 				foreach ( $friends as $friend ) {
-					$this->friend_ids[] = $friend->friend_id;
+					$this->friend_ids[] = $friend;
 				}
 				
 				return $this->friend_ids;
