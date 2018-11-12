@@ -11,7 +11,9 @@
         unset($_SESSION['email']);
         header("location: login.php");
     }
-	
+    $email = $_SESSION['email'];
+    $user_temp = $query->load_user_objects_by_email ($email);
+    $logged_user_id = ($user_temp->ID);
 	$friends = $query->get_friends($logged_user_id);
 ?>
 
