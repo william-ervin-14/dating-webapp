@@ -13,7 +13,7 @@ $logged_user_id = ($user_temp->ID);
 		<div id="navigation">
 			<ul>
 				<li><a href="home.php">Home</a></li>
-				<li><a href="profile-view.php?uid=<?php echo $logged_user_id; ?>">View Profile</a></li>
+				<li><a href="profile-view.php">View Profile</a></li>
 				<li><a href="profile-edit.php">Edit Profile</a></li>
 				<li><a href="friends-directory.php">Member Directory</a></li>
 				<li><a href="friends-list.php">Friends List</a></li>
