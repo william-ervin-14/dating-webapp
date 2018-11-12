@@ -121,10 +121,10 @@
 				$friends = $db->select($query);
 				
 				foreach ( $friends as $friend ) {
-					$this->friend_ids[] = $friend->friend_id;
+					$friend_ids[] = $friend->friend_id;
 				}
 				
-				return $this->friend_ids;
+				return $friend_ids;
 			}
 			
 			public function get_message_objects($user_id) {
