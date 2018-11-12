@@ -15,10 +15,11 @@
     $user_temp = $query->load_user_objects_by_email ($email);
     $logged_user_id = ($user_temp->ID);
 	$friends = $query->get_friends($logged_user_id);
+
 ?>
 
 		<h1>Friends List</h1>
-        <h2><?php echo $friends; ?></h2>
+        <h2><?php echo $friends[0]; ?></h2>
 		<div class="content">
 			<?php $query->do_friends_list($friends); ?>
 		</div>
