@@ -119,13 +119,12 @@
 							";
 				
 				$friends = $db->select($query);
-				return $friends;
 				
-				//foreach ( $friends as $friend ) {
-					//$friend_ids[] = $friend->friend_id;
-				//}
+				foreach ( $friends as $friend ) {
+					$friend_ids[] = $friend->friend_id;
+				}
 				
-				//return $friend_ids;
+				return $friend_ids;
 			}
 			
 			public function get_message_objects($user_id) {
