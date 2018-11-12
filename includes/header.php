@@ -1,7 +1,12 @@
 <?php
-$email = $_SESSION['email'];
-$user = $query->load_user_objects_by_email ($email);
-$logged_user_id = ($user->ID);
+    require_once('class-query.php');
+    require_once('class-insert.php');
+    require_once('class-db.php');
+    require_once('class-login.php');
+    
+    $email = $_SESSION['email'];
+    $user = $query->load_user_objects_by_email ($email);
+    $logged_user_id = ($user->ID);
 ?>
 
 <!DOCTYPE html>
