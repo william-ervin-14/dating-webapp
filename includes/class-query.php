@@ -114,17 +114,17 @@
 				$table = 'friends';
 				
 				$query = "
-								SELECT friend_id FROM $table
+								SELECT ID, friend_id FROM $table
 								WHERE user_id = '$user_id'
 							";
 				
 				$friends = $db->select($query);
 				
 				foreach ( $friends as $friend ) {
-					$friend_ids[] = $friend;
+					$this->friend_ids[] = $friend->friend_id;
 				}
 				
-				return $friend_ids;
+				return $this->friend_ids;
 			}
 			
 			public function get_message_objects($user_id) {
