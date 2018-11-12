@@ -19,7 +19,7 @@
 ?>
 
 		<h1>Friends List</h1>
-        <h2><?php echo $friends[0]; ?></h2>
+        <h2><?php echo $friends->friend_id; ?></h2>
 		<div class="content">
 			<?php $query->do_friends_list($friends); ?>
 		</div>

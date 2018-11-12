@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dda1d095-7e6a-4fd6-9b08-2f152731ee88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/friends-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/friends-list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/class-query.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-query.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,12 +77,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="1889" />
+          <entry key="php" value="1930" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="1888" />
+          <entry key="PHP" value="1929" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
@@ -149,7 +150,7 @@
             <entry file="file://$PROJECT_DIR$/friends-list.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="357">
-                  <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+                  <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
                 </state>
               </provider>
             </entry>
@@ -195,8 +196,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/includes/class-query.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="372">
-                  <caret line="124" column="17" lean-forward="true" selection-start-line="122" selection-start-column="16" selection-end-line="124" selection-end-column="17" />
+                <state relative-caret-position="168">
+                  <caret line="121" column="32" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
@@ -302,12 +303,12 @@
       <workItem from="1541711390842" duration="17513000" />
       <workItem from="1541966412483" duration="17083000" />
       <workItem from="1541989568646" duration="6000" />
-      <workItem from="1542051270576" duration="5889000" />
+      <workItem from="1542051270576" duration="6331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45254000" />
+    <option name="totallyTimeSpent" value="45696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -463,15 +464,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/class-query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="124" column="17" lean-forward="true" selection-start-line="122" selection-start-column="16" selection-end-line="124" selection-end-column="17" />
+        <state relative-caret-position="168">
+          <caret line="121" column="32" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/friends-list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
         </state>
       </provider>
     </entry>
