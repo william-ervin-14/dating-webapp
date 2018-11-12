@@ -175,7 +175,7 @@
 				foreach ( $message_objects as $message ) {?>
 					<div class="status_item">
 						<?php $user = $this->load_user_object($message->message_sender_id); ?>
-						<h3>From: <a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo $user->firstname; ?></a></h3>
+						<h3>From: <a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->firstname}" ; ?></a></h3>
 						<p><?php echo $message->message_content; ?></p>
 					</div>
 				<?php
