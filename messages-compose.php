@@ -15,7 +15,9 @@
 	if ( !empty ( $_POST ) ) {
 		$send_message = $insert->send_message($_POST);
 	}
-	
+    $email = $_SESSION['email'];
+    $user = $query->load_user_objects_by_email ($email);
+    $logged_user_id = ($user->ID);
 	$friend_ids = $query->get_friends($logged_user_id);
 	
 	foreach ( $friend_ids as $friend_id ) {
