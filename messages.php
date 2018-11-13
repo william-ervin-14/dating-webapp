@@ -57,7 +57,7 @@
                         <textarea name="message_content"></textarea>
                     </p>
                     <p>
-                        <button class="submit" type="button">Submit</button>
+                        <input type="submit" value="Submit" />
                     </p>
                 </div>
 
@@ -72,6 +72,7 @@
             </form>
             <script>
                 function openVerticalTab(evt, tabName) {
+                    evt.preventDefault();
                     var i, tab_content, tab_links;
 
                     tab_content = document.getElementsByClassName("tab_content");
@@ -85,7 +86,6 @@
 
                     document.getElementById(tabName).style.display = "block";
                     evt.currentTarget.className += " active";
-                    return false;
                 }
                 document.getElementById("defaultOpen").click();
             </script>
