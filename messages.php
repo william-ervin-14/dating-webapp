@@ -29,7 +29,7 @@
 ?>
         <h1>Messages</h1>
         <div class="content">
-            <form method="post" onsubmit="return false">
+            <form method="post">
                 <div class="verticalTabs">
                     <button class="tab_links" onclick="openVerticalTab(event, 'New Message')" id="defaultOpen">New Message</button>
                     <?php foreach ($message_objects as $message ) : ?>
@@ -83,7 +83,7 @@
 
                     document.getElementById(tabName).style.display = "block";
                     evt.currentTarget.className += " active";
-
+                    return false;
                 }
                 document.getElementById("defaultOpen").click();
             </script>
