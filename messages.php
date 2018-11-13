@@ -33,10 +33,10 @@
         <div class="content">
             <form method="post">
                 <div class="verticalTabs">
-                    <button class="tab_links" type="button" onclick="openVerticalTab(event, 'New Message')" id="defaultOpen">New Message</button>
+                    <button class="tab_links" type="button" onclick="openVerticalTab(event, 'New Message'); return false;" id="defaultOpen">New Message</button>
                     <?php foreach ($message_objects as $message ) : ?>
                         <?php $friend = $query->load_user_object($message->message_sender_id); ?>
-                        <button class="tab_links" type="button" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>')"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
+                        <button class="tab_links" type="button" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>'); return false;"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
                     <?php endforeach; ?>
                 </div>
 
@@ -72,7 +72,6 @@
             </form>
             <script>
                 function openVerticalTab(evt, tabName) {
-                    evt.preventDefault();
                     var i, tab_content, tab_links;
 
                     tab_content = document.getElementsByClassName("tab_content");
