@@ -141,6 +141,20 @@
 								
 				return $messages;
 			}
+            public function get_message_senders($user_id) {
+                global $db;
+
+                $table = 'messages';
+
+                $query = "
+								SELECT message_sender_id FROM $table
+								WHERE message_recipient_id = '$user_id'
+							";
+
+                $senders = $db->select($query);
+
+                return $senders;
+            }
 			
 			public function do_user_directory() {
 				$users = $this->load_all_user_objects();
@@ -181,17 +195,22 @@
 				<?php
 				}
 			}
-            public function get_messages($user_id) {
-                $message_objects = $this->get_message_objects($user_id);
+            public function get_senders($user_id) {
+                $senders = $this->get_message_senders($user_id);
+                $different_friends = array();
 
-                foreach ( $message_objects as $message ) {?>
-                    <div class="status_item">
-                        <?php $user = $this->load_user_object($message->message_sender_id); ?>
-                        <h3>From: <a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}" ; ?></a></h3>
-                        <p><?php echo $message->message_content; ?></p>
-                    </div>
-                    <?php
+                foreach ( $senders as $sender ) {
+                    $user = $this->load_user_object($sender);
+                    if(!in_array($user, $different_friends)){
+                        $different_friends[] = $user;
+                    }
                 }
+                return $different_friends;
+            }
+            public function do_messages($user_id){
+			    //$friends = $this->get_senders($user_id);
+
+
             }
 		}
 	}
