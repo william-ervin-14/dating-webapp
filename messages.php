@@ -18,7 +18,7 @@
 	$friend_ids = $query->get_friends($logged_user_id);
 
     //$different_friends = $query->get_senders($logged_user_id);
-    $message_objects = $query->get_message_objects($user_id);
+    $message_objects = $query->get_message_objects($logged_user_id);
 ?>
         <h1>Messages</h1>
         <div class="content">
