@@ -23,8 +23,9 @@
         <div class="content">
 
             <div class="verticalTabs">
+                <button class="tab_links" onclick="openVerticalTab(event, 'New Message')" id="defaultOpen">New Message</button>
                 <?php foreach ($different_friends as $friend ) : ?>
-                    <button class="tab_links" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>')" id="defaultOpen"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
+                    <button class="tab_links" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>')"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
                 <?php endforeach; ?>
             </div>
             <div id="Compatibility questions" class="tab_content">
