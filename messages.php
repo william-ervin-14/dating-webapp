@@ -30,7 +30,8 @@
                     <button class="tab_links" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>')"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
                 <?php endforeach; ?>
             </div>
-            <?php foreach ($different_friends as $friend ) : ?>
+            <?php foreach ($message_objects as $message ) : ?>
+                <?php $friend = $query->load_user_object($message->message_sender_id); ?>
                 <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
 
 
