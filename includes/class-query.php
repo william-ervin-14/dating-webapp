@@ -199,11 +199,11 @@
 				}
 			}
             public function get_senders($user_id) {
-                $senders = $this->get_message_senders($user_id);
+                $sender_ids = $this->get_message_senders($user_id);
                 $different_friends = array();
 
-                foreach ( $senders as $sender ) {
-                    $user = $this->load_user_object($sender);
+                foreach ( $sender_ids as $sender_id ) {
+                    $user = $this->load_user_object($sender_id);
                     if(!in_array($user, $different_friends)){
                         array_push($different_friends, $user);
                     }
