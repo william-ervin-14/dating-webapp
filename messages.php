@@ -12,13 +12,12 @@
         header("location: login.php");
     }
 
-    $email = $_SESSION['email'];
-    $user = $query->load_user_objects_by_email ($email);
-    $logged_user_id = ($user->ID);
-	$friend_ids = $query->get_friends($logged_user_id);
-
-    //$different_friends = $query->get_senders($logged_user_id);
-    $message_objects = $query->get_message_objects($logged_user_id);
+    $email           = $_SESSION['email'];
+    $user            = $query->load_user_objects_by_email ($email);
+    $logged_user_id  = ($user->ID);
+	$friend_ids      = $query->get_friends($logged_user_id);
+    $message_objects_received = $query->get_message_objects($logged_user_id);
+    $friend_messages = $query->get_senders($logged_user_id);
 
     foreach ( $friend_ids as $friend_id ) {
         $friend_objects[] = $query->load_user_object($friend_id);
@@ -39,8 +38,7 @@
             <form method="post">
                 <div class="verticalTabs">
                     <button class="tab_links" type="button" onclick="openVerticalTab(event, 'New Message'); return false;" id="defaultOpen">New Message</button>
-                    <?php foreach ($message_objects as $message ) : ?>
-                        <?php $friend = $query->load_user_object($message->message_sender_id); ?>
+                    <?php foreach ($friend_messages as $friend ) : ?>
                         <button class="tab_links" type="button" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>'); return false;"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
                     <?php endforeach; ?>
                 </div>
