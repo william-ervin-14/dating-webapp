@@ -28,9 +28,12 @@
                     <button class="tab_links" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>')"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
                 <?php endforeach; ?>
             </div>
-            <div id="Compatibility questions" class="tab_content">
+            <?php foreach ($different_friends as $friend ) : ?>
+                <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
+                    
 
-            </div>
+                </div>
+            <?php endforeach; ?>
 
             <script>
                 function openVerticalTab(evt, tabName) {
