@@ -30,6 +30,7 @@
             unset($_POST['message_sender_id']);
             unset($_POST['message_recipient_id']);
             unset($_POST['message_content']);
+            header('location: messages.php');
         }
     }
 ?>
