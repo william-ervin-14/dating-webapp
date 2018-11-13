@@ -16,12 +16,46 @@
     $user = $query->load_user_objects_by_email ($email);
     $logged_user_id = ($user->ID);
 	$friend_ids = $query->get_friends($logged_user_id);
+
+    $different_friends = array();
+    $messages = $query->get_message_objects($logged_user_id);
+    foreach ( $messages as $message ) {
+        if(!in_array($message, $different_friends)){
+            $different_friends[] = $message;
+        }
+    }
 ?>
         <h1>Messages</h1>
         <div class="content">
-            <form method="post">
 
-            </form>
+            <div class="verticalTabs">
+                <?php foreach ($different_friends as $different_friend ) : ?>
+                    <button class="tab_links" onclick="openVerticalTab(event, '<?php echo "{$different_friend->firstname} {$different_friend->lastname}"  ?>')" id="defaultOpen"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
+                <?php endforeach; ?>
+            </div>
+            <div id="Compatibility questions" class="tab_content">
+
+            </div>
+
+            <script>
+                function openVerticalTab(evt, tabName) {
+                    var i, tab_content, tab_links;
+
+                    tab_content = document.getElementsByClassName("tab_content");
+                    for (i = 0; i < tab_content.length; i++) {
+                        tab_content[i].style.display = "none";
+                    }
+                    tab_links = document.getElementsByClassName("tab_links");
+                    for (i = 0; i < tab_links.length; i++) {
+                        tab_links[i].className = tab_links[i].className.replace(" active", "");
+                    }
+
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.className += " active";
+
+                }
+                document.getElementById("defaultOpen").click();
+            </script>
         </div>
     </body>
 </html>
