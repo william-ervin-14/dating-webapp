@@ -18,7 +18,7 @@
 	$friend_ids = $query->get_friends($logged_user_id);
 
     //$different_friends = $query->get_senders($logged_user_id);
-    $message_objects = $this->get_message_objects($user_id);
+    $message_objects = $query->get_message_objects($user_id);
 ?>
         <h1>Messages</h1>
         <div class="content">
@@ -26,7 +26,7 @@
             <div class="verticalTabs">
                 <button class="tab_links" onclick="openVerticalTab(event, 'New Message')" id="defaultOpen">New Message</button>
                 <?php foreach ($message_objects as $message ) : ?>
-                    <?php $friend = $this->load_user_object($message->message_sender_id); ?>
+                    <?php $friend = $query->load_user_object($message->message_sender_id); ?>
                     <button class="tab_links" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>')"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
                 <?php endforeach; ?>
             </div>
