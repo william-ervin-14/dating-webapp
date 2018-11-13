@@ -20,7 +20,7 @@
     $different_friends = $query->get_senders($logged_user_id);
 
     foreach ( $friend_ids as $friend_id ) {
-        $friend_objects[] = $query->load_user_object($friend_id);
+        $friend_objects[] = $query->load_user_object($friend_id->friend_id);
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
