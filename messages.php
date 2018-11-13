@@ -37,6 +37,7 @@
                         <button class="tab_links" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>')"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
                     <?php endforeach; ?>
                 </div>
+
                 <div id="New Message" class="tab_content">
                     <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
                     <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
@@ -66,27 +67,26 @@
 
                     </div>
                 <?php endforeach; ?>
-
-                <script>
-                    function openVerticalTab(evt, tabName) {
-                        var i, tab_content, tab_links;
-
-                        tab_content = document.getElementsByClassName("tab_content");
-                        for (i = 0; i < tab_content.length; i++) {
-                            tab_content[i].style.display = "none";
-                        }
-                        tab_links = document.getElementsByClassName("tab_links");
-                        for (i = 0; i < tab_links.length; i++) {
-                            tab_links[i].className = tab_links[i].className.replace(" active", "");
-                        }
-
-                        document.getElementById(tabName).style.display = "block";
-                        evt.currentTarget.className += " active";
-
-                    }
-                    document.getElementById("defaultOpen").click();
-                </script>
             </form>
+            <script>
+                function openVerticalTab(evt, tabName) {
+                    var i, tab_content, tab_links;
+
+                    tab_content = document.getElementsByClassName("tab_content");
+                    for (i = 0; i < tab_content.length; i++) {
+                        tab_content[i].style.display = "none";
+                    }
+                    tab_links = document.getElementsByClassName("tab_links");
+                    for (i = 0; i < tab_links.length; i++) {
+                        tab_links[i].className = tab_links[i].className.replace(" active", "");
+                    }
+
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.className += " active";
+
+                }
+                document.getElementById("defaultOpen").click();
+            </script>
         </div>
     </body>
 </html>
