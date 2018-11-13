@@ -13,14 +13,14 @@
     }
 
     $email           = $_SESSION['email'];
-    $user            = $query->load_user_objects_by_email ($email);
+    $user            = $query->load_user_objects_by_email($email);
     $logged_user_id  = ($user->ID);
 	$friend_ids      = $query->get_friends($logged_user_id);
     $message_objects_received = $query->get_message_objects($logged_user_id);
     $different_friends = $query->get_senders($logged_user_id);
 
     foreach ( $friend_ids as $friend_id ) {
-        $friend_objects[] = $query->load_user_object($friend_id->friend_id);
+        $friend_objects[] = $query->load_user_object($friend_id);
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
