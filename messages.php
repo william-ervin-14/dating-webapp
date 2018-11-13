@@ -23,8 +23,10 @@
     foreach ( $friend_ids as $friend_id ) {
         $friend_objects[] = $query->load_user_object($friend_id);
     }
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_POST['message_content']) && isset($_POST['message_content'])) {
+            $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
+        }
     }
 ?>
         <h1>Messages</h1>
