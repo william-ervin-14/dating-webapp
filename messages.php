@@ -16,11 +16,11 @@
     $user = $query->load_user_objects_by_email ($email);
     $logged_user_id = ($user->ID);
 	$friend_ids = $query->get_friends($logged_user_id);
-	
+
     $messages = $query->get_message_objects($logged_user_id);
     foreach ( $messages as $message ) {
-        if(!in_array($message, $different_friends)){
-            $different_friends[] = $message;
+        if(!in_array($message->firstname, $different_friends)){
+            $different_friends[] = $message-firstname;
         }
     }
 ?>
