@@ -34,7 +34,7 @@
     }
 ?>
         <h1>Messages</h1>
-        <h6><?php echo $different_friends[0]->friend_id; ?></h6>
+        <h6><?php echo $different_friends[0]->firstname; ?></h6>
         <div class="content">
             <form method="post">
                 <div class="verticalTabs">
