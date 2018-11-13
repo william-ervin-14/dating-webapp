@@ -205,7 +205,7 @@
                 foreach ( $senders as $sender ) {
                     $user = $this->load_user_object($sender);
                     if(!in_array($user, $different_friends)){
-                        $different_friends[] = $user;
+                        array_push($different_friends, $user);
                     }
                 }
                 return $different_friends;
