@@ -147,13 +147,16 @@
                 $table = 'messages';
 
                 $query = "
-								SELECT message_sender_id FROM $table
+								SELECT ID, message_sender_id FROM $table
 								WHERE message_recipient_id = '$user_id'
 							";
 
                 $senders = $db->select($query);
+                foreach ( $senders as $sender ) {
+                    $sender_ids[] = $sender->friend_id;
+                }
 
-                return $senders;
+                return $sender_ids;
             }
 			
 			public function do_user_directory() {
