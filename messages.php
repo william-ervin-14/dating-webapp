@@ -16,8 +16,7 @@
     $user = $query->load_user_objects_by_email ($email);
     $logged_user_id = ($user->ID);
 	$friend_ids = $query->get_friends($logged_user_id);
-
-    $different_friends = array();
+	
     $messages = $query->get_message_objects($logged_user_id);
     foreach ( $messages as $message ) {
         if(!in_array($message, $different_friends)){
@@ -29,8 +28,8 @@
         <div class="content">
 
             <div class="verticalTabs">
-                <?php foreach ($different_friends as $different_friend ) : ?>
-                    <button class="tab_links" onclick="openVerticalTab(event, '<?php echo "{$different_friend->firstname} {$different_friend->lastname}"  ?>')" id="defaultOpen"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
+                <?php foreach ($different_friends as $friend ) : ?>
+                    <button class="tab_links" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>')" id="defaultOpen"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
                 <?php endforeach; ?>
             </div>
             <div id="Compatibility questions" class="tab_content">
