@@ -26,6 +26,10 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
             $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
+            unset($_POST['message_time']);
+            unset($_POST['message_sender_id']);
+            unset($_POST['message_recipient_id']);
+            unset($_POST['message_content']);
         }
     }
 ?>
