@@ -29,7 +29,7 @@
 ?>
         <h1>Messages</h1>
         <div class="content">
-            <form method="post">
+            
                 <div class="verticalTabs">
                     <button class="tab_links" onclick="openVerticalTab(event, 'New Message')" id="defaultOpen">New Message</button>
                     <?php foreach ($message_objects as $message ) : ?>
@@ -50,7 +50,7 @@
 
                     </div>
                 <?php endforeach; ?>
-            </form>
+
             <script>
                 function openVerticalTab(evt, tabName) {
                     var i, tab_content, tab_links;
