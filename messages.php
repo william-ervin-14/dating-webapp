@@ -29,7 +29,7 @@
 ?>
         <h1>Messages</h1>
         <div class="content">
-            
+            <form method="post" onsubmit="return false">
                 <div class="verticalTabs">
                     <button class="tab_links" onclick="openVerticalTab(event, 'New Message')" id="defaultOpen">New Message</button>
                     <?php foreach ($message_objects as $message ) : ?>
@@ -39,7 +39,24 @@
                 </div>
 
                 <div id="New Message" class="tab_content">
-                   <h1>New Message</h1>
+                    <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
+                    <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
+                    <p>
+                        <label for="message_recipient_id">To:</label>
+                        <select name="message_recipient_id">
+                            <option value="">--Select a Friend--</option>
+                            <?php foreach ( $friend_objects as $friend ) : ?>
+                                <option value="<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="message_content">Message:</label>
+                        <textarea name="message_content"></textarea>
+                    </p>
+                    <p>
+                        <input type="submit" value="Submit" />
+                    </p>
                 </div>
 
                 <?php foreach ($message_objects as $message ) : ?>
@@ -50,7 +67,7 @@
 
                     </div>
                 <?php endforeach; ?>
-
+            </form>
             <script>
                 function openVerticalTab(evt, tabName) {
                     var i, tab_content, tab_links;
