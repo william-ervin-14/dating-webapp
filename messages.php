@@ -38,7 +38,7 @@
                 <?php $friend = $query->load_user_object($message->message_sender_id); ?>
                 <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
                     <h3>From: <a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
-                    <p><?php echo $message->message_content; ?></p>
+                    <p><?php echo "{$message->message_time} : {$message->message_content}"; ?></p>
 
                 </div>
             <?php endforeach; ?>
