@@ -74,8 +74,17 @@
     padding: 0 20px;
 }
 .message_box_received{
-
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
 }
 .message_box_sent{
-
+    border: 2px solid #dedede;
+    border-color: #ccc;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
 }
