@@ -74,6 +74,7 @@
     width: 85%;
     border-left: none;
     height: 500px;
+    overflow: hidden;
 }
 
 .message_box_received{
