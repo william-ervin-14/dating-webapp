@@ -73,7 +73,8 @@
     width: 100%;
     display: inline-block;
     border: 1px solid #ccc;
-    background: #f1f1f1;
+    background-color: black;
+    color: white;
     text-align: center;
     position: sticky;
     top: 0;
