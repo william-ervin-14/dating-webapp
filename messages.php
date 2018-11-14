@@ -89,6 +89,7 @@
                             <div class="send_message_form">
                                 <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
                                 <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
+                                <input name="message_recipient_id" type="hidden" value="<?php echo $friend->user_id; ?>" />
                                 <input class="message_input" name="message_content" type="text" placeholder="Your message">
                                 <button class="submit_button" type="submit">Send</button>
                             </div>
