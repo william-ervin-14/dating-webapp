@@ -87,6 +87,12 @@
                         <?php endforeach; ?>
                     </div>
                 <?php endforeach; ?>
+                    <div class="send_message">
+                        <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
+                        <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
+                        <input type="text" placeholder="Your message">
+                        <button type="submit">Send</button>
+                    </div>
                 </div>
             </form>
             <script>

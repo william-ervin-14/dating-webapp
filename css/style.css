@@ -100,3 +100,10 @@
     float: left;
     color: #999;
 }
+.send-message-form{
+	width: 100%;
+	border: none;
+	font-size: 16px;
+	padding: 10px;
+}
+
