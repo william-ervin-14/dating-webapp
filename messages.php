@@ -79,7 +79,7 @@
                                 <h3>From: <a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
                                 <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
                             <?php else : ?>
-                                <h3>From: me</h3>
+                                <h3>Sent</h3>
                                 <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
                             <?php endif ?>
                         <?php endforeach; ?>
