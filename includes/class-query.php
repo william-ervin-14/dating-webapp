@@ -233,7 +233,7 @@
 
                    $friend_temp = $this->load_user_object($received->message_sender_id);
 
-                   if($friend_temp->user_id == $friend->user_id){
+                   if($friend_temp->ID == $friend->ID){
                        $messages_temp[] = $received;
                    }
 			   }
@@ -241,7 +241,7 @@
 
 			       $friend_temp = $this->load_user_object($sent->message_sender_id);
 
-			       if($friend_temp->user_id == $friend->user_id){
+			       if($friend_temp->ID == $friend->ID){
 			           $messages_temp[] = $sent;
 			       }
 			   }
