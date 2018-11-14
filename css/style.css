@@ -47,6 +47,7 @@
 .vertical-navigation{
     flex: 15%;
     background-color: #333;
+    overflow: auto;
 }
 
 #vertical-navigation ul {
