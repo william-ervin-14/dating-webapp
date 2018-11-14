@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="message_content">
     <form method="post">
 
-        <div class="verticalTabs">
+        <div id="navigation">
             <?php foreach ($different_friends as $friend ) : ?>
                 <li><a href="messages.php?uid=<?php echo $friend->ID ?>"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></a></li>
                 <?php $current_tab = $friend; ?>
