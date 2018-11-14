@@ -98,10 +98,16 @@
     margin: 10px 0;
 }
 .message-time-received{
-    float: left;
+    text-align: left;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 0;
 }
 .message-time-sent{
-    float: right;
+    text-align: right;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 0;
 }
 .send-message-form{
 	display: flex;
