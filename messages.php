@@ -78,15 +78,15 @@
                                 </div>
                             <?php else : ?>
                                 <div class="message_box_sent">
-                                    <div class="message_box_sent name">
+                                    <span class="message_box_sent name">
                                         <h3>Sent</h3>
-                                    </div>
-                                    <div class="message_box_sent message_content">
+                                    </span>
+                                    <span class="message_box_sent message_content">
                                         <p><?php echo $message_temp->message_content; ?></p>
-                                    </div>
-                                    <div class="message_box_sent message_time">
+                                    </span>
+                                    <span class="message_box_sent message_time">
                                         <p><?php echo $message_temp->message_time; ?></p>
-                                    </div>
+                                    </span>
                                 </div>
                             <?php endif ?>
                         <?php endforeach; ?>
