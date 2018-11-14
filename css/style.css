@@ -36,13 +36,13 @@
 	padding: 15px;
 }
 .message_content{
-    height: 500px;
+    
     width: 100%;
     border: 1px solid #ccc;
 }
 #row{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 #vertical-navigation{
     flex: 15%;
