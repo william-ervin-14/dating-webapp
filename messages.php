@@ -76,6 +76,7 @@
                                 </div>
                             <?php else : ?>
                                 <div class="message_box_sent">
+                                    <h3>Sent</h3>
                                     <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
                                 </div>
                             <?php endif ?>
