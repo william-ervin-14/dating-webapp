@@ -78,7 +78,6 @@
     overflow: auto;
 }
 .message_box_received{
-    float: left;
     border: 2px solid #dedede;
     background-color: #f1f1f1;
     border-radius: 5px;
@@ -87,7 +86,6 @@
 
 }
 .message_box_sent{
-    float: right;
     border-color: #ccc;
     background-color: #ddd;
     border-radius: 5px;
