@@ -90,7 +90,7 @@
 
 }
 .message-box-sent{
-    border-color: #464646;
+    border: 1px solid #464646;
     background-color: #efefef;
     text-align: right;
     border-radius: 5px;
