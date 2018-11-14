@@ -60,33 +60,31 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php endforeach; ?>
             </div>
 
-            <div class ="chat_container">
-
-                    <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $current_tab_user); ?>
-
-                        <?php foreach($messages_temp as $message_temp): ?>
-                            <?php if(in_array($message_temp,$message_received_objects)) :?>
-                                <div class="message_box_received">
-                                    <p><a href="profile-view.php?uid=<?php echo $current_tab_user->ID; ?>"><?php echo "{$current_tab_user->firstname} {$current_tab_user->lastname}" ; ?></a></p>
-                                    <p><?php echo $message_temp->message_content; ?></p>
-                                    <p><?php echo $message_temp->message_time; ?></p>
-                                </div>
-                            <?php else : ?>
-                                <div class="message_box_sent">
-                                    <p><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}" ; ?></a></p>
-                                    <p><?php echo $message_temp->message_content; ?></p>
-                                    <p><?php echo $message_temp->message_time; ?></p>
-                                </div>
-                            <?php endif ?>
-                        <?php endforeach; ?>
-                        <div class="send_message_form">
-                            <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
-                            <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
-                            <input name="message_recipient_id" type="hidden" value="<?php echo $current_tab_user->ID; ?>" />
-                            <input class="message_input" name="message_content" type="text" placeholder="Your message">
-                            <button class="submit_button" type="submit" value="Submit">Send</button>
+            <div class ="chat-container">
+                <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $current_tab_user); ?>
+                <?php foreach($messages_temp as $message_temp): ?>
+                    <?php if(in_array($message_temp,$message_received_objects)) :?>
+                        <div class="message-box-received">
+                            <p><a href="profile-view.php?uid=<?php echo $current_tab_user->ID; ?>"><?php echo "{$current_tab_user->firstname} {$current_tab_user->lastname}" ; ?></a></p>
+                            <p><?php echo $message_temp->message_content; ?></p>
+                            <p><?php echo $message_temp->message_time; ?></p>
                         </div>
-                    </div>
+                    <?php else : ?>
+                        <div class="message-box-sent">
+                            <p><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}" ; ?></a></p>
+                            <p><?php echo $message_temp->message_content; ?></p>
+                            <p><?php echo $message_temp->message_time; ?></p>
+                        </div>
+                    <?php endif ?>
+                <?php endforeach; ?>
+                <div class="send-message-form">
+                    <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
+                    <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
+                    <input name="message_recipient_id" type="hidden" value="<?php echo $current_tab_user->ID; ?>" />
+                    <input class="message_input" name="message_content" type="text" placeholder="Your message">
+                    <button class="submit_button" type="submit" value="Submit">Send</button>
+                </div>
+            </div>
         </div>
     </form>
     <script>
