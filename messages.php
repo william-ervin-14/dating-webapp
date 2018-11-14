@@ -37,59 +37,55 @@
         <h1>Messages</h1>
         <div class="content">
             <form method="post">
-                <div class="row">
-                    <div class="side">
-                        <div class="verticalTabs">
-                            <button class="tab_links" type="button" onclick="openVerticalTab(event, 'New Message'); return false;" id="defaultOpen">New Message</button>
-                            <?php foreach ($different_friends as $friend ) : ?>
-                                <button class="tab_links" type="button" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>'); return false;"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
+
+                <div class="verticalTabs">
+                    <button class="tab_links" type="button" onclick="openVerticalTab(event, 'New Message'); return false;" id="defaultOpen">New Message</button>
+                    <?php foreach ($different_friends as $friend ) : ?>
+                        <button class="tab_links" type="button" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>'); return false;"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
+                    <?php endforeach; ?>
+                </div>
+
+                <div id="New Message" class="tab_content">
+                    <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
+                    <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
+                    <p>
+                        <label for="message_recipient_id">To:</label>
+                        <select name="message_recipient_id">
+                            <option value="">--Select a Friend--</option>
+                            <?php foreach ( $friend_objects as $friend ) : ?>
+                                <option value="<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="message_content">Message:</label>
+                        <textarea name="message_content"></textarea>
+                    </p>
+                    <p>
+                        <input type="submit" value="Submit" />
+                    </p>
+                </div>
+
+                <?php foreach ($different_friends as $friend) : ?>
+                    <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
+                    <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
+                        <div class="chat_box">
+                            <?php foreach($messages_temp as $message_temp): ?>
+                                <?php if(in_array($message_temp,$message_received_objects)) :?>
+                                    <div class="message_box_received">
+                                        <h3>From: <a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
+                                        <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
+                                    </div>
+                                <?php else : ?>
+                                    <div class="message_box_sent">
+                                        <h3>Sent</h3>
+                                        <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
+                                    </div>
+                                <?php endif ?>
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="main">
-                        <div id="New Message" class="tab_content">
-                            <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
-                            <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
-                            <p>
-                                <label for="message_recipient_id">To:</label>
-                                <select name="message_recipient_id">
-                                    <option value="">--Select a Friend--</option>
-                                    <?php foreach ( $friend_objects as $friend ) : ?>
-                                        <option value="<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </p>
-                            <p>
-                                <label for="message_content">Message:</label>
-                                <textarea name="message_content"></textarea>
-                            </p>
-                            <p>
-                                <input type="submit" value="Submit" />
-                            </p>
-                        </div>
-
-                        <?php foreach ($different_friends as $friend) : ?>
-                            <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
-                            <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
-                                <div class="chat_box">
-                                <?php foreach($messages_temp as $message_temp): ?>
-                                    <?php if(in_array($message_temp,$message_received_objects)) :?>
-                                        <div class="message_box_received">
-                                            <h3>From: <a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
-                                            <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="message_box_sent">
-                                            <h3>Sent</h3>
-                                            <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
-                                        </div>
-                                    <?php endif ?>
-                                <?php endforeach; ?>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </form>
             <script>
                 function openVerticalTab(evt, tabName) {
