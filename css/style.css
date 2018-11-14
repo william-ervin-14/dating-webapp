@@ -80,8 +80,8 @@
     top: 0;
 }
 .message-box-received{
-    border: 2px solid #dedede;
-    background-color: #f1f1f1;
+    border: 1px solid #136fde;
+    background-color: #2aadf1;
     text-align: left;
     border-radius: 5px;
     padding: 5px;
