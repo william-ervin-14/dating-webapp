@@ -107,15 +107,28 @@
 				
 				return $obj;
 			}
-			
-			public function get_friends($user_id) {
+			public function get_friends_again($id){
+                global $db;
+
+                $table = 'friends';
+
+                $query = "
+								SELECT ID, user_id FROM $table
+								WHERE friend_id = '$id'
+							";
+
+                $friends = $db->select($query);
+
+                return $friends;
+            }
+			public function get_friends($id) {
 				global $db;
 				
 				$table = 'friends';
 				
 				$query = "
 								SELECT ID, friend_id FROM $table
-								WHERE user_id = '$user_id'
+								WHERE user_id = '$id'
 							";
 				
 				$friends = $db->select($query);
@@ -123,7 +136,13 @@
 				foreach ( $friends as $friend ) {
 					$friend_ids[] = $friend->friend_id;
 				}
-				
+
+				$more_friends = $this->get_friends_again($id);
+
+                foreach ( $more_friends as $friend ) {
+                    $friend_ids[] = $friend->user_id;
+                }
+
 				return $friend_ids;
 			}
 			
