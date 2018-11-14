@@ -68,4 +68,14 @@
 .verticalTabs button.active {
 	background-color: #ccc;
 }
+.chat_box{
+    max_width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+.message_box_received{
 
+}
+.message_box_sent{
+
+}
