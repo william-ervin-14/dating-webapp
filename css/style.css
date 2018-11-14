@@ -30,13 +30,15 @@
 	background-color: #ddd;
     color: black;
 }
-
 .square {
 	width: 430px;
 	float: left;
 	padding: 15px;
 }
-
+.content{
+    height: 500px;
+    width: 100%
+}
 /* Style the tab */
 .verticalTabs {
 	float: left;
