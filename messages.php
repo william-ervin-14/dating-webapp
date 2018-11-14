@@ -62,8 +62,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class ="chat-container">
                 <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $current_tab_user); ?>
                 <?php foreach($messages_temp as $message_temp): ?>
+                    <div class="top-name"><h4><?php echo "{$current_tab_user->firstname} {$current_tab_user->lastname}" ; ?></h4></div>
                     <?php if(in_array($message_temp,$message_received_objects)) :?>
-                        <div class="top_name"><h4><?php echo "{$current_tab_user->firstname} {$current_tab_user->lastname}" ; ?></h4></div>
                         <div class="message-box-received">
                             <p><?php echo $message_temp->message_content; ?></p>
                         </div>
