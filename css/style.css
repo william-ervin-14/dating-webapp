@@ -42,6 +42,7 @@
 }
 #row{
     display: flex;
+    flex-direction: row;
 }
 #vertical-navigation{
     flex: 15%;
