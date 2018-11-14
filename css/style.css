@@ -83,10 +83,12 @@
 }
 .top_name{
     width: 95%;
-    padding: 15px;
     display: inline-block;
     border: 1px solid #ccc;
     background: #f1f1f1;
+    text-align: center;
+    position: sticky;
+    top: 0;
 }
 .message_box_received{
     border: 2px solid #dedede;
