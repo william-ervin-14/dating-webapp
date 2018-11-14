@@ -245,6 +245,7 @@
 			           $messages_temp[] = $sent;
 			       }
 			   }
+			   return $messages_temp;
             }
 		}
 	}

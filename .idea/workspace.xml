@@ -79,14 +79,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="2" />
-          <entry key="php" value="4259" />
+          <entry key="php" value="4272" />
           <entry key="txt" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="PHP" value="4258" />
+          <entry key="PHP" value="4271" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="SQL" value="1" />
         </counts>
@@ -118,8 +118,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/includes/class-query.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="748">
-                  <caret line="243" column="53" selection-start-line="243" selection-start-column="53" selection-end-line="243" selection-end-column="53" />
+                <state relative-caret-position="765">
+                  <caret line="247" column="37" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
                 </state>
               </provider>
             </entry>
@@ -309,7 +309,7 @@
       <workItem from="1541711390842" duration="17513000" />
       <workItem from="1541966412483" duration="17083000" />
       <workItem from="1541989568646" duration="6000" />
-      <workItem from="1542051270576" duration="33852000" />
+      <workItem from="1542051270576" duration="33899000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -322,7 +322,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73217000" />
+    <option name="totallyTimeSpent" value="73264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -503,8 +503,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/class-query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="243" column="53" selection-start-line="243" selection-start-column="53" selection-end-line="243" selection-end-column="53" />
+        <state relative-caret-position="765">
+          <caret line="247" column="37" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
         </state>
       </provider>
     </entry>
