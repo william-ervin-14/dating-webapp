@@ -76,6 +76,7 @@
 .chat_box {
 	height: 500px;
 	overflow: auto;
+	border: 1px solid #ccc;
 }
 .chat_container {
     height: 465px;
@@ -101,6 +102,6 @@
 	height: 15px;
 	border: none;
 	font-size: 16px;
-	
+
 }
 
