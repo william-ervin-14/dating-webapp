@@ -35,13 +35,6 @@
     }
 ?>
         <h1>Messages</h1>
-        <?php foreach ($message_received_objects as $message ) : ?>
-            <h6><?php echo $message->message_content; ?></h6>
-        <?php endforeach; ?>
-
-        <?php foreach ($message_sent_objects as $message ) : ?>
-            <h6><?php echo $message->message_content; ?></h6>
-        <?php endforeach; ?>
         <div class="content">
             <form method="post">
                 <div class="verticalTabs">
