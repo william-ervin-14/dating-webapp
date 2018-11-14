@@ -35,7 +35,7 @@
 ?>
         <h1>Messages</h1>
         <?php foreach ($different_friends as $friend ) : ?>
-            <h6><?php echo $friend; ?></h6>
+            <h6><?php echo $friend->firstname; ?></h6>
         <?php endforeach; ?>
         <div class="content">
             <form method="post">

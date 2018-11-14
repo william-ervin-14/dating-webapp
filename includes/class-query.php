@@ -208,7 +208,7 @@
                         $different_friends[] = $user;
                     }
                 }
-                return $sender_ids;
+                return $different_friends;
             }
             public function do_messages($user_id){
 			    //$friends = $this->get_senders($user_id);
