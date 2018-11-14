@@ -34,7 +34,9 @@
     }
 ?>
         <h1>Messages</h1>
-        <h6><?php echo $different_friends[0]->firstname; ?></h6>
+        <?php foreach ($different_friends as $friend ) : ?>
+            <h6><?php echo $friend; ?></h6>
+        <?php endforeach; ?>
         <div class="content">
             <form method="post">
                 <div class="verticalTabs">
