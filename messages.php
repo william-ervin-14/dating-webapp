@@ -48,7 +48,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <h1>Messages</h1>
 <h3><?php echo $current_tab->ID; ?></h3>
-<div class="message_content">
     <form method="post">
         <div class="row">
             <div id="vertical-navigation">
@@ -105,6 +104,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         document.getElementById("defaultOpen").click();
     </script>
-</div>
 </body>
 </html>
