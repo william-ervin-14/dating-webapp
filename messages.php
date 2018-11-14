@@ -69,7 +69,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <p><?php echo $message_temp->message_time; ?></p>
                         </div>
                         <div class="message-time-received">
-                            
+
                         </div>
                     <?php else : ?>
                         <div class="message-box-sent">
