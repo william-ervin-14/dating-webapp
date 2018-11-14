@@ -225,7 +225,7 @@
                 return $different_friends;
             }
             public function cmp($a, $b){
-               return strcmp($a['message_time'], $b['message_time']);
+                return ($a->message_time < $b->message_time) ? -1 : 1;
             }
             public function do_messages($message_received, $message_sent, $friend){
 			   $messages_temp = array();
