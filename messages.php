@@ -67,8 +67,7 @@
                                 <input type="submit" value="Submit" />
                             </p>
                         </div>
-                    </div>
-                    <div class="main">
+
                         <?php foreach ($different_friends as $friend) : ?>
                             <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
                             <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
