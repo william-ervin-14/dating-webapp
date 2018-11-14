@@ -41,7 +41,9 @@
             <form method="post">
                 <div class="verticalTabs">
                     <button class="tab_links" type="button" onclick="openVerticalTab(event, 'New Message'); return false;" id="defaultOpen">New Message</button>
-
+                    <?php foreach ($different_friends as $friend ) : ?>
+                        <button class="tab_links" type="button" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>'); return false;"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
+                    <?php endforeach; ?>
                 </div>
 
                 <div id="New Message" class="tab_content">
