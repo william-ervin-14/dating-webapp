@@ -70,7 +70,7 @@
                     <?php foreach ($different_friends as $friend) : ?>
                         <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
                         <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
-                            <div class="top_name"><h3><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></h3></div>
+                            <div class="top_name"><h4><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></h4></div>
                             <?php foreach($messages_temp as $message_temp): ?>
                                 <?php if(in_array($message_temp,$message_received_objects)) :?>
                                     <div class="message_box_received">
