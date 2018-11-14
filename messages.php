@@ -65,34 +65,36 @@
                         <input type="submit" value="Submit" />
                     </p>
                 </div>
-                <div class ="chat_container">
-                <?php foreach ($different_friends as $friend) : ?>
-                    <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
-                    <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
+                <div class="chat_box">
+                    <div class ="chat_container">
+                    <?php foreach ($different_friends as $friend) : ?>
+                        <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
+                        <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
 
-                        <?php foreach($messages_temp as $message_temp): ?>
-                            <?php if(in_array($message_temp,$message_received_objects)) :?>
-                                <div class="message_box_received">
-                                    <p><a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></p>
-                                    <p><?php echo $message_temp->message_content; ?></p>
-                                    <p><?php echo $message_temp->message_time; ?></p>
-                                </div>
-                            <?php else : ?>
-                                <div class="message_box_sent">
-                                    <p><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}" ; ?></a></p>
-                                    <p><?php echo $message_temp->message_content; ?></p>
-                                    <p><?php echo $message_temp->message_time; ?></p>
-                                </div>
-                            <?php endif ?>
-                        <?php endforeach; ?>
+                            <?php foreach($messages_temp as $message_temp): ?>
+                                <?php if(in_array($message_temp,$message_received_objects)) :?>
+                                    <div class="message_box_received">
+                                        <p><a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></p>
+                                        <p><?php echo $message_temp->message_content; ?></p>
+                                        <p><?php echo $message_temp->message_time; ?></p>
+                                    </div>
+                                <?php else : ?>
+                                    <div class="message_box_sent">
+                                        <p><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}" ; ?></a></p>
+                                        <p><?php echo $message_temp->message_content; ?></p>
+                                        <p><?php echo $message_temp->message_time; ?></p>
+                                    </div>
+                                <?php endif ?>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endforeach; ?>
                     </div>
-                <?php endforeach; ?>
-                </div>
-                <div class="send_message">
-                    <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
-                    <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
-                    <input type="text" placeholder="Your message">
-                    <button type="submit">Send</button>
+                    <div class="send_message_form">
+                        <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
+                        <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
+                        <input type="text" placeholder="Your message">
+                        <button type="submit">Send</button>
+                    </div>
                 </div>
             </form>
             <script>
