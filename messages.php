@@ -19,6 +19,7 @@
     $message_received_objects = $query->get_message_received_objects($logged_user_id);
     $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
     $different_friends = $query->get_senders($logged_user_id);
+    $current_tab;
 
     foreach ( $friend_ids as $friend_id ) {
         $friend_objects[] = $query->load_user_object($friend_id);
@@ -50,6 +51,7 @@
                     <button class="tab_links" type="button" onclick="openVerticalTab(event, 'New Message'); return false;" id="defaultOpen">New Message</button>
                     <?php foreach ($different_friends as $friend ) : ?>
                         <button class="tab_links" type="button" onclick="openVerticalTab(event, '<?php echo "{$friend->firstname} {$friend->lastname}"  ?>'); return false;"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></button>
+                        <?php $current_tab = $friend; ?>
                     <?php endforeach; ?>
                 </div>
 
@@ -97,7 +99,7 @@
                             <div class="send_message_form">
                                 <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
                                 <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
-                                <input name="message_recipient_id" type="hidden" value="<?php echo $friend->ID; ?>" />
+                                <input name="message_recipient_id" type="hidden" value="<?php echo $current_tab->ID; ?>" />
                                 <input class="message_input" name="message_content" type="text" placeholder="Your message">
                                 <button class="submit_button" type="submit" value="Submit">Send</button>
                             </div>
