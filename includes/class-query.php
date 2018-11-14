@@ -214,6 +214,9 @@
 				<?php
 				}
 			}
+            public function go_to_message(){
+
+            }
             public function get_senders_again($id){
                 global $db;
 
@@ -289,6 +292,7 @@
 			   usort($messages_temp, array($this, "cmp"));
 			   return $messages_temp;
             }
+
 		}
 	}
 	
