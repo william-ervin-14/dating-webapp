@@ -245,7 +245,7 @@
 			           $messages_temp[] = $sent;
 			       }
 			   }
-			   usort($messages_temp, "cmp");
+			   usort($messages_temp, array($this, "cmp"));
 			   return $messages_temp;
             }
 		}
