@@ -75,7 +75,7 @@
                     <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
                     <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
                         <?php foreach($messages_temp as $message_temp): ?>
-                            <?php if(in_array($message_received_objects, $message_temp)) :?>
+                            <?php if(in_array($message_temp,$message_received_objects)) :?>
                                 <h3>From: <a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
                                 <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
                             <?php else : ?>
