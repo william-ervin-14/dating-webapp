@@ -79,7 +79,7 @@
                                 </div>
                             <?php else : ?>
                                 <div class="message_box_sent">
-                                    <p>Sent from me</p>
+                                    <p><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}" ; ?></a></p>
                                     <p><?php echo $message_temp->message_content; ?></p>
                                     <p><?php echo $message_temp->message_time; ?></p>
                                 </div>
