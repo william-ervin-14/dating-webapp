@@ -46,6 +46,7 @@
 }
 .vertical-navigation{
     flex: 15%;
+    background-color: #f1f1f1;
 }
 
 #vertical-navigation ul {
@@ -66,7 +67,6 @@
 }
 .chat-container {
     flex:85%;
-    height: 500px;
     overflow: auto;
 }
 
