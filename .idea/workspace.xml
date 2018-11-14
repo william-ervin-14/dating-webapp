@@ -80,15 +80,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="457" />
-          <entry key="php" value="5224" />
+          <entry key="css" value="466" />
+          <entry key="php" value="5244" />
           <entry key="txt" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="457" />
-          <entry key="PHP" value="5223" />
+          <entry key="CSS" value="466" />
+          <entry key="PHP" value="5243" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="SQL" value="1" />
         </counts>
@@ -138,8 +138,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+                <state relative-caret-position="544">
+                  <caret line="113" column="14" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -151,8 +151,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/messages.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+                <state relative-caret-position="314">
+                  <caret line="91" column="59" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="59" />
                 </state>
               </provider>
             </entry>
@@ -332,7 +332,7 @@
       <workItem from="1541966412483" duration="17083000" />
       <workItem from="1541989568646" duration="6000" />
       <workItem from="1542051270576" duration="43712000" />
-      <workItem from="1542209037897" duration="8558000" />
+      <workItem from="1542209037897" duration="8642000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -345,7 +345,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91635000" />
+    <option name="totallyTimeSpent" value="91719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -534,15 +534,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/messages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        <state relative-caret-position="314">
+          <caret line="91" column="59" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        <state relative-caret-position="544">
+          <caret line="113" column="14" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="14" />
         </state>
       </provider>
     </entry>

@@ -111,7 +111,7 @@
     position: sticky;
     bottom: 0;
 }
-input[type=text] {
+.message_input {
     width: 85%;
     padding: 15px;
     display: inline-block;
