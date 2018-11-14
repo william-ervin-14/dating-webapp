@@ -40,7 +40,12 @@
     width: 100%;
     border: 1px solid #ccc;
 }
-/* Style the tab */
+#row{
+    display: flex;
+}
+#vertical-navigation{
+    flex: 15%;
+}
 #vertical-navigation ul {
     ​list-style-type: none;
     margin: 0;
@@ -63,6 +68,7 @@
     height: 100%;
 }
 .chat_container {
+    flex:85%;
     height: 500px;
     overflow: auto;
 }
