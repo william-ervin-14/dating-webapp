@@ -88,6 +88,8 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+    transform: rotate(180deg);
+    direction: ltr;
 }
 .message_box_sent{
     border-color: #ccc;
@@ -95,4 +97,6 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+    transform: rotate(180deg);
+    direction: ltr;
 }
