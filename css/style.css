@@ -46,14 +46,13 @@
 }
 .vertical-navigation{
     flex: 15%;
-    background-color: #f1f1f1;
+    background-color: #333;
 }
 
 #vertical-navigation ul {
     ​list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #f1f1f1;
 }
 #vertical-navigation li a{
     display: block;
@@ -62,8 +61,8 @@
     text-decoration: none;
 }
 #vertical-navigation li a:hover{
-    background-color: #555;
-    color: white;
+    background-color: #ddd;
+    color: black;
 }
 .chat-container {
     flex:85%;
