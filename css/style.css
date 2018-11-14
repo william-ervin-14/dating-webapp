@@ -79,8 +79,6 @@
 .chat_container {
     height: 400px;
     overflow: auto;
-    transform: rotate(180deg);
-    direction: rtl;
 }
 .message_box_received{
     border: 2px solid #dedede;
@@ -88,8 +86,7 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
-    transform: rotate(180deg);
-    direction: ltr;
+
 }
 .message_box_sent{
     border-color: #ccc;
@@ -97,6 +94,5 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
-    transform: rotate(180deg);
-    direction: ltr;
+
 }
