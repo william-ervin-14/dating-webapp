@@ -63,15 +63,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $current_tab_user); ?>
                 <?php foreach($messages_temp as $message_temp): ?>
                     <?php if(in_array($message_temp,$message_received_objects)) :?>
+                        <div class="top_name"><h4><?php echo "{$current_tab_user->firstname} {$current_tab_user->lastname}" ; ?></h4></div>
                         <div class="message-box-received">
-                            <p><a href="profile-view.php?uid=<?php echo $current_tab_user->ID; ?>"><?php echo "{$current_tab_user->firstname} {$current_tab_user->lastname}" ; ?></a></p>
                             <p><?php echo $message_temp->message_content; ?></p>
-                            <p><?php echo $message_temp->message_time; ?></p>
                         </div>
                     <?php else : ?>
                         <div class="message-box-sent">
-                            <p><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}" ; ?></a></p>
                             <p><?php echo $message_temp->message_content; ?></p>
+                        </div>
+                        <div class="message-box-time">
                             <p><?php echo $message_temp->message_time; ?></p>
                         </div>
                     <?php endif ?>
