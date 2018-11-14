@@ -89,12 +89,15 @@
                         </div>
                     <?php endforeach; ?>
                     </div>
-                    <div class="send_message_form">
-                        <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
-                        <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
-                        <input type="text" placeholder="Your message">
-                        <button type="submit">Send</button>
-                    </div>
+                    <?php foreach ($different_friends as $friend) : ?>
+                        <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
+                        <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content send_message_form">
+                            <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
+                            <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
+                            <input type="text" placeholder="Your message">
+                            <button type="submit">Send</button>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </form>
             <script>
