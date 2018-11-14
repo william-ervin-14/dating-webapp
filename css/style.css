@@ -36,15 +36,11 @@
 	float: left;
 	padding: 15px;
 }
-.content{
-    display: flex;
-    flex-wrap: wrap;
-}
 /* Style the tab */
 .verticalTabs {
 	border: 1px solid #ccc;
 	background-color: #f1f1f1;
-	flex: 15%
+	width: 15%
 	height: 500px;
 }
 
@@ -73,7 +69,7 @@
 }
 .tab_content {
     padding: 0px 12px;
-    flex: 85%;
+    width: 85%;
     height: 500px;
     float: right;
 }
