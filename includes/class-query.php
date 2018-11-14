@@ -174,20 +174,42 @@
 
                 return $messages;
             }
-            public function get_message_senders($user_id) {
+            public function get_senders_again($id){
+                global $db;
+
+                $table = 'friends';
+
+                $query = "
+								SELECT ID, message_recipient_id FROM $table
+								WHERE message_sender_id = '$id'
+							";
+
+                $friends = $db->select($query);
+
+                return $friends;
+            }
+            public function get_message_senders($id) {
                 global $db;
 
                 $table = 'messages';
 
                 $query = "
 								SELECT ID, message_sender_id FROM $table
-								WHERE message_recipient_id = '$user_id'
+								WHERE message_recipient_id = '$id'
 							";
 
                 $senders = $db->select($query);
+
                 foreach ( $senders as $sender ) {
                     $sender_ids[] = $sender->message_sender_id;
                 }
+
+                $more_senders = $this->get_senders_again($id);
+
+                foreach ( $more_senders as $sender ) {
+                    $sender_ids[] = $sender->message_recipient_id;
+                }
+
 
                 return $sender_ids;
             }
