@@ -44,6 +44,7 @@
     }
 ?>
         <h1>Messages</h1>
+        <h3><?php echo $current_tab->ID; ?></h3>
         <div class="message_content">
             <form method="post">
 
