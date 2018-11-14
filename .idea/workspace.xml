@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dda1d095-7e6a-4fd6-9b08-2f152731ee88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/includes/class-query.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/messages.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,14 +80,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="466" />
-          <entry key="php" value="5549" />
+          <entry key="php" value="5572" />
           <entry key="txt" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="466" />
-          <entry key="PHP" value="5548" />
+          <entry key="PHP" value="5571" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="SQL" value="1" />
         </counts>
@@ -141,8 +141,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/messages.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+                <state relative-caret-position="731">
+                  <caret line="91" column="82" selection-start-line="91" selection-start-column="82" selection-end-line="91" selection-end-column="82" />
                 </state>
               </provider>
             </entry>
@@ -228,8 +228,8 @@
         <option value="$PROJECT_DIR$/messages-compose.php" />
         <option value="$PROJECT_DIR$/home.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/messages.php" />
         <option value="$PROJECT_DIR$/includes/class-query.php" />
+        <option value="$PROJECT_DIR$/messages.php" />
       </list>
     </option>
   </component>
@@ -331,7 +331,7 @@
       <workItem from="1541966412483" duration="17083000" />
       <workItem from="1541989568646" duration="6000" />
       <workItem from="1542051270576" duration="43712000" />
-      <workItem from="1542209037897" duration="10023000" />
+      <workItem from="1542209037897" duration="10243000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -344,7 +344,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93100000" />
+    <option name="totallyTimeSpent" value="93320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -531,17 +531,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/messages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/class-query.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="219" column="36" lean-forward="true" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/messages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="91" column="82" selection-start-line="91" selection-start-column="82" selection-end-line="91" selection-end-column="82" />
         </state>
       </provider>
     </entry>

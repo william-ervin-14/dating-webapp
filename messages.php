@@ -35,9 +35,6 @@
     }
 ?>
         <h1>Messages</h1>
-        <?php foreach ($different_friends as $friend) : ?>
-            <h2><?php echo $friend->user_id; ?></h2>
-        <?php endforeach; ?>
         <div class="message_content">
             <form method="post">
 
@@ -92,7 +89,7 @@
                             <div class="send_message_form">
                                 <input name="message_time" type="hidden" value="<?php echo time(); ?>" />
                                 <input name="message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
-                                <input class="message_input" type="text" placeholder="Your message">
+                                <input class="message_input" name="message_content" type="text" placeholder="Your message">
                                 <button class="submit_button" type="submit">Send</button>
                             </div>
                         </div>
