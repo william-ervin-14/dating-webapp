@@ -35,7 +35,7 @@
     }
 ?>
         <h1>Messages</h1>
-        <div class="content">
+        <div class="message_content">
             <form method="post">
 
                 <div class="verticalTabs">
