@@ -36,11 +36,13 @@
 	float: left;
 	padding: 15px;
 }
+
 /* Style the tab */
 .verticalTabs {
+	float: left;
 	border: 1px solid #ccc;
 	background-color: #f1f1f1;
-	width: 15%
+	width: 15%;
 	height: 500px;
 }
 
