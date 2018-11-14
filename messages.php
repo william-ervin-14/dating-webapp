@@ -73,18 +73,19 @@
                         <?php foreach($messages_temp as $message_temp): ?>
                             <?php if(in_array($message_temp,$message_received_objects)) :?>
                                 <div class="message_box_received">
-                                    <h3>From: <a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
-                                    <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
+
+                                    <h3><a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
+
+                                    <span class="message_received_content">
+                                        <p><?php echo $message_temp->message_content; ?></p>
+                                        <p><?php echo $message_temp->message_time; ?></p>
+                                    </span>
                                 </div>
                             <?php else : ?>
                                 <div class="message_box_sent">
-                                    <span class="message_box_sent name">
-                                        <h3>Sent</h3>
-                                    </span>
-                                    <span class="message_box_sent message_content">
+
+                                    <span class="message_sent_content">
                                         <p><?php echo $message_temp->message_content; ?></p>
-                                    </span>
-                                    <span class="message_box_sent message_time">
                                         <p><?php echo $message_temp->message_time; ?></p>
                                     </span>
                                 </div>
