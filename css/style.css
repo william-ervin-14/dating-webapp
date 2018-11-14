@@ -74,7 +74,7 @@
 }
 .tab_content {
     padding: 0px 12px;
-    width: 90%;
+    width: 95%;
     height: 100%;
 }
 .chat_container {
@@ -104,10 +104,20 @@
     bottom: 0;
 }
 input[type=text] {
-    width: 100%;
+    width: 95%;
     padding: 15px;
     display: inline-block;
     border: 1px solid #ccc;
     background: #f1f1f1;
+}
+.submit_button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
 }
 
