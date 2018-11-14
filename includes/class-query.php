@@ -127,7 +127,7 @@
 				return $friend_ids;
 			}
 			
-			public function get_message_objects($user_id) {
+			public function get_message_received_objects($user_id) {
 				global $db;
 				
 				$table = 'messages';
@@ -141,6 +141,20 @@
 								
 				return $messages;
 			}
+            public function get_message_sent_objects($user_id) {
+                global $db;
+
+                $table = 'messages';
+
+                $query = "
+								SELECT * FROM $table
+								WHERE message_sender_id = '$user_id'
+							";
+
+                $messages = $db->select($query);
+
+                return $messages;
+            }
             public function get_message_senders($user_id) {
                 global $db;
 
@@ -187,7 +201,7 @@
 			
 			
 			public function do_inbox($user_id) {
-				$message_objects = $this->get_message_objects($user_id);
+				$message_objects = $this->get_message_received_objects($user_id);
 				
 				foreach ( $message_objects as $message ) {?>
 					<div class="status_item">

@@ -16,7 +16,8 @@
     $user            = $query->load_user_objects_by_email ($email);
     $logged_user_id  = ($user->ID);
 	$friend_ids      = $query->get_friends($logged_user_id);
-    $message_objects = $query->get_message_objects($logged_user_id);
+    $message_received_objects = $query->get_message_received_objects($logged_user_id);
+    $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
     $different_friends = $query->get_senders($logged_user_id);
 
     foreach ( $friend_ids as $friend_id ) {
@@ -34,8 +35,8 @@
     }
 ?>
         <h1>Messages</h1>
-        <?php foreach ($different_friends as $friend ) : ?>
-            <h6><?php echo $friend->firstname; ?></h6>
+        <?php foreach ($message_received_objects as $message ) : ?>
+            <h6><?php echo $message->message_content; ?></h6>
         <?php endforeach; ?>
         <div class="content">
             <form method="post">
@@ -67,7 +68,7 @@
                     </p>
                 </div>
 
-                <?php foreach ($message_objects as $message ) : ?>
+                <?php foreach ($message_received_objects as $message ) : ?>
                     <?php $friend = $query->load_user_object($message->message_sender_id); ?>
                     <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
                         <h3>From: <a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
