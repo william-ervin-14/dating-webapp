@@ -73,12 +73,13 @@
                         <?php foreach($messages_temp as $message_temp): ?>
                             <?php if(in_array($message_temp,$message_received_objects)) :?>
                                 <div class="message_box_received">
-                                    <h3><a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
+                                    <p><a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></p>
                                     <p><?php echo $message_temp->message_content; ?></p>
                                     <p><?php echo $message_temp->message_time; ?></p>
                                 </div>
                             <?php else : ?>
                                 <div class="message_box_sent">
+                                    <p>Sent from me</p>
                                     <p><?php echo $message_temp->message_content; ?></p>
                                     <p><?php echo $message_temp->message_time; ?></p>
                                 </div>

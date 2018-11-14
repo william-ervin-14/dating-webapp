@@ -79,14 +79,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="146" />
-          <entry key="php" value="4987" />
+          <entry key="php" value="5004" />
           <entry key="txt" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="146" />
-          <entry key="PHP" value="4986" />
+          <entry key="PHP" value="5003" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="SQL" value="1" />
         </counts>
@@ -149,8 +149,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/messages.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="530">
-                  <caret line="77" column="85" selection-start-line="77" selection-start-column="85" selection-end-line="77" selection-end-column="85" />
+                <state relative-caret-position="598">
+                  <caret line="81" column="51" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="51" />
                 </state>
               </provider>
             </entry>
@@ -316,7 +316,7 @@
       <workItem from="1541711390842" duration="17513000" />
       <workItem from="1541966412483" duration="17083000" />
       <workItem from="1541989568646" duration="6000" />
-      <workItem from="1542051270576" duration="41757000" />
+      <workItem from="1542051270576" duration="41819000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -329,7 +329,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81122000" />
+    <option name="totallyTimeSpent" value="81184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -515,8 +515,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/messages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="77" column="85" selection-start-line="77" selection-start-column="85" selection-end-line="77" selection-end-column="85" />
+        <state relative-caret-position="598">
+          <caret line="81" column="51" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="51" />
         </state>
       </provider>
     </entry>
