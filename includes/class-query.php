@@ -184,9 +184,9 @@
 								WHERE message_sender_id = '$id'
 							";
 
-                $friends = $db->select($query);
+                $sender = $db->select($query);
 
-                return $friends;
+                return $sender;
             }
             public function get_message_senders($id) {
                 global $db;

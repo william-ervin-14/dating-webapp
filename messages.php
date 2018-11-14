@@ -35,6 +35,9 @@
     }
 ?>
         <h1>Messages</h1>
+        <?php foreach ($different_friends as $friend) : ?>
+            <h2><?php echo $friend->user_id; ?></h2>
+        <?php endforeach; ?>
         <div class="message_content">
             <form method="post">
 
