@@ -92,11 +92,6 @@
 
 }
 */
-.chat_box{
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 0 20px;
-}
 .message_box_received{
     border: 2px solid #dedede;
     background-color: #f1f1f1;

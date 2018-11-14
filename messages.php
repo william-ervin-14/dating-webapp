@@ -69,21 +69,21 @@
                 <?php foreach ($different_friends as $friend) : ?>
                     <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
                     <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
-                        <div class="chat_box">
-                            <?php foreach($messages_temp as $message_temp): ?>
-                                <?php if(in_array($message_temp,$message_received_objects)) :?>
-                                    <div class="message_box_received">
-                                        <h3>From: <a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
-                                        <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
-                                    </div>
-                                <?php else : ?>
-                                    <div class="message_box_sent">
-                                        <h3>Sent</h3>
-                                        <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
-                                    </div>
-                                <?php endif ?>
-                            <?php endforeach; ?>
-                        </div>
+
+                        <?php foreach($messages_temp as $message_temp): ?>
+                            <?php if(in_array($message_temp,$message_received_objects)) :?>
+                                <div class="message_box_received">
+                                    <h3>From: <a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
+                                    <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
+                                </div>
+                            <?php else : ?>
+                                <div class="message_box_sent">
+                                    <h3>Sent</h3>
+                                    <p><?php echo "{$message_temp->message_time} : {$message_temp->message_content}"; ?></p>
+                                </div>
+                            <?php endif ?>
+                        <?php endforeach; ?>
+
                     </div>
                 <?php endforeach; ?>
             </form>
