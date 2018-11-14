@@ -71,12 +71,7 @@
 .tab_content {
     padding: 0px 12px;
     width: 85%;
-    height: 100%;
-}
-.chat_box {
-	height: 500px;
-	overflow: auto;
-	border: 1px solid #ccc;
+    height: 500px;
 }
 .chat_container {
     height: 465px;
