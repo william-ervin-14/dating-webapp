@@ -93,6 +93,12 @@
     padding: 5px;
     margin: 10px 0;
 }
+.message-time-received{
+    float: left;
+}
+.message-time-sent{
+    float: right;
+}
 .send-message-form{
 	border: none;
 	font-size: 16px;
