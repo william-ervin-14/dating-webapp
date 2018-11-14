@@ -117,5 +117,6 @@ input[type=text] {
     border: none;
     cursor: pointer;
     width: 10%;
+    float: right;
 }
 
