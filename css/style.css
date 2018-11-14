@@ -97,9 +97,8 @@
     padding: 5px;
     margin: 10px 0;
 }
-.send_message_form{
+#tab_content send_message_form{
 	border: none;
 	font-size: 16px;
-
 }
 
