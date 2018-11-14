@@ -224,8 +224,8 @@
                 }
                 return $different_friends;
             }
-            public function sort_messages(){
-
+            public function cmp($a, $b){
+               return strcmp($a->message_time, $b->message_time);
             }
             public function do_messages($message_received, $message_sent, $friend){
 			   $messages_temp = array();
@@ -245,6 +245,7 @@
 			           $messages_temp[] = $sent;
 			       }
 			   }
+			   usort($messages_temp, "cmp");
 			   return $messages_temp;
             }
 		}
