@@ -153,7 +153,7 @@
 
                 $senders = $db->select($query);
                 foreach ( $senders as $sender ) {
-                    $sender_ids[] = $sender->friend_id;
+                    $sender_ids[] = $sender->message_sender_id;
                 }
 
                 return $sender_ids;

@@ -41,7 +41,7 @@
             <form method="post">
                 <div class="verticalTabs">
                     <button class="tab_links" type="button" onclick="openVerticalTab(event, 'New Message'); return false;" id="defaultOpen">New Message</button>
-                   
+
                 </div>
 
                 <div id="New Message" class="tab_content">
