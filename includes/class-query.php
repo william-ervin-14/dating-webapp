@@ -231,7 +231,7 @@
 			   $messages_temp = array();
 			   foreach($message_received as $received){
 
-                   $friend_temp = $this->load_user_object($received->message_sender_id);
+                   $friend_temp = $this->load_user_object($received->message_recipient_id);
 
                    if($friend_temp->ID == $friend->ID){
                        $messages_temp[] = $received;
