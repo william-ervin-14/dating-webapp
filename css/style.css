@@ -70,9 +70,7 @@
 }
 .tab_content {
     padding: 0px 12px;
-    border: 1px solid #ccc;
     width: 85%;
-    border-left: none;
     height: 100%;
 }
 .chat_container {
