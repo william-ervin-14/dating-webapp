@@ -224,10 +224,27 @@
                 }
                 return $different_friends;
             }
-            public function do_messages($user_id){
-			    //$friends = $this->get_senders($user_id);
+            public function sort_messages(){
 
+            }
+            public function do_messages($message_received, $message_sent, $friend){
+			   $messages_temp = array();
+			   foreach($message_received as $received){
 
+                   $friend_temp = $this->load_user_object($received->message_sender_id);
+
+                   if($friend_temp->user_id == $friend->user_id){
+                       $messages_temp[] = $received;
+                   }
+			   }
+			   foreach($message_sent as $sent){
+
+			       $friend_temp = $this->load_user_object($sent->message_sender_id);
+
+			       if($friend_temp->user_id == $friend->user_id){
+			           $messages_temp[] = $sent;
+			       }
+			   }
             }
 		}
 	}
