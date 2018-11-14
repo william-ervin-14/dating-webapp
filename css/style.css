@@ -92,14 +92,6 @@
     padding: 5px;
     margin: 10px 0;
 }
-.message_sent_content{
-    float: right;
-    color: #aaa;
-}
-.message_received_content{
-    float: left;
-    color: #999;
-}
 .send-message-form{
 	width: 100%;
 	border: none;
