@@ -66,16 +66,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <?php if(in_array($message_temp,$message_received_objects)) :?>
                         <div class="message-box-received">
                             <p><?php echo $message_temp->message_content; ?></p>
+                            <p><?php echo $message_temp->message_time; ?></p>
                         </div>
                         <div class="message-time-received">
-                            <p><?php echo $message_temp->message_time; ?></p>
+                            
                         </div>
                     <?php else : ?>
                         <div class="message-box-sent">
                             <p><?php echo $message_temp->message_content; ?></p>
+                            <p><?php echo $message_temp->message_time; ?></p>
                         </div>
                         <div class="message-time-sent">
-                            <p><?php echo $message_temp->message_time; ?></p>
+
                         </div>
                     <?php endif ?>
                 <?php endforeach; ?>
