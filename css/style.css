@@ -42,10 +42,10 @@
 .row{
     display: flex;
     flex-direction: row;
+    height: 500px;
 }
 .vertical-navigation{
     flex: 15%;
-    height: 500px;
 }
 
 #vertical-navigation ul {
@@ -105,7 +105,7 @@
     display: inline-block;
     border: 1px solid #ccc;
     background: #f1f1f1;
-    width: 90%;
+    width: 85%;
 }
 .submit_button {
     background-color: #2364af;
