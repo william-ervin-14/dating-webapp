@@ -68,6 +68,15 @@
 .verticalTabs button.active {
 	background-color: #ccc;
 }
+.tab_content {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 85%;
+    border-left: none;
+    height: 100%;
+}
+/*
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -82,6 +91,7 @@
     background-color: white;
 
 }
+*/
 .chat_box{
     margin: 0 auto;
     max-width: 800px;
