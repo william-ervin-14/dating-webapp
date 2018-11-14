@@ -53,8 +53,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div id="navigation">
             <?php foreach ($different_friends as $friend ) : ?>
-                <li><a href="messages.php?uid=<?php echo $friend->ID ?>"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></a></li>
-                <?php $current_tab = $friend; ?>
+                <ul>
+                    <li><a href="messages.php?uid=<?php echo $friend->ID ?>"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></a></li>
+                    <?php $current_tab = $friend; ?>
+                </ul>
             <?php endforeach; ?>
         </div>
 
