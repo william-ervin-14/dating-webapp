@@ -80,6 +80,28 @@
 
                     </div>
                 <?php endforeach; ?>
+                <?php foreach ($different_friends as $friend) : ?>
+
+                    <?php $messages_temp = array(); ?>
+
+                    <?php foreach ($message_received_objects as $message ) : ?>
+
+                        <?php $friend_temp = $query->load_user_object($message->message_sender_id); ?>
+
+                        <?php if($friend_temp->user_id == $friend->user_id):?>
+
+                                <?php $messages_temp[] = message; ?>
+
+                        <?php endif; ?>
+
+                        <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
+                            <?php foreach($messages_temp as $message_temp): ?>
+                                <h3>From: <a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></h3>
+                                <p><?php echo "{$messages_temp->message_time} : {$messages_temp->message_content}"; ?></p>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
             </form>
             <script>
                 function openVerticalTab(evt, tabName) {
