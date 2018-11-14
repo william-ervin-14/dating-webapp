@@ -174,45 +174,6 @@
 
                 return $messages;
             }
-            public function get_senders_again($id){
-                global $db;
-
-                $table = 'friends';
-
-                $query = "
-								SELECT ID, message_recipient_id FROM $table
-								WHERE message_sender_id = '$id'
-							";
-
-                $sender = $db->select($query);
-
-                return $sender;
-            }
-            public function get_message_senders($id) {
-                global $db;
-
-                $table = 'messages';
-
-                $query = "
-								SELECT ID, message_sender_id FROM $table
-								WHERE message_recipient_id = '$id'
-							";
-
-                $senders = $db->select($query);
-
-                foreach ( $senders as $sender ) {
-                    $sender_ids[] = $sender->message_sender_id;
-                }
-
-                $more_senders = $this->get_senders_again($id);
-
-                foreach ( $more_senders as $sender ) {
-                    $sender_ids[] = $sender->message_recipient_id;
-                }
-
-
-                return $sender_ids;
-            }
 			
 			public function do_user_directory() {
 				$users = $this->load_all_user_objects();
@@ -253,6 +214,45 @@
 				<?php
 				}
 			}
+            public function get_senders_again($id){
+                global $db;
+
+                $table = 'messages';
+
+                $query = "
+								SELECT ID, message_recipient_id FROM $table
+								WHERE message_sender_id = '$id'
+							";
+
+                $sender = $db->select($query);
+
+                return $sender;
+            }
+            public function get_message_senders($id) {
+                global $db;
+
+                $table = 'messages';
+
+                $query = "
+								SELECT ID, message_sender_id FROM $table
+								WHERE message_recipient_id = '$id'
+							";
+
+                $senders = $db->select($query);
+
+                foreach ( $senders as $sender ) {
+                    $sender_ids[] = $sender->message_sender_id;
+                }
+
+                $more_senders = $this->get_senders_again($id);
+
+                foreach ( $more_senders as $sender ) {
+                    $sender_ids[] = $sender->message_recipient_id;
+                }
+
+
+                return $sender_ids;
+            }
             public function get_senders($user_id) {
                 $sender_ids = $this->get_message_senders($user_id);
                 $different_friends = array();
