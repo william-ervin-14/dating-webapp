@@ -69,9 +69,9 @@
 	background-color: #ccc;
 }
 .chat_box{
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 20px;
 }
 .message_box_received{
 
