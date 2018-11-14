@@ -65,8 +65,8 @@
                         <input type="submit" value="Submit" />
                     </p>
                 </div>
-                <div class="chat_box">
-                    <div class ="chat_container">
+
+                <div class ="chat_container">
                     <?php foreach ($different_friends as $friend) : ?>
                         <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
                         <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
@@ -95,7 +95,6 @@
                             <button type="submit">Send</button>
                         </div>
                     </div>
-                </div>
             </form>
             <script>
                 function openVerticalTab(evt, tabName) {
