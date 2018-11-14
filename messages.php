@@ -19,7 +19,10 @@ $friend_ids      = $query->get_friends($logged_user_id);
 $message_received_objects = $query->get_message_received_objects($logged_user_id);
 $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
 $different_friends = $query->get_senders($logged_user_id);
-$current_tab;
+if ( !empty ( $_GET['uid'] ) ) {
+    $current_tab_id = $_GET['uid'];
+    $current_tab_user = $query->load_user_object($current_tab_id);
+}
 
 foreach ( $friend_ids as $friend_id ) {
     $friend_objects[] = $query->load_user_object($friend_id);
@@ -55,36 +58,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php endforeach; ?>
         </div>
 
-        <div id="New Message" class="tab_content">
-            <input name="new_message_time" type="hidden" value="<?php echo time(); ?>" />
-            <input name="new_message_sender_id" type="hidden" value="<?php echo $logged_user_id; ?>" />
-            <p>
-                <label for="new_message_recipient_id">To:</label>
-                <select name="new_message_recipient_id">
-                    <option value="">--Select a Friend--</option>
-                    <?php foreach ( $friend_objects as $friend ) : ?>
-                        <option value="<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}"; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </p>
-            <p>
-                <label for="new_message_content">Message:</label>
-                <textarea name="new_message_content"></textarea>
-            </p>
-            <p>
-                <input type="submit" value="Submit" />
-            </p>
-        </div>
-
         <div class ="chat_container">
-            <?php foreach ($different_friends as $friend) : ?>
-                <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $friend); ?>
-                <div id="<?php echo "{$friend->firstname} {$friend->lastname}"  ?>" class="tab_content">
-                    <div class="top_name"><h4><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></h4></div>
+
+                <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $current_tab_user); ?>
+
                     <?php foreach($messages_temp as $message_temp): ?>
                         <?php if(in_array($message_temp,$message_received_objects)) :?>
                             <div class="message_box_received">
-                                <p><a href="profile-view.php?uid=<?php echo $friend->ID; ?>"><?php echo "{$friend->firstname} {$friend->lastname}" ; ?></a></p>
+                                <p><a href="profile-view.php?uid=<?php echo $current_tab_user->ID; ?>"><?php echo "{$current_tab_user->firstname} {$current_tab_user->lastname}" ; ?></a></p>
                                 <p><?php echo $message_temp->message_content; ?></p>
                                 <p><?php echo $message_temp->message_time; ?></p>
                             </div>
@@ -104,7 +85,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <button class="submit_button" type="submit" value="Submit">Send</button>
                     </div>
                 </div>
-            <?php endforeach; ?>
         </div>
     </form>
     <script>
