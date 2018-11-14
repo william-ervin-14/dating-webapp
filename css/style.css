@@ -78,6 +78,7 @@
 }
 .chat_container {
     height: 500px;
+    border: 1px solid #ccc;
     overflow: auto;
 }
 .message_box_received{
