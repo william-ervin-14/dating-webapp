@@ -100,18 +100,20 @@
     position: sticky;
     bottom: 0;
 }
-.message_input {
+#message_input {
     padding: 15px;
     display: inline-block;
     border: 1px solid #ccc;
     background: #f1f1f1;
+    width: 90%;
 }
-.submit_button {
+#submit_button {
     background-color: #2364af;
     color: white;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
     float: right;
+    width: 10%;
 }
 
