@@ -73,8 +73,8 @@
     width: 100%;
     display: inline-block;
     border: 1px solid #ccc;
-    background-color: black;
-    color: white;
+    background-color: #ddd;
+    color: black;
     text-align: center;
     position: sticky;
     top: 0;
@@ -103,12 +103,14 @@
     float: right;
 }
 .send-message-form{
-	border: none;
+	display: flex;
+    border: none;
 	font-size: 16px;
     position: sticky;
     bottom: 0;
 }
 .message_input {
+    flex: 85%;
     padding: 15px;
     display: inline-block;
     border: 1px solid #ccc;
@@ -116,6 +118,7 @@
     width: 85%;
 }
 .submit_button {
+    flex: 15%;
     background-color: #2364af;
     color: white;
     padding: 16px 20px;
