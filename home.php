@@ -37,7 +37,7 @@
 		<div class="square">
 		<h3>Messages</h3>
 			<ul>
-			<li><a href="messages.php">Inbox</a></li>
+			<li><a href="messages.php">Messages</a></li>
 		</ul>
 		</div>
         <h2><?php echo $logged_user_id; ?></h2>
