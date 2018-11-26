@@ -23,11 +23,8 @@
 				<li><a href="profile-edit.php">Edit Profile</a></li>
 				<li><a href="friends-directory.php">Member Directory</a></li>
 				<li><a href="friends-list.php">Friends List</a></li>
-				<li><a href="feed-view.php">View Feed</a></li>
-				<li><a href="feed-post.php">Post Status</a></li>
                 <li><a href="messages.php">Messages</a></li>
-				<li><a href="messages-inbox.php">Inbox</a></li>
-				<li><a href="messages-compose.php">Compose</a></li>
+                <li><a href="notifications.php">Notifications</a></li>
 				<li><a href="login.php" name="logout">Log out</a></li>
 			</ul>
 		</div>

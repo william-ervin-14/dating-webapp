@@ -35,17 +35,9 @@
 		</ul>
 		</div>
 		<div class="square">
-		<h3>News Feed</h3>
-			<ul>
-			<li><a href="feed-view.php">View Feed</a></li>
-			<li><a href="feed-post.php">Post Status</a></li>
-		</ul>
-		</div>
-		<div class="square">
 		<h3>Messages</h3>
 			<ul>
-			<li><a href="messages-inbox.php">Inbox</a></li>
-			<li><a href="messages-compose.php">Compose</a></li>
+			<li><a href="messages.php">Inbox</a></li>
 		</ul>
 		</div>
         <h2><?php echo $logged_user_id; ?></h2>
