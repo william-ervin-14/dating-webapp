@@ -24,6 +24,7 @@
 				<li><a href="friends-directory.php">Member Directory</a></li>
 				<li><a href="friends-list.php">Friends List</a></li>
                 <li><a href="messages.php">Messages</a></li>
+                <li><a href="youtube.php">YouTube</a></li>
                 <li><a href="notifications.php">Notifications</a></li>
 				<li><a href="login.php" name="logout">Log out</a></li>
 			</ul>
