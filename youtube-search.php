@@ -29,10 +29,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 $htmlBody = <<<END
 <form method="GET">
   <div>
-    Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
-  </div>
-  <div>
-    Max Results: <input type="number" id="maxResults" name="maxResults" min="1" max="50" step="1" value="25">
+    Search: <input type="search" id="q" name="q" placeholder="Enter Search Term">
   </div>
   <input type="submit" value="Search">
 </form>
@@ -40,7 +37,7 @@ END;
 
 // This code executes if the user enters a search query in the form
 // and submits the form. Otherwise, the page displays the form above.
-if (isset($_GET['q']) && isset($_GET['maxResults'])) {
+if (isset($_GET['q'])) {
     /*
      * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
     * {{ Google Cloud Console }} <{{ https://cloud.google.com/console }}>
@@ -60,7 +57,7 @@ if (isset($_GET['q']) && isset($_GET['maxResults'])) {
         $searchResponse = $youtube->search->listSearch('id,snippet', array(
             'type' => 'video',
             'q' => $_GET['q'],
-            'maxResults' => $_GET['maxResults'],
+            'maxResults' => 25,
         ));
 
         $videoResults = array();
