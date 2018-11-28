@@ -78,10 +78,9 @@ if (isset($_GET['q']) && isset($_GET['maxResults'])) {
 
         // Display the list of matching videos.
         foreach ($videosResponse['items'] as $videoResult) {
-            $videos .= sprintf('<li>%s (%s,%s)</li>',
-                $videoResult['snippet']['title'],
-                $videoResult['recordingDetails']['location']['latitude'],
-                $videoResult['recordingDetails']['location']['longitude']);
+            $videos .= sprintf('<li>%s</li>',
+                $videoResult['snippet']['title']);
+
         }
 
 
@@ -101,11 +100,10 @@ END;
 
 <!doctype html>
 <html>
-<head>
-    <title>YouTube Geolocation Search</title>
-</head>
-<body>
-<?=$htmlBody?>
-</body>
+    <head>
+    </head>
+    <body>
+        <?=$htmlBody?>
+    </body>
 </html>
 
