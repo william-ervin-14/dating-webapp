@@ -92,11 +92,11 @@ END;
     <body>
         <?=$htmlBody?>
     <div>
-    </div>
-        <?php foreach ($thumbnails as $thumbnail): ?>
+    <?php foreach ($thumbnails as $thumbnail): ?>
+        </div>
             <?php echo "<img src='$thumbnail'><br>"; ?>
-        <?php endforeach; ?>
-    </div>
+        </div>
+    <?php endforeach; ?>
     </body>
 </html>
 
