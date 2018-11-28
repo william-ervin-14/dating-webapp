@@ -33,16 +33,13 @@
       <div>
         Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
       </div>
-      <div>
-        Max Results: <input type="number" id="maxResults" name="maxResults" min="1" max="50" step="1" value="25">
-      </div>
       <input type="submit" value="Search">
     </form>
 END;
 
     // This code will execute if the user entered a search query in the form
     // and submitted the form. Otherwise, the page displays the form above.
-    if (isset($_GET['q']) && isset($_GET['maxResults'])) {
+    if (isset($_GET['q'])) {
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
          * {{ Google Cloud Console }} <{{ https://cloud.google.com/console }}>
@@ -62,31 +59,20 @@ END;
             // Call the search.list method to retrieve results matching the specified
             // query term.
             $searchResponse = $youtube->search->listSearch('id,snippet', array(
+                'type' => 'video',
                 'q' => $_GET['q'],
-                'maxResults' => $_GET['maxResults'],
+                'maxResults' => 25,
             ));
 
             $videos = '';
-            $channels = '';
-            $playlists = '';
 
             // Add each result to the appropriate list, and then display the lists of
             // matching videos, channels, and playlists.
             foreach ($searchResponse['items'] as $searchResult) {
-                switch ($searchResult['id']['kind']) {
-                    case 'youtube#video':
-                        $videos .= sprintf('<li>%s (%s)</li>',
-                            $searchResult['snippet']['title'], $searchResult['id']['videoId']);
-                        break;
-                    case 'youtube#channel':
-                        $channels .= sprintf('<li>%s (%s)</li>',
-                            $searchResult['snippet']['title'], $searchResult['id']['channelId']);
-                        break;
-                    case 'youtube#playlist':
-                        $playlists .= sprintf('<li>%s (%s)</li>',
-                            $searchResult['snippet']['title'], $searchResult['id']['playlistId']);
-                        break;
-                }
+                $videos .= sprintf('<li>%s (%s)</li>',
+                    $searchResult['snippet']['title'], $searchResult['id']['videoId']);
+
+
             }
 
             $htmlBody .= <<<END
