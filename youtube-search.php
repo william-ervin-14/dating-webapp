@@ -60,6 +60,8 @@ if (isset($_GET['q']) && isset($_GET['maxResults'])) {
         $searchResponse = $youtube->search->listSearch('id,snippet', array(
             'type' => 'video',
             'q' => $_GET['q'],
+            'location' =>  $_GET['location'],
+            'locationRadius' =>  $_GET['locationRadius'],
             'maxResults' => $_GET['maxResults'],
         ));
 
@@ -70,9 +72,24 @@ if (isset($_GET['q']) && isset($_GET['maxResults'])) {
         }
         $videoIds = join(',', $videoResults);
 
+        $videosResponse = $youtube->videos->listVideos('snippet, recordingDetails', array(
+            'id' => $videoIds,
+        ));
+
+        $videos = '';
+
+        // Display the list of matching videos.
+        foreach ($videosResponse['items'] as $videoResult) {
+            $videos .= sprintf('<li>%s (%s,%s)</li>',
+                $videoResult['snippet']['title'],
+                $videoResult['recordingDetails']['location']['latitude'],
+                $videoResult['recordingDetails']['location']['longitude']);
+        }
+
+
         $htmlBody .= <<<END
     <h3>Videos</h3>
-    <ul>$videoResults</ul>
+    <ul>$videos</ul>
 END;
     } catch (Google_Service_Exception $e) {
         $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',
