@@ -65,7 +65,7 @@ END;
                     $searchResult['snippet']['title'], $searchResult['id']['videoId']);
             }
             foreach ($searchResponse['items'] as $searchResult) {
-                $thumbnails = $searchResult['snippet']['thumbnails'];
+                $thumbnails = $searchResult['snippet']['thumbnails']['default'];
             }
 
             $htmlBody .= <<<END
