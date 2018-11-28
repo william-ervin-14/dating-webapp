@@ -63,20 +63,22 @@ END;
             ));
 
             $videos = '';
+            $thumbnails;
 
             // Add each result to the appropriate list, and then display the lists of
             // matching videos, channels, and playlists.
             foreach ($searchResponse['items'] as $searchResult) {
-                $videos .= sprintf('<li>%s (%s) %s</li>',
-                    $searchResult['snippet']['title'], $searchResult['id']['videoId'],
-                    $searchResult['snippet']['thumbnails']);
-
-
+                $videos .= sprintf('<li>%s (%s)</li>',
+                    $searchResult['snippet']['title'], $searchResult['id']['videoId']);
+            }
+            foreach ($searchResponse['items'] as $searchResult) {
+                $thumbnails = $searchResult['snippet']['thumbnails'];
             }
 
             $htmlBody .= <<<END
         <h3>Videos</h3>
         <ul>$videos</ul>
+        <ul>$thumbnails</ul>
 END;
         } catch (Google_Service_Exception $e) {
             $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',
