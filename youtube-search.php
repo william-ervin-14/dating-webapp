@@ -67,8 +67,9 @@ END;
             // Add each result to the appropriate list, and then display the lists of
             // matching videos, channels, and playlists.
             foreach ($searchResponse['items'] as $searchResult) {
-                $videos .= sprintf('<li>%s (%s)</li>',
-                    $searchResult['snippet']['title'], $searchResult['id']['videoId']);
+                $videos .= sprintf('<li>%s (%s) %s</li>',
+                    $searchResult['snippet']['title'], $searchResult['id']['videoId'],
+                    $searchResult['snippet']['thumbnails']);
 
 
             }
