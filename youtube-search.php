@@ -1,44 +1,32 @@
 <?php
 ?>
 <html>
-<script>
-    function showResponse(response) {
-        var responseString = JSON.stringify(response, '', 2);
-        document.getElementById('response').innerHTML += responseString;
+<head>
+    <title>Youtube playlist search</title>
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+    function go_get(){
+        var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+        var search_field = document.getElementById('yourtextfield').value;
+        var target_url = base_url + search_field;
+        var ifr = document.getElementById('youriframe');
+        ifr.src = target_url;
+        return false;
     }
 
-    function onClientLoad() {
-        gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
-    }
-
-    function onYouTubeApiLoad() {
-        gapi.client.setApiKey('API_KEY');
-
-        search();
-    }
-
-    function search() {
-        var request = gapi.client.youtube.search.list({
-            part: 'snippet',
-            q:"dogs",
-
-        });
-
-
-        request.execute(onSearchResponse);
-    }
-
-    function onSearchResponse(response) {
-        showResponse(response);
-    }
 </script>
 
-<head>
-    <script src="javascript.js" type="text/javascript"></script>
-    <script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript"></script>
-</head>
-<body>
-<pre id="response"></pre>
+<form onsubmit="go_get(); return false;" >
+    <input type="text"  id="yourtextfield"/>
+    <input type="submit" value="Search Playlists" />
+</form>
+
+<iframe id="youriframe" width="640" height="360" ></iframe>
+
 </body>
 </html>
 
