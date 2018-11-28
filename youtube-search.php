@@ -57,8 +57,6 @@ if (isset($_GET['q']) && isset($_GET['maxResults'])) {
         $searchResponse = $youtube->search->listSearch('id,snippet', array(
             'type' => 'video',
             'q' => $_GET['q'],
-            'location' =>  $_GET['location'],
-            'locationRadius' =>  $_GET['locationRadius'],
             'maxResults' => 25,
         ));
 
