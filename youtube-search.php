@@ -14,14 +14,7 @@
     $email = $_SESSION['email'];
     $user = $query->load_user_objects_by_email($email);
     $logged_user_id = ($user->ID);
-    /**
-     * Library Requirements
-     *
-     * 1. Install composer (https://getcomposer.org)
-     * 2. On the command line, change to this directory (api-samples/php)
-     * 3. Require the google/apiclient library
-     *    $ composer require google/apiclient:~2.0
-     */
+
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
     }
@@ -78,7 +71,7 @@ END;
             $htmlBody .= <<<END
         <h3>Videos</h3>
         <ul>$videos</ul>
-        <ul>$thumbnails</ul>
+
 END;
         } catch (Google_Service_Exception $e) {
             $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',
