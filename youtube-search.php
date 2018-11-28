@@ -94,7 +94,7 @@ END;
     <div>
     <?php foreach ($thumbnails as $thumbnail): ?>
         </div>
-            <?php echo "<img src='$thumbnail'><br>"; ?>
+            <?php echo "<img src='$thumbnail'>"; ?>
         </div>
     <?php endforeach; ?>
     </body>
