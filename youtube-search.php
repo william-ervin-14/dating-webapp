@@ -59,7 +59,7 @@ if (isset($_GET['q']) && isset($_GET['maxResults'])) {
             'q' => $_GET['q'],
             'location' =>  $_GET['location'],
             'locationRadius' =>  $_GET['locationRadius'],
-            'maxResults' => '25',
+            'maxResults' => 25,
         ));
 
         $videoResults = array();
