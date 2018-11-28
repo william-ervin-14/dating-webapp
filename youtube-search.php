@@ -32,12 +32,6 @@ $htmlBody = <<<END
     Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
   </div>
   <div>
-    Location: <input type="text" id="location" name="location" placeholder="37.42307,-122.08427">
-  </div>
-  <div>
-    Location Radius: <input type="text" id="locationRadius" name="locationRadius" placeholder="5km">
-  </div>
-  <div>
     Max Results: <input type="number" id="maxResults" name="maxResults" min="1" max="50" step="1" value="25">
   </div>
   <input type="submit" value="Search">
@@ -66,8 +60,6 @@ if (isset($_GET['q']) && isset($_GET['maxResults'])) {
         $searchResponse = $youtube->search->listSearch('id,snippet', array(
             'type' => 'video',
             'q' => $_GET['q'],
-            'location' =>  $_GET['location'],
-            'locationRadius' =>  $_GET['locationRadius'],
             'maxResults' => $_GET['maxResults'],
         ));
 
@@ -77,21 +69,6 @@ if (isset($_GET['q']) && isset($_GET['maxResults'])) {
             array_push($videoResults, $searchResult['id']['videoId']);
         }
         $videoIds = join(',', $videoResults);
-
-        # Call the videos.list method to retrieve location details for each video.
-        $videosResponse = $youtube->videos->listVideos('snippet, recordingDetails', array(
-            'id' => $videoIds,
-        ));
-
-        $videos = '';
-
-        // Display the list of matching videos.
-        foreach ($videosResponse['items'] as $videoResult) {
-            $videos .= sprintf('<li>%s (%s,%s)</li>',
-                $videoResult['snippet']['title'],
-                $videoResult['recordingDetails']['location']['latitude'],
-                $videoResult['recordingDetails']['location']['longitude']);
-        }
 
         $htmlBody .= <<<END
     <h3>Videos</h3>
