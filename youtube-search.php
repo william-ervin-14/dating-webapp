@@ -52,8 +52,6 @@ END;
 
         // Define an object that will be used to make all API requests.
         $youtube = new Google_Service_YouTube($client);
-
-        $htmlBody = '';
         try {
 
             // Call the search.list method to retrieve results matching the specified
@@ -78,10 +76,6 @@ END;
             $htmlBody .= <<<END
         <h3>Videos</h3>
         <ul>$videos</ul>
-        <h3>Channels</h3>
-        <ul>$channels</ul>
-        <h3>Playlists</h3>
-        <ul>$playlists</ul>
 END;
         } catch (Google_Service_Exception $e) {
             $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',
