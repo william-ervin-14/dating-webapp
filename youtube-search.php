@@ -1,43 +1,74 @@
 <?php
 ?>
-<html>
-<script>
-    function showResponse(response) {
-        var responseString = JSON.stringify(response, '', 2);
-        document.getElementById('response').innerHTML += responseString;
-    }
-
-    function onClientLoad() {
-        gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
-    }
-
-    function onYouTubeApiLoad() {
-        gapi.client.setApiKey('API_KEY');
-
-        search();
-    }
-
-    function search() {
-        var request = gapi.client.youtube.search.list({
-            part: 'snippet',
-            q:"dogs",
-
-        });
-
-
-        request.execute(onSearchResponse);
-    }
-
-    function onSearchResponse(response) {
-        showResponse(response);
-    }
-</script>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <script src="javascript.js" type="text/javascript"></script>
-    <script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript"></script>
+    <title>Your awesome Youtube search engine</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Awesome videos!" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<pre id="response"></pre>
+<header>
+    <h1 class="w100 text-center"><a href="index.html">YouTube Viral Search</a></h1>
+</header>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form action="#">
+            <p><input type="text" id="search" placeholder="Type something..." autocomplete="off" class="form-control" /></p>
+            <p><input type="submit" value="Search" class="form-control btn btn-primary w100"></p>
+        </form>
+        <div id="results"></div>
+    </div>
+</div>
+
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script>
+    function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
+
+    $(function() {
+        $("form").on("submit", function(e) {
+            e.preventDefault();
+            // prepare the request
+            var request = gapi.client.youtube.search.list({
+                part: "snippet",
+                type: "video",
+                q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
+                maxResults: 3,
+                order: "viewCount",
+                publishedAfter: "2015-01-01T00:00:00Z"
+            });
+            // execute the request
+            request.execute(function(response) {
+                var results = response.result;
+                $("#results").html("");
+                $.each(results.items, function(index, item) {
+                    $.get("tpl/item.html", function(data) {
+                        $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
+                    });
+                });
+                resetVideoHeight();
+            });
+        });
+
+        $(window).on("resize", resetVideoHeight);
+    });
+
+    function resetVideoHeight() {
+        $(".video").css("height", $("#results").width() * 9/16);
+    }
+
+    function init() {
+        gapi.client.setApiKey("AIzaSyCDQM84XUFkyA6__WNdffCvmMzYoiaA6og");
+        gapi.client.load("youtube", "v3", function() {
+            // yt api is ready
+        });
+    }
+</script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
 </body>
 </html>
 
