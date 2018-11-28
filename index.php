@@ -15,6 +15,8 @@
           header('location: login.php');
           //include( 'login.php' );
       }
+  }else{
+      header('location: login.php');
   }
 
 
