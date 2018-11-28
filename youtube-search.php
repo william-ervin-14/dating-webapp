@@ -71,6 +71,7 @@ END;
             $htmlBody .= <<<END
         <h3>Videos</h3>
         <ul>$videos</ul>
+        
 
 END;
         } catch (Google_Service_Exception $e) {
@@ -90,6 +91,12 @@ END;
     </head>
     <body>
         <?=$htmlBody?>
+    <div>
+    </div>
+        <?php foreach ($thumbnails as $thumbnail): ?>
+            <?php echo $thumbnail ?>
+        <?php endforeach; ?>
+    </div>
     </body>
 </html>
 
