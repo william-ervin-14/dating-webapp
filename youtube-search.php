@@ -65,9 +65,9 @@
         <div>
             <?=$htmlBody?>
         </div>
-        <?php foreach ($searchResponse['items'] as $searchResult): ?>
+        <?php foreach ($thumbnails as $thumbnail): ?>
             <div>
-                <?php echo "<img src='$thumbnails'>"; ?>
+                <?php echo "<img src='$thumbnail'>"; ?>
             </div>
         <?php endforeach; ?>
     </body>
