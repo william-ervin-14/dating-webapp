@@ -18,7 +18,7 @@
     $friend_id = $_GET['uid'];
     $insert->add_chat($logged_user_id, $friend_id);
     $chat = $query->get_chat_id($logged_user_id, $friend_id);
-    $chat_id = $chat->ID;
+    $chat_id = ($chat->user_id);
 
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
