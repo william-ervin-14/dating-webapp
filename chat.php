@@ -78,3 +78,4 @@ if (isset($_GET['q'])) {
 }
 $current_video_id = $_GET['vid'];
 ?>
+

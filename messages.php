@@ -87,6 +87,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input name="message_recipient_id" type="hidden" value="<?php echo $current_tab_user->ID; ?>" />
                     <input class="message_input" name="message_content" type="text" placeholder="Your message">
                     <button class="submit_button" type="submit" value="Submit">Send</button>
+                    <ul>
+                        <li><a href="messages.php?uid=<?php echo $current_tab_user->ID; ?>">Go to Messages?</a></li>
+                    </ul>
+
                 </div>
             </div>
         </div>
