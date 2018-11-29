@@ -85,5 +85,6 @@
         <form action="messages.php" method="post">
             <button type="submit" name="exit_chat">Exit Chat</button>
         </form>
+        <h3><?php echo $chat_id; ?></h3>
     </body>
 </html>
