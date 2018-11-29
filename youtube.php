@@ -1,7 +1,6 @@
 <?php
 
     require_once('load.php');
-    include('includes/header.php');
 
     if (!isset($_SESSION['email'])) {
         $_SESSION['msg'] = "You must log in first";
@@ -78,5 +77,10 @@
                 <?php endforeach; ?>
             </div>
         </form>
+        <div class="leave-chat">
+            <ul>
+                <li><a href="messages.php">Exit Chat</a></li>
+            </ul>
+        </div>
     </body>
 </html>
