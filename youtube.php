@@ -17,10 +17,10 @@
     $message_received_objects = $query->get_message_received_objects($logged_user_id);
     $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
     $current_video_id = $_GET['vid'];
-    $friend_id = $_GET['uid'];
-    $current_tab_user = $query->load_user_object($friend_id);
-    $insert->add_chat($logged_user_id, $friend_id);
-    $chat = $query->get_chat_id($logged_user_id, $friend_id);
+    $_SESSION['friend_id'] = $_GET['uid'];
+    $current_tab_user = $query->load_user_object($_SESSION['friend_id']);
+    $insert->add_chat($logged_user_id, $_SESSION['friend_id']);
+    $chat = $query->get_chat_id($logged_user_id, $_SESSION['friend_id']);
     $chat_id = ($chat->ID);
 
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
@@ -55,7 +55,8 @@
         }
     }
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $insert->remove_chat($logged_user_id, $friend_id);
+        $insert->remove_chat($logged_user_id, $_SESSION['friend_id']);
+        unset($_SESSION['friend_id']);
     }
 
 ?>
