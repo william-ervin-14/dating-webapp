@@ -62,11 +62,6 @@
         </form>
         <h3>Videos</h3>
         <ul><?php echo $videos; ?></ul>
-        <?php foreach ($thumbnails as $thumbnail) : ?>
-            <div>
-                <?php echo "<img src='$thumbnail'>"; ?>
-            </div>
-        <?php endforeach; ?>
     </body>
 </html>
 
