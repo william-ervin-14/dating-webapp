@@ -61,7 +61,7 @@
     <div>
         Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
     </div>
-    <div class = "submit_button">
+    <div class = "youtube-submit-button">
         <input type="submit" value="Search">
     </div>
     <h3>Videos</h3>
