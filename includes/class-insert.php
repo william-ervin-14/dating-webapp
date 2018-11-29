@@ -65,6 +65,18 @@
 				
 				return $db->insert($query);
 			}
+			public function add_chat($user_id, $friend_id){
+                global $db;
+
+                $table = 'watching';
+
+                $query = "
+								INSERT INTO $table (user_id, friend_id)
+								VALUES ('$user_id', '$friend_id')
+							";
+
+                return $db->insert($query);
+            }
 		}
 	}
 	

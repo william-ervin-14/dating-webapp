@@ -14,6 +14,9 @@
     $email = $_SESSION['email'];
     $user = $query->load_user_objects_by_email($email);
     $logged_user_id = ($user->ID);
+    $current_video_id = $_GET['vid'];
+    $friend_id = $_GET['uid'];
+    $insert->add_chat($logged_user_id, $friend_id);
 
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
@@ -46,9 +49,8 @@
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
     }
-    $current_video_id = $_GET['vid'];
-    $current_user_id = $_GET['uid'];
-    $static_id = $current_user_id;
+
+
 ?>
 <html>
     <body>
