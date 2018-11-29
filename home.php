@@ -39,6 +39,11 @@
 			<ul>
 			<li><a href="messages.php">Messages</a></li>
 		</ul>
+        <div class="square">
+        <h3>Youtube</h3>
+            <ul>
+            <li><a href="youtube.php">Youtube</a></li>
+        </ul>
 		</div>
         <h2><?php echo $logged_user_id; ?></h2>
         <h2><?php echo $email; ?></h2>
