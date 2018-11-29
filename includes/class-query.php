@@ -303,9 +303,13 @@
                                 AND friend_id = '$friend_id'
 							";
 
-                $result = $db->select($query);
+                $obj = $db->select($query);
 
-                return $result;
+                if ( !$obj ) {
+                    return "No chat found";
+                }
+
+                return $obj[0];
             }
 
 
