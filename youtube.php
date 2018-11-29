@@ -14,6 +14,8 @@
     $email = $_SESSION['email'];
     $user = $query->load_user_objects_by_email($email);
     $logged_user_id = ($user->ID);
+    $message_received_objects = $query->get_message_received_objects($logged_user_id);
+    $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
     $current_video_id = $_GET['vid'];
     $friend_id = $_GET['uid'];
     $current_tab_user = $query->load_user_object($friend_id);
@@ -113,9 +115,6 @@
                 <input name="message_recipient_id" type="hidden" value="<?php echo $current_tab_user->ID; ?>" />
                 <input class="message_input" name="message_content" type="text" placeholder="Your message">
                 <button class="submit_button" type="submit" value="Submit">Send</button>
-                <ul>
-                    <li><a href="youtube.php?uid=<?php echo $current_tab_user->ID; ?>">Watch Youtube?</a></li>
-                </ul>
             </div>
         </div>
     </body>
