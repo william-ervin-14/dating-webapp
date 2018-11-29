@@ -51,7 +51,7 @@
 ?>
 <html>
     <body>
-        <iframe id="existing-iframe-example"
+        <iframe id="existing-iframe"
                 width="640" height="360"
                 src="https://www.youtube.com/embed/<?php echo $current_video_id; ?>?enablejsapi=1"
                 frameborder="0"
@@ -78,23 +78,9 @@
         </form>
 
         <script type="text/javascript">
-            var tag = document.createElement('script');
-            tag.id = 'iframe-demo';
-            tag.src = 'https://www.youtube.com/iframe_api';
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-            var player;
-            function onYouTubeIframeAPIReady() {
-                player = new YT.Player('existing-iframe-example', {
-                    events: {
-                        'onReady': onPlayerReady,
-                        'onStateChange': onPlayerStateChange
-                    }
-                });
-            }
             function onPlayerReady(event) {
-                document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
+                document.getElementById('existing-iframe').style.borderColor = '#FF6D00';
             }
             function changeBorderColor(playerStatus) {
                 var color;
