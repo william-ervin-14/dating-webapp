@@ -50,7 +50,7 @@
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
     }
-    if (isset($_GET['exit'])) {
+    if (isset($_POST['exit_chat'])) {
         $insert->remove_chat($chat_id);
     }
 
@@ -81,12 +81,9 @@
                 </ul>
                 <?php endforeach; ?>
             </div>
-            <div class="leave-chat">
-                <ul>
-                    <li><a href="messages.php" id="exit" name="exit">Exit Chat</a></li>
-                </ul>
-            </div>
         </form>
-
+        <form action="messages.php" method="post">
+            <button type="submit" name="exit_chat">Exit Chat</button>
+        </form>
     </body>
 </html>
