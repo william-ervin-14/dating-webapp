@@ -39,6 +39,7 @@
 			<ul>
 			<li><a href="messages.php">Messages</a></li>
 		</ul>
+        </div>
         <div class="square">
         <h3>Youtube</h3>
             <ul>
