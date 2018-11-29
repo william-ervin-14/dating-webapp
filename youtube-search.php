@@ -43,7 +43,7 @@
                 $searchResult['snippet']['title'], $searchResult['id']['videoId']);
         }
         foreach ($searchResponse['items'] as $searchResult) {
-            $thumbnails = $searchResult['snippet']['thumbnails']['default'];
+            $thumbnails = $searchResult['snippet']['thumbnails']['default']['url'];
         }
     }
 ?>
