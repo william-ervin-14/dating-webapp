@@ -21,25 +21,14 @@
 
     require_once __DIR__ . '/vendor/autoload.php';
 
-    // This code will execute if the user entered a search query in the form
-    // and submitted the form. Otherwise, the page displays the form above.
     if (isset($_GET['q'])) {
-        /*
-         * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
-         * {{ Google Cloud Console }} <{{ https://cloud.google.com/console }}>
-         * Please ensure that you have enabled the YouTube Data API for your project.
-         */
-        $DEVELOPER_KEY = 'AIzaSyCDQM84XUFkyA6__WNdffCvmMzYoiaA6og';
 
+        $DEVELOPER_KEY = 'AIzaSyCDQM84XUFkyA6__WNdffCvmMzYoiaA6og';
         $client = new Google_Client();
         $client->setDeveloperKey($DEVELOPER_KEY);
 
-        // Define an object that will be used to make all API requests.
         $youtube = new Google_Service_YouTube($client);
 
-
-        // Call the search.list method to retrieve results matching the specified
-        // query term.
         $searchResponse = $youtube->search->listSearch('id,snippet', array(
             'type' => 'video',
             'q' => $_GET['q'],
@@ -49,8 +38,6 @@
         $videos = '';
         $thumbnails;
 
-        // Add each result to the appropriate list, and then display the lists of
-        // matching videos, channels, and playlists.
         foreach ($searchResponse['items'] as $searchResult) {
             $videos .= sprintf('<li>%s (%s)</li>',
                 $searchResult['snippet']['title'], $searchResult['id']['videoId']);
@@ -58,11 +45,6 @@
         foreach ($searchResponse['items'] as $searchResult) {
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
-
-
-       
-
-
     }
 ?>
 
@@ -83,9 +65,13 @@
         <div>
             <?=$htmlBody?>
         </div>
-        <?php foreach ($thumbnails as $thumbnail): ?>
+        <?php foreach ($searchResponse['items'] as $searchResult): ?>
             <div>
-                <?php echo "<img src='$thumbnail'>"; ?>
+                <?php echo sprintf('<li>%s (%s)</li>',
+                $searchResult['snippet']['title'], $searchResult['id']['videoId']); ?>
+            </div>
+            <div>
+                <?php echo $searchResult['snippet']['thumbnails']['default']; ?>
             </div>
         <?php endforeach; ?>
     </body>
