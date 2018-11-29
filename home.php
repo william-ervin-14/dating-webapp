@@ -41,7 +41,7 @@
 		</ul>
         </div>
         <div class="square">
-        <h3>Youtube</h3>
+        <h3>YouTube</h3>
             <ul>
             <li><a href="youtube.php">YouTube</a></li>
         </ul>
