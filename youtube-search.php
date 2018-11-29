@@ -79,7 +79,7 @@
             <input type="submit" value="Search">
         </form>
         <h3>Videos</h3>
-        <ul>$videos</ul>
+        <ul><?php echo $videos; ?></ul>
         <div>
             <?=$htmlBody?>
         </div>
