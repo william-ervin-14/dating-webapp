@@ -303,7 +303,7 @@
                                 AND friend_id = '$friend_id'
 							";
 
-                $result = $db->select($query);
+                $result = $db->select_one($query);
 
                 return $result;
             }
