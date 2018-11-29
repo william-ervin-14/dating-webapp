@@ -61,11 +61,14 @@
     <div>
         Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
     </div>
-    <input type="submit" value="Search">
+    <div class = "submit_button">
+        <input type="submit" value="Search">
+    </div>
+    <h3>Videos</h3>
+    <div class="video-search-results">
+        <ul><?php echo $videos; ?></ul>
+    </div>
 </form>
-<h3>Videos</h3>
-<ul><?php echo $videos; ?></ul>
-
 
 <script type="text/javascript">
     var tag = document.createElement('script');
