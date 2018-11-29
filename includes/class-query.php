@@ -298,12 +298,12 @@
                 $table = 'watching';
 
                 $query = "
-								SELECT ID FROM $table
+								SELECT * FROM $table
 								WHERE user_id = '$user_id'
                                 AND friend_id = '$friend_id'
 							";
 
-                $result = $db->select_one($query);
+                $result = $db->select($query);
 
                 return $result;
             }
