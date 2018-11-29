@@ -83,7 +83,7 @@
             </div>
             <div class="leave-chat">
                 <ul>
-                    <li><a href="messages.php" name="exit">Exit Chat</a></li>
+                    <li><a href="messages.php" id="exit" name="exit">Exit Chat</a></li>
                 </ul>
             </div>
         </form>
