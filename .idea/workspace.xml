@@ -108,7 +108,7 @@
             <entry file="file://$PROJECT_DIR$/youtube-search.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="596">
-                  <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+                  <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
                 </state>
               </provider>
             </entry>
@@ -272,7 +272,7 @@
       <workItem from="1543270845708" duration="3759000" />
       <workItem from="1543439245907" duration="5452000" />
       <workItem from="1543446991959" duration="28000" />
-      <workItem from="1543447170470" duration="3660000" />
+      <workItem from="1543447170470" duration="3723000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -285,7 +285,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126207000" />
+    <option name="totallyTimeSpent" value="126270000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -491,7 +491,7 @@
     <entry file="file://$PROJECT_DIR$/youtube-search.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="596">
-          <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+          <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
         </state>
       </provider>
     </entry>

@@ -62,17 +62,13 @@
         </form>
         <h3>Videos</h3>
         <ul><?php echo $videos; ?></ul>
-        <ul><?php echo $thumbnails; ?></ul>
+        <ul><?php echo "<img src='$thumbnails'>"; ?></ul>
         <div>
             <?=$htmlBody?>
         </div>
         <?php foreach ($searchResponse['items'] as $searchResult): ?>
             <div>
-                <?php echo sprintf('<li>%s (%s)</li>',
-                $searchResult['snippet']['title'], $searchResult['id']['videoId']); ?>
-            </div>
-            <div>
-                <?php echo $searchResult['snippet']['thumbnails']['default']; ?>
+                <?php echo "<img src='$thumbnails'>"; ?>
             </div>
         <?php endforeach; ?>
     </body>
