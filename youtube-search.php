@@ -43,7 +43,7 @@
                 $searchResult['snippet']['title'], $searchResult['id']['videoId']);
         }
         foreach ($searchResponse['items'] as $searchResult) {
-            $thumbnails = $searchResult['snippet']['thumbnails']['standard'];
+            $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
     }
 ?>
@@ -65,7 +65,7 @@
         <div>
             <?=$htmlBody?>
         </div>
-        <?php foreach ($thumbnails as $thumbnail): ?>
+        <?php foreach ($thumbnails as $thumbnail) : ?>
             <div>
                 <?php echo "<img src='$thumbnail'>"; ?>
             </div>
