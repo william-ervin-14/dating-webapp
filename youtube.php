@@ -73,7 +73,7 @@
             <div class="video-search-results">
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
                 <ul>
-                    <li><a href="youtube.php?uid=<?php echo $static_id; ?>/vid=<?php echo $searchResult['id']['videoId']; ?>"><?php echo $searchResult['snippet']['title']; ?></a></li>
+                    <li><a href="youtube.php?vid=<?php echo $searchResult['id']['videoId']; ?>"><?php echo $searchResult['snippet']['title']; ?></a></li>
                 </ul>
                 <?php endforeach; ?>
             </div>
