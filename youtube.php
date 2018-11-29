@@ -52,7 +52,7 @@
         }
     }
     if (isset($_POST['exit_chat'])) {
-        $insert->remove_chat($chat_id);
+        $insert->remove_chat($logged_user_id, $friend_id);
     }
 
 ?>

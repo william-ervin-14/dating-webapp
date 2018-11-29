@@ -77,14 +77,15 @@
 
                 return $db->insert($query);
             }
-            public function remove_chat($chat_id){
+            public function remove_chat($user_id, $friend_id){
                 global $db;
 
                 $table = 'watching';
 
                 $query = "
 								DELETE FROM $table
-								WHERE ID = '$chat_id'
+								WHERE user_id = '$user_id'
+                                AND friend_id = '$friend_id'
 							";
 
                 return $db->insert($query);
