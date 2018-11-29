@@ -38,7 +38,6 @@
 		<h3>Messages</h3>
 			<ul>
 			<li><a href="messages.php">Messages</a></li>
-                <li><a href="youtube-search.php">Search-YT</a></li>
 		</ul>
 		</div>
         <h2><?php echo $logged_user_id; ?></h2>

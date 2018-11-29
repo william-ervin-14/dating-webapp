@@ -47,7 +47,7 @@
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
     }
-    $current_video_id = 'JgOPpoSB1Hw';
+    $current_video_id = '';
 ?>
 <html>
 <body>
