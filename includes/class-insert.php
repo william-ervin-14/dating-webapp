@@ -84,7 +84,7 @@
 
                 $query = "
 								DELETE FROM $table
-								WHERE ID = $chat_id
+								WHERE ID = '$chat_id'
 							";
 
                 return $db->insert($query);
