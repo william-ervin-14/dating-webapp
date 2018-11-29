@@ -71,7 +71,7 @@ END;
             $htmlBody .= <<<END
         <h3>Videos</h3>
         <ul>$videos</ul>
-        
+       
 
 END;
         } catch (Google_Service_Exception $e) {
@@ -90,8 +90,9 @@ END;
         <title>YouTube Search</title>
     </head>
     <body>
-        <?=$htmlBody?>
     <div>
+        <?=$htmlBody?>
+    </div>
     <?php foreach ($thumbnails as $thumbnail): ?>
         </div>
             <?php echo "<img src='$thumbnail'>"; ?>
