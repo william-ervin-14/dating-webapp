@@ -62,7 +62,6 @@
         </form>
         <h3>Videos</h3>
         <ul><?php echo $videos; ?></ul>
-        <ul><?php echo "<img src='$thumbnails'>"; ?></ul>
         <div>
             <?=$htmlBody?>
         </div>
