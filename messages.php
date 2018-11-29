@@ -19,6 +19,7 @@
     $message_received_objects = $query->get_message_received_objects($logged_user_id);
     $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
     $different_friends = $query->get_senders($logged_user_id);
+    $current_tab_id;
     if ( !empty ( $_GET['uid'] ) ) {
         $current_tab_id = $_GET['uid'];
         $current_tab_user = $query->load_user_object($current_tab_id);
