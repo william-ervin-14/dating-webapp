@@ -65,7 +65,7 @@
                 style="border: solid 4px #37474F"
         ></iframe>
         <div class="chat-container">
-            <?php include('includes/messages-container'); ?>
+            <?php include('includes/messages-container.php'); ?>
         </div>
         <form method="GET">
             <div>
