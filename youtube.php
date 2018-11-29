@@ -47,12 +47,13 @@
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
     }
+    $current_video_id = 'JgOPpoSB1Hw';
 ?>
 <html>
 <body>
 <iframe id="existing-iframe-example"
         width="640" height="360"
-        src="https://www.youtube.com/embed/?enablejsapi=1"
+        src="https://www.youtube.com/embed/<?php echo $current_video_id; ?>?enablejsapi=1"
         frameborder="0"
         style="border: solid 4px #37474F"
 ></iframe>
