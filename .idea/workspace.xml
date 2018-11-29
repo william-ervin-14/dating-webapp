@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dda1d095-7e6a-4fd6-9b08-2f152731ee88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/includes/class-query.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-query.php" afterDir="false" />
-    </list>
+    <list default="true" id="dda1d095-7e6a-4fd6-9b08-2f152731ee88" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +35,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/includes/class-insert.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="769">
@@ -55,10 +53,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/youtube.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1259">
+                <state relative-caret-position="718">
                   <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
                   <folding>
                     <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -288,7 +286,7 @@
       <workItem from="1543439245907" duration="5452000" />
       <workItem from="1543446991959" duration="28000" />
       <workItem from="1543447170470" duration="9808000" />
-      <workItem from="1543522360277" duration="6682000" />
+      <workItem from="1543522360277" duration="7048000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -301,7 +299,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139037000" />
+    <option name="totallyTimeSpent" value="139403000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -498,16 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/youtube.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1259">
-          <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/class-insert.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="769">
@@ -519,6 +507,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="298" lean-forward="true" selection-start-line="298" selection-end-line="298" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/youtube.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="718">
+          <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
