@@ -49,6 +49,7 @@
     }
     $current_video_id = $_GET['vid'];
     $current_user_id = $_GET['uid'];
+    $static_id = $current_user_id;
 ?>
 <html>
     <body>
@@ -72,7 +73,7 @@
             <div class="video-search-results">
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
                 <ul>
-                    <li><a href="youtube.php?uid=<?php echo $current_user_id; ?>/vid=<?php echo $searchResult['id']['videoId']; ?>"><?php echo $searchResult['snippet']['title']; ?></a></li>
+                    <li><a href="youtube.php?uid=<?php echo $static_id; ?>/vid=<?php echo $searchResult['id']['videoId']; ?>"><?php echo $searchResult['snippet']['title']; ?></a></li>
                 </ul>
                 <?php endforeach; ?>
             </div>
