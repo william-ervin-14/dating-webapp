@@ -36,7 +36,7 @@
         ));
 
         $videos = '';
-        $thumbnails;
+        $thumbnails = array();
 
         foreach ($searchResponse['items'] as $searchResult) {
             $videos .= sprintf('<li>%s (%s)</li>',
