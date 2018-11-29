@@ -47,70 +47,74 @@
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
     }
-    $current_video_id = '';
+    $current_video_id = $_GET['vid'];
 ?>
 <html>
-<body>
-<iframe id="existing-iframe-example"
-        width="640" height="360"
-        src="https://www.youtube.com/embed/<?php echo $current_video_id; ?>?enablejsapi=1"
-        frameborder="0"
-        style="border: solid 4px #37474F"
-></iframe>
-<form method="GET">
-    <div>
-        Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
-    </div>
-    <div class = "youtube-submit-button">
-        <input type="submit" value="Search">
-    </div>
-    <h3>Videos</h3>
-    <div class="video-search-results">
-        <ul><?php echo $videos; ?></ul>
-    </div>
-</form>
+    <body>
+        <iframe id="existing-iframe-example"
+                width="640" height="360"
+                src="https://www.youtube.com/embed/<?php echo $current_video_id; ?>?enablejsapi=1"
+                frameborder="0"
+                style="border: solid 4px #37474F"
+        ></iframe>
+        <form method="GET">
+            <div>
+                Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
+            </div>
+            <div class = "youtube-submit-button">
+                <input type="submit" value="Search">
+            </div>
+            <h3>Videos</h3>
+            <div class="video-search-results">
+                <?php foreach ($searchResponse['items'] as $searchResult) : ?>
+                <ul>
+                    <li><a href="youtube.php?vid=<?php echo $searchResult['id']['videoId']; ?>"><?php echo $searchResult['snippet']['title']; ?></a></li>
+                </ul>
+                <?php endforeach; ?>
+            </div>
+        </form>
 
-<script type="text/javascript">
-    var tag = document.createElement('script');
-    tag.id = 'iframe-demo';
-    tag.src = 'https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        <script type="text/javascript">
+            var tag = document.createElement('script');
+            tag.id = 'iframe-demo';
+            tag.src = 'https://www.youtube.com/iframe_api';
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    var player;
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('existing-iframe-example', {
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('existing-iframe-example', {
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
             }
-        });
-    }
-    function onPlayerReady(event) {
-        document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
-    }
-    function changeBorderColor(playerStatus) {
-        var color;
-        if (playerStatus == -1) {
-            color = "#37474F"; // unstarted = gray
-        } else if (playerStatus == 0) {
-            color = "#FFFF00"; // ended = yellow
-        } else if (playerStatus == 1) {
-            color = "#33691E"; // playing = green
-        } else if (playerStatus == 2) {
-            color = "#DD2C00"; // paused = red
-        } else if (playerStatus == 3) {
-            color = "#AA00FF"; // buffering = purple
-        } else if (playerStatus == 5) {
-            color = "#FF6DOO"; // video cued = orange
-        }
-        if (color) {
-            document.getElementById('existing-iframe-example').style.borderColor = color;
-        }
-    }
-    function onPlayerStateChange(event) {
-        changeBorderColor(event.data);
-    }
-</script>
-</body>
+            function onPlayerReady(event) {
+                document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
+            }
+            function changeBorderColor(playerStatus) {
+                var color;
+                if (playerStatus == -1) {
+                    color = "#37474F"; // unstarted = gray
+                } else if (playerStatus == 0) {
+                    color = "#FFFF00"; // ended = yellow
+                } else if (playerStatus == 1) {
+                    color = "#33691E"; // playing = green
+                } else if (playerStatus == 2) {
+                    color = "#DD2C00"; // paused = red
+                } else if (playerStatus == 3) {
+                    color = "#AA00FF"; // buffering = purple
+                } else if (playerStatus == 5) {
+                    color = "#FF6DOO"; // video cued = orange
+                }
+                if (color) {
+                    document.getElementById('existing-iframe-example').style.borderColor = color;
+                }
+            }
+            function onPlayerStateChange(event) {
+                changeBorderColor(event.data);
+            }
+        </script>
+    </body>
 </html>
