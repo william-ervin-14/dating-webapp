@@ -21,15 +21,6 @@
 
     require_once __DIR__ . '/vendor/autoload.php';
 
-    $htmlBody = <<<END
-    <form method="GET">
-      <div>
-        Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
-      </div>
-      <input type="submit" value="Search">
-    </form>
-END;
-
     // This code will execute if the user entered a search query in the form
     // and submitted the form. Otherwise, the page displays the form above.
     if (isset($_GET['q'])) {
@@ -45,42 +36,33 @@ END;
 
         // Define an object that will be used to make all API requests.
         $youtube = new Google_Service_YouTube($client);
-        try {
 
-            // Call the search.list method to retrieve results matching the specified
-            // query term.
-            $searchResponse = $youtube->search->listSearch('id,snippet', array(
-                'type' => 'video',
-                'q' => $_GET['q'],
-                'maxResults' => 25,
-            ));
 
-            $videos = '';
-            $thumbnails;
+        // Call the search.list method to retrieve results matching the specified
+        // query term.
+        $searchResponse = $youtube->search->listSearch('id,snippet', array(
+            'type' => 'video',
+            'q' => $_GET['q'],
+            'maxResults' => 25,
+        ));
 
-            // Add each result to the appropriate list, and then display the lists of
-            // matching videos, channels, and playlists.
-            foreach ($searchResponse['items'] as $searchResult) {
-                $videos .= sprintf('<li>%s (%s)</li>',
-                    $searchResult['snippet']['title'], $searchResult['id']['videoId']);
-            }
-            foreach ($searchResponse['items'] as $searchResult) {
-                $thumbnails = $searchResult['snippet']['thumbnails']['default'];
-            }
+        $videos = '';
+        $thumbnails;
 
-            $htmlBody .= <<<END
-        <h3>Videos</h3>
-        <ul>$videos</ul>
+        // Add each result to the appropriate list, and then display the lists of
+        // matching videos, channels, and playlists.
+        foreach ($searchResponse['items'] as $searchResult) {
+            $videos .= sprintf('<li>%s (%s)</li>',
+                $searchResult['snippet']['title'], $searchResult['id']['videoId']);
+        }
+        foreach ($searchResponse['items'] as $searchResult) {
+            $thumbnails = $searchResult['snippet']['thumbnails']['default'];
+        }
+
+
        
 
-END;
-        } catch (Google_Service_Exception $e) {
-            $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',
-                htmlspecialchars($e->getMessage()));
-        } catch (Google_Exception $e) {
-            $htmlBody .= sprintf('<p>An client error occurred: <code>%s</code></p>',
-                htmlspecialchars($e->getMessage()));
-        }
+
     }
 ?>
 
@@ -90,14 +72,22 @@ END;
         <title>YouTube Search</title>
     </head>
     <body>
-    <div>
-        <?=$htmlBody?>
-    </div>
-    <?php foreach ($thumbnails as $thumbnail): ?>
+        <form method="GET">
+            <div>
+                Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
+            </div>
+            <input type="submit" value="Search">
+        </form>
+        <h3>Videos</h3>
+        <ul>$videos</ul>
+        <div>
+            <?=$htmlBody?>
         </div>
-            <?php echo "<img src='$thumbnail'>"; ?>
-        </div>
-    <?php endforeach; ?>
+        <?php foreach ($thumbnails as $thumbnail): ?>
+            <div>
+                <?php echo "<img src='$thumbnail'>"; ?>
+            </div>
+        <?php endforeach; ?>
     </body>
 </html>
 
