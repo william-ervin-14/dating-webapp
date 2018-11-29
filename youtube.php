@@ -17,6 +17,7 @@
     $current_video_id = $_GET['vid'];
     $friend_id = $_GET['uid'];
     $insert->add_chat($logged_user_id, $friend_id);
+    $chat_id = $query->get_chat_id($logged_user_id, $friend_id);
 
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
@@ -49,7 +50,9 @@
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
     }
-
+    if (isset($_GET['exit'])) {
+        $insert->remove_chat($chat_id);
+    }
 
 ?>
 <html>
@@ -78,11 +81,12 @@
                 </ul>
                 <?php endforeach; ?>
             </div>
+            <div class="leave-chat">
+                <ul>
+                    <li><a href="messages.php" name="exit">Exit Chat</a></li>
+                </ul>
+            </div>
         </form>
-        <div class="leave-chat">
-            <ul>
-                <li><a href="messages.php">Exit Chat</a></li>
-            </ul>
-        </div>
+
     </body>
 </html>

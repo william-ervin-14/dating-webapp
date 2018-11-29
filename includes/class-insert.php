@@ -77,6 +77,18 @@
 
                 return $db->insert($query);
             }
+            public function remove_chat($chat_id){
+                global $db;
+
+                $table = 'watching';
+
+                $query = "
+								DELETE FROM $table
+								WHERE ID = $chat_id
+							";
+
+                return $db->insert($query);
+            }
 		}
 	}
 	

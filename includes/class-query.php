@@ -292,6 +292,22 @@
 			   usort($messages_temp, array($this, "cmp"));
 			   return $messages_temp;
             }
+            public function get_chat_id($user_id, $friend_id){
+                global $db;
+
+                $table = 'watching';
+
+                $query = "
+								SELECT ID FROM $table
+								WHERE user_id = '$user_id'
+                                AND friend_id = '$friend_id'
+							";
+
+                $result = $db->select($query);
+
+                return $result;
+            }
+
 
 		}
 	}
