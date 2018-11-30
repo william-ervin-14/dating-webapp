@@ -35,7 +35,7 @@
             unset($_POST['new_message_sender_id']);
             unset($_POST['new_message_recipient_id']);
             unset($_POST['new_message_content']);
-            header('location: messages.php');
+            header('location: messages.php?uid='.$current_tab_id);
         }
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
             $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
@@ -43,7 +43,7 @@
             unset($_POST['message_sender_id']);
             unset($_POST['message_recipient_id']);
             unset($_POST['message_content']);
-            header('location: messages.php');
+            header('location: messages.php?uid='.$current_tab_id);
         }
 
     }
