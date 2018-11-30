@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dda1d095-7e6a-4fd6-9b08-2f152731ee88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +42,7 @@
             <entry file="file://$PROJECT_DIR$/includes/header.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="578">
-                  <caret line="34" column="71" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="71" />
+                  <caret line="34" column="89" selection-start-line="34" selection-start-column="89" selection-end-line="34" selection-end-column="89" />
                 </state>
               </provider>
             </entry>
@@ -49,7 +50,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/youtube.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-336">
+                <state relative-caret-position="-322">
                   <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
                   <folding>
                     <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -92,8 +93,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/home.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="612">
-                  <caret line="45" column="67" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
+                <state relative-caret-position="698">
+                  <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -180,8 +181,8 @@
         <option value="$PROJECT_DIR$/includes/class-insert.php" />
         <option value="$PROJECT_DIR$/youtube.php" />
         <option value="$PROJECT_DIR$/messages.php" />
-        <option value="$PROJECT_DIR$/includes/header.php" />
         <option value="$PROJECT_DIR$/home.php" />
+        <option value="$PROJECT_DIR$/includes/header.php" />
       </list>
     </option>
   </component>
@@ -288,7 +289,7 @@
       <workItem from="1543439245907" duration="5452000" />
       <workItem from="1543446991959" duration="28000" />
       <workItem from="1543447170470" duration="9808000" />
-      <workItem from="1543522360277" duration="12409000" />
+      <workItem from="1543522360277" duration="12726000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -301,7 +302,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144764000" />
+    <option name="totallyTimeSpent" value="145081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -491,16 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/youtube.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336">
-          <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/class-insert.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1041">
@@ -529,17 +520,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/header.php">
+    <entry file="file://$PROJECT_DIR$/youtube.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="71" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="71" />
+        <state relative-caret-position="-322">
+          <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="45" column="67" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
+        <state relative-caret-position="698">
+          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="89" selection-start-line="34" selection-start-column="89" selection-end-line="34" selection-end-column="89" />
         </state>
       </provider>
     </entry>

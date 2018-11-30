@@ -47,11 +47,6 @@
 		</ul>
         </div>
         <div class="square">
-        <h3>YouTube</h3>
-            <ul>
-            <li><a href="youtube.php">YouTube</a></li>
-            <li><a href="chat.php">Chat</a></li>
-        </ul>
 		</div>
         <h2><?php echo $logged_user_id; ?></h2>
         <h2><?php echo $email; ?></h2>
