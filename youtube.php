@@ -118,17 +118,9 @@
                         <div class="message-box-received">
                             <p><?php echo $message_temp->message_content; ?></p>
                         </div>
-
-                        <div class="message-time-received">
-                            <p><?php echo $message_temp->message_time; ?></p>
-                        </div>
                     <?php else : ?>
                         <div class="message-box-sent">
                             <p><?php echo $message_temp->message_content; ?></p>
-                        </div>
-
-                        <div class="message-time-sent">
-                            <p><?php echo $message_temp->message_time; ?></p>
                         </div>
                     <?php endif ?>
                 <?php endforeach; ?>
