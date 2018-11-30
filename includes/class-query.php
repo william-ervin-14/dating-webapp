@@ -292,7 +292,7 @@
 			   usort($messages_temp, array($this, "cmp"));
 			   return $messages_temp;
             }
-            public function get_chat_id($user_id, $friend_id){
+            public function get_chat($user_id, $friend_id){
                 global $db;
 
                 $table = 'watching';

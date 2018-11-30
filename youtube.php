@@ -15,10 +15,16 @@
     $friend_id = $_GET['uid'];
     $_SESSION['friend_id'] = $friend_id;
     $current_tab_user = $query->load_user_object($_SESSION['friend_id']);
-    $insert->add_chat($logged_user_id, $_SESSION['friend_id']);
-    $chat = $query->get_chat_id($logged_user_id, $_SESSION['friend_id']);
-    $chat_id = ($chat->ID);
     $different_friends = $query->get_senders($logged_user_id);
+    $chat = $query->get_chat($logged_user_id, $_SESSION['friend_id']);
+
+    if("No chat found" == $chat){
+        $insert->add_chat($logged_user_id, $_SESSION['friend_id']);
+        $chat = $query->get_chat($logged_user_id, $_SESSION['friend_id']);
+        $chat_id = ($chat->ID);
+    }else{
+        $chat_id = ($chat->ID);
+    }
 
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
