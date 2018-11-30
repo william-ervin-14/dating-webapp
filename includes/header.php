@@ -7,6 +7,15 @@
     $email = $_SESSION['email'];
     $user = $query->load_user_objects_by_email ($email);
     $logged_user_id = ($user->ID);
+    $different_friends = $query->get_senders($logged_user_id);
+    if ( !$different_friends ) {
+        $friend_id = '';
+    }else{
+        $friend = $different_friends[0];
+        $friend_id = $friend->ID;
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +32,7 @@
 				<li><a href="profile-edit.php">Edit Profile</a></li>
 				<li><a href="friends-directory.php">Member Directory</a></li>
 				<li><a href="friends-list.php">Friends List</a></li>
-                <li><a href="messages.php">Messages</a></li>
+                <li><a href="messages.php?uid=<?php echo $friend_id ?>">Messages</a></li>
                 <li><a href="youtube.php">YouTube</a></li>
                 <li><a href="notifications.php">Notifications</a></li>
 				<li><a href="login.php" name="logout">Log out</a></li>
