@@ -114,7 +114,7 @@
                 frameborder="0"
                 style="border: solid 4px #37474F"
         ></iframe>
-        <form action="messages.php?uid=<?php echo $friend_id ?>" method="post">
+        <form action="messages.php?uid=<?php echo $friend_id ?>" method="POST">
             <input type="submit" name="exit_chat" value="Exit Chat"/>
         </form>
         <h3><?php echo $chat_id; ?></h3>
