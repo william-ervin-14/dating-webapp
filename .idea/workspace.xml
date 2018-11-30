@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dda1d095-7e6a-4fd6-9b08-2f152731ee88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube.php" beforeDir="false" afterPath="$PROJECT_DIR$/messages/youtube.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +66,7 @@
             <entry file="file://$PROJECT_DIR$/messages.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="684">
-                  <caret line="94" column="78" selection-start-line="94" selection-start-column="78" selection-end-line="94" selection-end-column="78" />
+                  <caret line="94" column="90" lean-forward="true" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="90" />
                 </state>
               </provider>
             </entry>
@@ -245,6 +243,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Will\Desktop\Capstone\dating-webapp\messages" />
       <recent name="C:\Users\Will\Desktop\Capstone\dating-webapp\includes" />
     </key>
   </component>
@@ -291,7 +290,7 @@
       <workItem from="1543439245907" duration="5452000" />
       <workItem from="1543446991959" duration="28000" />
       <workItem from="1543447170470" duration="9808000" />
-      <workItem from="1543522360277" duration="14408000" />
+      <workItem from="1543522360277" duration="14466000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -304,7 +303,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146763000" />
+    <option name="totallyTimeSpent" value="146821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -542,7 +541,7 @@
     <entry file="file://$PROJECT_DIR$/messages.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
-          <caret line="94" column="78" selection-start-line="94" selection-start-column="78" selection-end-line="94" selection-end-column="78" />
+          <caret line="94" column="90" lean-forward="true" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="90" />
         </state>
       </provider>
     </entry>
