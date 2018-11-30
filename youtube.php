@@ -22,6 +22,13 @@
     $insert->add_chat($logged_user_id, $_SESSION['friend_id']);
     $chat = $query->get_chat_id($logged_user_id, $_SESSION['friend_id']);
     $chat_id = ($chat->ID);
+    $different_friends = $query->get_senders($logged_user_id);
+    if ( !$different_friends ) {
+        $friend_id = '';
+    }else{
+        $friend = $different_friends[0];
+        $friend_id = $friend->ID;
+    }
 
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
@@ -61,6 +68,10 @@
 
 ?>
 <html>
+    <head>
+        <title>Youtube</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
     <body>
     <div class="row">
         <form method="GET">
@@ -85,7 +96,7 @@
                 frameborder="0"
                 style="border: solid 4px #37474F"
         ></iframe>
-        <form action="messages.php" method="post">
+        <form action="messages.php?uid=<?php echo $friend_id ?>k" method="post">
             <button type="submit" name="exit_chat">Exit Chat</button>
         </form>
         <h3><?php echo $chat_id; ?></h3>
