@@ -71,8 +71,11 @@
 
     }
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $insert->remove_chat($logged_user_id, $_SESSION['friend_id']);
-        unset($_SESSION['friend_id']);
+
+        if(isset($_POST['exit_chat'])){
+            $insert->remove_chat($logged_user_id, $_SESSION['friend_id']);
+            unset($_SESSION['friend_id']);
+        }
     }
 
 ?>
@@ -105,7 +108,7 @@
                 frameborder="0"
                 style="border: solid 4px #37474F"
         ></iframe>
-        <form action="messages.php?uid=<?php echo $friend_id ?>">
+        <form action="messages.php?uid=<?php echo $friend_id ?>" method="post">
             <button type="submit" name="exit_chat">Exit Chat</button>
         </form>
         <h3><?php echo $chat_id; ?></h3>
