@@ -79,7 +79,7 @@
 
     $exit_chat_button = $_POST['exit_chat'];
     if($exit_chat_button){
-        $insert->remove_chat($logged_user_id, $_SESSION['friend_id']);
+        $insert->remove_chat($chat_id);
         unset($_SESSION['friend_id']);
     }
 
