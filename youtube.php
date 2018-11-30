@@ -62,6 +62,7 @@
 ?>
 <html>
     <body>
+    <div class="row">
         <form method="GET">
             <div>
                 Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
@@ -118,5 +119,6 @@
                 <button class="submit_button" type="submit" value="Submit">Send</button>
             </div>
         </div>
+    </div>
     </body>
 </html>
