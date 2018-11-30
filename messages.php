@@ -49,7 +49,6 @@
     }
 ?>
 <h1>Messages</h1>
-<h3><?php echo $current_tab->ID; ?></h3>
     <form method="post">
         <div class="row">
             <div id="vertical-navigation">
