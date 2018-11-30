@@ -70,7 +70,7 @@
 <html>
     <head>
         <title>Youtube</title>
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../css/style.css" />
     </head>
     <body>
     <div class="row">
@@ -96,7 +96,7 @@
                 frameborder="0"
                 style="border: solid 4px #37474F"
         ></iframe>
-        <form action="messages.php?uid=<?php echo $friend_id ?>" method="post">
+        <form action="../messages.php?uid=<?php echo $friend_id ?>" method="post">
             <button type="submit" name="exit_chat">Exit Chat</button>
         </form>
         <h3><?php echo $chat_id; ?></h3>

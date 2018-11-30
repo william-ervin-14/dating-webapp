@@ -92,7 +92,7 @@
                 </div>
             </div>
             <ul>
-                <li><a href="youtube.php?uid=<?php echo $current_tab_user->ID; ?>">Watch Youtube?</a></li>
+                <li><a href="messages?uid=<?php echo $current_tab_user->ID; ?>/youtube.php">Watch Youtube?</a></li>
             </ul>
         </div>
     </form>
