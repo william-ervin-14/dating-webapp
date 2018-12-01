@@ -336,8 +336,8 @@
                     ?><p>No invitations found</p> <?php
                 }else{
                     foreach ( $invitations as $invitation ) { ?>
-                        <div class="directory_item">
-                            <p><?php echo $invitations->ID; ?></p>
+                        <div class="invitation-item">
+                            <p><?php echo $invitation->ID; ?></p>
                         </div>
                         <?php
                     }
@@ -368,7 +368,7 @@
                     ?><p>No notifications found</p> <?php
                 }else{
                     foreach ( $notifications as $notification ) { ?>
-                        <div class="directory_item">
+                        <div class="notification_item">
                             <p><?php echo $notification->ID; ?></p>
                         </div>
                         <?php
