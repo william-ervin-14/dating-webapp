@@ -39,7 +39,7 @@
             header('location: messages.php?uid='.$current_tab_id);
         }
         if(isset($_POST['send_invitation'])){
-            $insert->send_invitation($logged_user_id, $current_tab_id, 0, 0);
+            $insert->send_invitation($current_tab_id, $logged_user_id, 0, 0);
         }
 
     }
