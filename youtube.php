@@ -18,9 +18,11 @@
     $video_url = '';
 
     if("No chat found" == $chat){
-        $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
-        $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
-        $chat_id = ($chat->ID);
+        if(isset($_SESSION['message_friend_id'])){
+            $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
+            $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
+            $chat_id = ($chat->ID);
+        }
     }else{
         $chat_id = ($chat->ID);
     }
@@ -57,14 +59,6 @@
         }
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (!empty($_POST['new_message_content']) && isset($_POST['new_message_recipient_id'])) {
-            $send_message = $insert->send_message($_POST['new_message_time'], $_POST['new_message_sender_id'], $_POST['new_message_recipient_id'], $_POST['new_message_content']);
-            unset($_POST['new_message_time']);
-            unset($_POST['new_message_sender_id']);
-            unset($_POST['new_message_recipient_id']);
-            unset($_POST['new_message_content']);
-            header('location: messages.php?uid='.$_SESSION['message_friend_id']);
-        }
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
             $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
             unset($_POST['message_time']);
@@ -73,10 +67,9 @@
             unset($_POST['message_content']);
             header('location: '.$video_url);
         }
-
     }
     if(isset($_POST['exit_chat'])){
-        $insert->remove_chat($chat_id);
+        $insert->remove_chat($logged_user_id, $_SESSION['message_friend_id']);
         unset($_SESSION['message_friend_id']);
     }
 
