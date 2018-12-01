@@ -70,8 +70,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/invitations.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+                <state relative-caret-position="646">
+                  <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -128,8 +128,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/includes/class-query.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="803">
-                  <caret line="377" column="69" selection-start-line="377" selection-start-column="69" selection-end-line="377" selection-end-column="69" />
+                <state relative-caret-position="378">
+                  <caret line="346" column="17" lean-forward="true" selection-start-line="334" selection-start-column="16" selection-end-line="346" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
@@ -279,7 +279,7 @@
       <workItem from="1543439245907" duration="5452000" />
       <workItem from="1543446991959" duration="28000" />
       <workItem from="1543447170470" duration="9808000" />
-      <workItem from="1543522360277" duration="29872000" />
+      <workItem from="1543522360277" duration="30772000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -292,13 +292,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162227000" />
+    <option name="totallyTimeSpent" value="163127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4936351" visible="true" weight="0.11140725" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4936351" visible="true" weight="0.11140725" />
       <window_info id="Structure" order="1" sideWeight="0.50636494" side_tool="true" weight="0.0" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -316,7 +316,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3295302" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32942432" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4936351" visible="true" weight="0.11140725" />
@@ -536,15 +536,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/class-query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="377" column="69" selection-start-line="377" selection-start-column="69" selection-end-line="377" selection-end-column="69" />
+        <state relative-caret-position="378">
+          <caret line="346" column="17" lean-forward="true" selection-start-line="334" selection-start-column="16" selection-end-line="346" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invitations.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="646">
+          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
         </state>
       </provider>
     </entry>
