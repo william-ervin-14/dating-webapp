@@ -311,6 +311,25 @@
 
                 return $obj[0];
             }
+            public function get_invitations($user_id, $friend_id){
+                global $db;
+
+                $table = 'watching';
+
+                $query = "
+								SELECT * FROM $table
+								WHERE user_id = '$user_id'
+                                AND friend_id = '$friend_id'
+							";
+
+                $obj = $db->select($query);
+
+                if ( !$obj ) {
+                    return "No chat found";
+                }
+
+                return $obj[0];
+            }
 
 
 		}
