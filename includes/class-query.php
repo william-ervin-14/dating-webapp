@@ -338,7 +338,7 @@
                     foreach ( $invitations as $invitation ) {
                         $friend = $this->load_user_object($invitation->friend_id)?>
                         <div class="invitation-item">
-                            <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
+                            <h3>Video Invitation from:<?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
                         </div>
                         <?php
                     }
@@ -371,7 +371,7 @@
                     foreach ( $notifications as $notification ) {
                         $friend = $this->load_user_object($notification->friend_id)?>
                         <div class="notification_item">
-                            <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
+                            <h3>Notification from: <?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
                         </div>
                         <?php
                     }
