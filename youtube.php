@@ -12,8 +12,7 @@
     $message_received_objects = $query->get_message_received_objects($logged_user_id);
     $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
     $current_video_id = $_GET['vid'];
-    $friend_id = $_GET['uid'];
-    $_SESSION['friend_id'] = $friend_id;
+    $friend_id = $_SESSION['message_friend_id'];
     $current_tab_user = $query->load_user_object($_SESSION['friend_id']);
     $different_friends = $query->get_senders($logged_user_id);
     $chat = $query->get_chat($logged_user_id, $_SESSION['friend_id']);
@@ -78,7 +77,7 @@
     }
     if(isset($_POST['exit_chat'])){
         $insert->remove_chat($chat_id);
-        unset($_SESSION['friend_id']);
+        unset($_SESSION['message_friend_id']);
     }
 
 
