@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dda1d095-7e6a-4fd6-9b08-2f152731ee88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/invitations.php" beforeDir="false" afterPath="$PROJECT_DIR$/invitations.php" afterDir="false" />
-    </list>
+    <list default="true" id="dda1d095-7e6a-4fd6-9b08-2f152731ee88" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +68,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/invitations.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="646">
-                  <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+                <state relative-caret-position="595">
+                  <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -128,8 +126,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/includes/class-query.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="346" column="17" lean-forward="true" selection-start-line="334" selection-start-column="16" selection-end-line="346" selection-end-column="17" />
+                <state relative-caret-position="497">
+                  <caret line="338" column="38" lean-forward="true" selection-start-line="338" selection-start-column="38" selection-end-line="338" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
@@ -279,7 +277,7 @@
       <workItem from="1543439245907" duration="5452000" />
       <workItem from="1543446991959" duration="28000" />
       <workItem from="1543447170470" duration="9808000" />
-      <workItem from="1543522360277" duration="30772000" />
+      <workItem from="1543522360277" duration="31018000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -292,7 +290,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163127000" />
+    <option name="totallyTimeSpent" value="163373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -534,17 +532,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/class-query.php">
+    <entry file="file://$PROJECT_DIR$/invitations.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="346" column="17" lean-forward="true" selection-start-line="334" selection-start-column="16" selection-end-line="346" selection-end-column="17" />
+        <state relative-caret-position="595">
+          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/invitations.php">
+    <entry file="file://$PROJECT_DIR$/includes/class-query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+        <state relative-caret-position="497">
+          <caret line="338" column="38" lean-forward="true" selection-start-line="338" selection-start-column="38" selection-end-line="338" selection-end-column="38" />
         </state>
       </provider>
     </entry>
