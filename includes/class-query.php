@@ -332,7 +332,7 @@
             public function do_invitations($user_id){
                 $invitations =$this->get_invitations($user_id);
 
-                if("No notifications found" == $invitations){
+                if("No invitations found" == $invitations){
                     ?><p>No invitations found</p> <?php
                 }else{
                     foreach ( $invitations as $invitation ) { ?>
