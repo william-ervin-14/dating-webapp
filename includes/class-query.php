@@ -329,23 +329,6 @@
 
                 return $obj;
             }
-            public function do_invitations($user_id){
-                $invitations =$this->get_invitations($user_id);
-
-                if("No invitations found" == $invitations){
-                    ?><h3>No invitations found</h3> <?php
-                }else{
-                    foreach ( $invitations as $invitation ) {
-                        $friend = $this->load_user_object($invitation->friend_id)?>
-                        <div class="invitation-item">
-                            <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
-                            <input type="submit" name="accept_invitation" value="Accept"/>
-                            <input type="submit" name="delete_invitation" value="Delete"/>
-                        </div>
-                        <?php
-                    }
-                }
-            }
             public function get_notifications($user_id){
                 global $db;
 
