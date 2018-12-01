@@ -71,7 +71,7 @@
             unset($_POST['message_sender_id']);
             unset($_POST['message_recipient_id']);
             unset($_POST['message_content']);
-            header('location: youtube.php?vid='.$searchResult['id']['videoId']);
+            header('location: '.$video_url);
         }
 
     }
