@@ -38,7 +38,7 @@
             unset($_POST['message_content']);
             header('location: messages.php?uid='.$current_tab_id);
         }
-        if(isset($_POST['invitation'])){
+        if(isset($_POST['send_invitation'])){
             $insert->send_invitation($logged_user_id, $current_tab_id, 0, 0);
         }
 
@@ -82,7 +82,8 @@
                     <button class="submit_button" type="submit" value="Submit">Send</button>
                 </div>
             </div>
-            <ul>
+            <input>
+                <input type="submit" name="send_invitation" value="Send Invitation"/>
                 <li><a href="youtube.php?uid=<?php echo $current_tab_user->ID; ?>" name="invitation">Watch Youtube?</a></li>
             </ul>
         </div>
