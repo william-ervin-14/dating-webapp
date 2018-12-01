@@ -337,7 +337,7 @@
                 }else{
                     foreach ( $invitations as $invitation ) { ?>
                         <div class="invitation-item">
-                            <h3>><?php echo $invitation->ID; ?></h3>
+                            <h3><?php echo $invitation->ID; ?></h3>
                         </div>
                         <?php
                     }
