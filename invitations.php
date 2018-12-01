@@ -16,11 +16,12 @@ $user = $query->load_user_objects_by_email($email);
 $logged_user_id = ($user->ID);
 ?>
 <html>
-<head>
-    <title>Invitations</title>
-</head>
-<h1>Invitations</h1>
-<div class="content">
+    <head>
+        <title>Invitations</title>
+    </head>
 
-</div>
+    <h1>Invitations</h1>
+    <div class="content">
+
+    </div>
 </html>

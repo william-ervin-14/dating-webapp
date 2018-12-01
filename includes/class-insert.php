@@ -90,6 +90,30 @@
 
                 return $db->insert($query);
             }
+            public function send_invitation($user_id, $friend_id, $view_status, $accepted_status){
+                global $db;
+
+                $table = 'video_invitations';
+
+                $query = "
+								INSERT INTO $table (user_id, friend_id, view_status, accepted_status)
+								VALUES ('$user_id', '$friend_id', '$view_status', '$accepted_status')
+							";
+
+                return $db->insert($query);
+            }
+            public function send_notification($user_id, $friend_id, $notification_content){
+                global $db;
+
+                $table = 'notifications';
+
+                $query = "
+								INSERT INTO $table (user_id, friend_id, notification_content)
+								VALUES ('$user_id', '$friend_id', '$notification_content')
+							";
+
+                return $db->insert($query);
+            }
 		}
 	}
 	

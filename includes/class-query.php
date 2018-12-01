@@ -176,15 +176,15 @@
             }
 			
 			public function do_user_directory() {
-				$users = $this->load_all_user_objects();
-				
-				foreach ( $users as $user ) { ?>
-					<div class="directory_item">
-						<h3><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}"; ?></a></h3>
-						<p><?php echo $user->email; ?></p>
-					</div>
-				<?php
-				}
+                $users = $this->load_all_user_objects();
+
+                foreach ( $users as $user ) { ?>
+                    <div class="directory_item">
+                        <h3><a href="profile-view.php?uid=<?php echo $user->ID; ?>"><?php echo "{$user->firstname} {$user->lastname}"; ?></a></h3>
+                        <p><?php echo $user->email; ?></p>
+                    </div>
+                    <?php
+                }
 			}
 			
 			public function do_friends_list($friends_array) {
@@ -311,24 +311,61 @@
 
                 return $obj[0];
             }
-            public function get_invitations($user_id, $friend_id){
+            public function get_invitations($user_id){
                 global $db;
 
-                $table = 'watching';
+                $table = 'video_invitations';
 
                 $query = "
 								SELECT * FROM $table
 								WHERE user_id = '$user_id'
-                                AND friend_id = '$friend_id'
 							";
 
                 $obj = $db->select($query);
 
                 if ( !$obj ) {
-                    return "No chat found";
+                    return "No invitations found";
                 }
 
                 return $obj[0];
+            }
+            public function do_invitations($user_id){
+                $invitations =$this->get_invitations($user_id);
+
+                foreach ( $invitations as $invitation ) { ?>
+                    <div class="directory_item">
+                        <p><?php echo $invitation->ID; ?></p>
+                    </div>
+                    <?php
+                }
+            }
+            public function get_notifications($user_id){
+                global $db;
+
+                $table = 'notifications';
+
+                $query = "
+								SELECT * FROM $table
+								WHERE user_id = '$user_id'
+							";
+
+                $obj = $db->select($query);
+
+                if ( !$obj ) {
+                    return "No notifications found";
+                }
+
+                return $obj[0];
+            }
+            public function do_notifications($user_id){
+                $notifications =$this->get_notifications($user_id);
+
+			    foreach ( $notifications as $notification ) { ?>
+                    <div class="directory_item">
+                        <p><?php echo $notification->ID; ?></p>
+                    </div>
+                    <?php
+                }
             }
 
 
