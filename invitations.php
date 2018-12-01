@@ -29,7 +29,7 @@ $invitations = $query->get_invitations($logged_user_id)
         <h3>No invitations found</h3>
     <? else : ?>
         <?php foreach ( $invitations as $invitation ) : ?>
-            <?php $friend = $this->load_user_object($invitation->friend_id)?>
+            <?php $friend = $query->load_user_object($invitation->friend_id)?>
             <div class="invitation-item">
                 <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
                 <input type="submit" name="accept_invitation" value="Accept"/>
