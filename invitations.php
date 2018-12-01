@@ -22,6 +22,7 @@ $invitations = $query->get_invitations($logged_user_id)
     </head>
 
     <h1>Invitations</h1>
+    <div class="content">
     <?php if("No invitations found" == $invitations): ?>
         <h3>No invitations found</h3>
     <? else : ?>
@@ -34,4 +35,5 @@ $invitations = $query->get_invitations($logged_user_id)
             </div>
         <?php endforeach;?>
     <?php endif; ?>
+    </div>
 </html>
