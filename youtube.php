@@ -110,8 +110,7 @@
         <form action="messages.php?uid=<?php echo $_SESSION['message_friend_id']; ?>" method="POST">
             <input type="submit" name="exit_chat" value="Exit Chat"/>
         </form>
-        <iframe name="iframe"/>
-        <form method="post" target="iframe">
+        <form method="post">
             <div class ="chat-container">
                 <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $current_tab_user); ?>
                 <div class="top-name"><h4><?php echo "{$current_tab_user->firstname} {$current_tab_user->lastname}" ; ?></h4></div>
