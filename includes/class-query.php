@@ -327,7 +327,7 @@
                     return "No invitations found";
                 }
 
-                return $obj[0];
+                return $obj;
             }
             public function do_invitations($user_id){
                 $invitations =$this->get_invitations($user_id);
@@ -359,7 +359,7 @@
                     return "No notifications found";
                 }
 
-                return $obj[0];
+                return $obj;
             }
             public function do_notifications($user_id){
                 $notifications =$this->get_notifications($user_id);
