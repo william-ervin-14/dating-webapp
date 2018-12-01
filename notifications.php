@@ -18,6 +18,5 @@ $logged_user_id = ($user->ID);
 <html>
     <head>
         <title>Notifications</title>
-        <link rel="stylesheet" href="css/style.css" />
     </head>
 </html>
