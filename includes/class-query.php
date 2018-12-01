@@ -335,9 +335,10 @@
                 if("No invitations found" == $invitations){
                     ?><h3>No invitations found</h3> <?php
                 }else{
-                    foreach ( $invitations as $invitation ) { ?>
+                    foreach ( $invitations as $invitation ) {
+                        $friend = $this->load_user_object($invitation->friend_id)?>
                         <div class="invitation-item">
-                            <h3><?php echo $invitation->ID; ?></h3>
+                            <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
                         </div>
                         <?php
                     }
@@ -367,9 +368,10 @@
                 if("No notifications found" == $notifications){
                     ?><h3>No notifications found</h3> <?php
                 }else{
-                    foreach ( $notifications as $notification ) { ?>
+                    foreach ( $notifications as $notification ) {
+                        $friend = $this->load_user_object($notification->friend_id)?>
                         <div class="notification_item">
-                            <h3><?php echo $notification->ID; ?></h3>
+                            <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
                         </div>
                         <?php
                     }
