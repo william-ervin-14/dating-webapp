@@ -30,14 +30,6 @@
         $friend_objects[] = $query->load_user_object($friend_id);
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (!empty($_POST['new_message_content']) && isset($_POST['new_message_recipient_id'])) {
-            $send_message = $insert->send_message($_POST['new_message_time'], $_POST['new_message_sender_id'], $_POST['new_message_recipient_id'], $_POST['new_message_content']);
-            unset($_POST['new_message_time']);
-            unset($_POST['new_message_sender_id']);
-            unset($_POST['new_message_recipient_id']);
-            unset($_POST['new_message_content']);
-            header('location: messages.php?uid='.$current_tab_id);
-        }
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
             $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
             unset($_POST['message_time']);
@@ -45,6 +37,9 @@
             unset($_POST['message_recipient_id']);
             unset($_POST['message_content']);
             header('location: messages.php?uid='.$current_tab_id);
+        }
+        if(isset($_POST['invitation'])){
+            $insert->send_invitation($logged_user_id, $current_tab_id, 0, 0);
         }
 
     }
@@ -87,7 +82,7 @@
                 </div>
             </div>
             <ul>
-                <li><a href="youtube.php?uid=<?php echo $current_tab_user->ID; ?>">Watch Youtube?</a></li>
+                <li><a href="youtube.php?uid=<?php echo $current_tab_user->ID; ?>" name="invitation">Watch Youtube?</a></li>
             </ul>
         </div>
     </form>
