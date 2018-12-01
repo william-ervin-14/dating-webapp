@@ -333,11 +333,11 @@
                 $invitations =$this->get_invitations($user_id);
 
                 if("No invitations found" == $invitations){
-                    ?><p>No invitations found</p> <?php
+                    ?><h3>No invitations found</h3> <?php
                 }else{
                     foreach ( $invitations as $invitation ) { ?>
                         <div class="invitation-item">
-                            <p><?php echo $invitation->ID; ?></p>
+                            <h3>><?php echo $invitation->ID; ?></h3>
                         </div>
                         <?php
                     }
@@ -365,11 +365,11 @@
                 $notifications =$this->get_notifications($user_id);
 
                 if("No notifications found" == $notifications){
-                    ?><p>No notifications found</p> <?php
+                    ?><h3>No notifications found</h3> <?php
                 }else{
                     foreach ( $notifications as $notification ) { ?>
                         <div class="notification_item">
-                            <p><?php echo $notification->ID; ?></p>
+                            <h3><?php echo $notification->ID; ?></h3>
                         </div>
                         <?php
                     }
