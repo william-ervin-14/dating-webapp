@@ -339,6 +339,8 @@
                         $friend = $this->load_user_object($invitation->friend_id)?>
                         <div class="invitation-item">
                             <h3>Video Invitation from: <?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
+                            <input type="submit" name="accept_invitation" value="Accept"/>
+                            <input type="submit" name="delete_invitation" value="Delete"/>
                         </div>
                         <?php
                     }
@@ -372,6 +374,8 @@
                         $friend = $this->load_user_object($notification->friend_id)?>
                         <div class="notification_item">
                             <h3>Notification from: <?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
+                            <input type="submit" name="accept_notification" value="Accept"/>
+                            <input type="submit" name="delete_notification" value="Delete"/>
                         </div>
                         <?php
                     }
