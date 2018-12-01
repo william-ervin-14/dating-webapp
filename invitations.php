@@ -17,7 +17,7 @@ $logged_user_id = ($user->ID);
 ?>
 <html>
     <head>
-        <title>Invitations</title>
+        <title>Video Invitations</title>
     </head>
 
     <h1>Invitations</h1>
