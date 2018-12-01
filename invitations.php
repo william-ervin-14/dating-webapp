@@ -23,7 +23,7 @@ $invitations = $query->get_invitations($logged_user_id)
 
     <h1>Invitations</h1>
     <?php foreach( $invitations as $invitation): ?>
-        <h3><?php echo $invitation-ID; ?></h3>
+        <h3><?php echo $invitation->ID; ?></h3>
     <?php endforeach ?>
     <?php if("No invitations found" == $invitations): ?>
         <h3>No invitations found</h3>
