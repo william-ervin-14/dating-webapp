@@ -19,6 +19,9 @@
     $logged_user_id = ($user_temp->ID);
 	$user = $query->load_user_object($logged_user_id);
 ?>
+<head>
+    <title>Edit Profile</title>
+</head>
 		<h1>Edit Profile</h1>
 		<div class="content">
 			<form method="post">

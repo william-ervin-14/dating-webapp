@@ -12,6 +12,9 @@
         header("location: login.php");
     }
 ?>
+<head>
+    <title>Member Directory</title>
+</head>
 		<h1>Members Directory</h1>
 		<div class="content">
 			<?php $query->do_user_directory(); ?>

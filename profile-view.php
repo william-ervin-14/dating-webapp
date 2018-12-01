@@ -42,6 +42,9 @@
 	
 	$friends = $query->get_friends($logged_user_id);
 ?>
+<head>
+    <title>View Profile</title>
+</head>
 		<h1>View Profile</h1>
 		<div class="content">
 			<p>Name: <?php echo "{$user->firstname} {$user->lastname}"; ?></p>
