@@ -76,9 +76,7 @@
         }
 
     }
-
-    $exit_chat_button = $_POST['exit_chat'];
-    if($exit_chat_button){
+    if(isset($_POST['exit_chat'])){
         $insert->remove_chat($chat_id);
         unset($_SESSION['friend_id']);
     }
@@ -91,6 +89,8 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
+    <h3><?php echo $chat_id; ?></h3>
+    <h3><?php echo $_SESSION['friend_id']; ?></h3>
     <div class="row">
         <form method="GET">
             <div>
@@ -117,7 +117,6 @@
         <form action="messages.php?uid=<?php echo $friend_id ?>" method="POST">
             <input type="submit" name="exit_chat" value="Exit Chat"/>
         </form>
-        <h3><?php echo $chat_id; ?></h3>
         <form method="post">
             <div class ="chat-container">
                 <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $current_tab_user); ?>
