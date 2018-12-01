@@ -21,6 +21,6 @@ $logged_user_id = ($user->ID);
     </head>
     <h1>Notifications</h1>
     <div class="content">
-
+        <?php $query->get_notifications($logged_user_id); ?>
     </div>
 </html>

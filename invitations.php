@@ -22,6 +22,6 @@ $logged_user_id = ($user->ID);
 
     <h1>Invitations</h1>
     <div class="content">
-
+        <?php $query->get_invitations($logged_user_id); ?>
     </div>
 </html>
