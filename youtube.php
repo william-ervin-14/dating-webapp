@@ -15,6 +15,7 @@
     $current_tab_user = $query->load_user_object($_SESSION['message_friend_id']);
     $different_friends = $query->get_senders($logged_user_id);
     $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
+    $video_url = '';
 
     if("No chat found" == $chat){
         $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
@@ -70,7 +71,7 @@
             unset($_POST['message_sender_id']);
             unset($_POST['message_recipient_id']);
             unset($_POST['message_content']);
-            header('location: youtube.php?uid='.$_SESSION['message_friend_id']);
+            header('location: youtube.php?vid='.$searchResult['id']['videoId']);
         }
 
     }
@@ -100,8 +101,9 @@
             <h3>Videos</h3>
             <div class="video-search-results">
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
+                <?php $video_url = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
                 <ul>
-                    <li><a href="youtube.php?vid=<?php echo $searchResult['id']['videoId']; ?>"><?php echo $searchResult['snippet']['title']; ?></a></li>
+                    <li><a href=<?php echo $video_url; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
                 </ul>
                 <?php endforeach; ?>
             </div>
