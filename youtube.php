@@ -12,14 +12,13 @@
     $message_received_objects = $query->get_message_received_objects($logged_user_id);
     $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
     $current_video_id = $_GET['vid'];
-    $friend_id = $_SESSION['message_friend_id'];
-    $current_tab_user = $query->load_user_object($_SESSION['friend_id']);
+    $current_tab_user = $query->load_user_object($_SESSION['message_friend_id']);
     $different_friends = $query->get_senders($logged_user_id);
-    $chat = $query->get_chat($logged_user_id, $_SESSION['friend_id']);
+    $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
 
     if("No chat found" == $chat){
-        $insert->add_chat($logged_user_id, $_SESSION['friend_id']);
-        $chat = $query->get_chat($logged_user_id, $_SESSION['friend_id']);
+        $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
+        $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
         $chat_id = ($chat->ID);
     }else{
         $chat_id = ($chat->ID);
@@ -63,7 +62,7 @@
             unset($_POST['new_message_sender_id']);
             unset($_POST['new_message_recipient_id']);
             unset($_POST['new_message_content']);
-            header('location: messages.php?uid='.$friend_id);
+            header('location: messages.php?uid='.$_SESSION['message_friend_id']);
         }
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
             $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
@@ -71,7 +70,7 @@
             unset($_POST['message_sender_id']);
             unset($_POST['message_recipient_id']);
             unset($_POST['message_content']);
-            header('location: youtube.php?uid='.$friend_id);
+            header('location: youtube.php?uid='.$_SESSION['message_friend_id']);
         }
 
     }
@@ -113,7 +112,7 @@
                 frameborder="0"
                 style="border: solid 4px #37474F"
         ></iframe>
-        <form action="messages.php?uid=<?php echo $friend_id ?>" method="POST">
+        <form action="messages.php?uid=<?php echo $_SESSION['message_friend_id']; ?>" method="POST">
             <input type="submit" name="exit_chat" value="Exit Chat"/>
         </form>
         <form method="post">
