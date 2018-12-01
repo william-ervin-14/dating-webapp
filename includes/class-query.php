@@ -332,11 +332,15 @@
             public function do_invitations($user_id){
                 $invitations =$this->get_invitations($user_id);
 
-                foreach ( $invitations as $invitation ) { ?>
-                    <div class="directory_item">
-                        <p><?php echo $invitation->ID; ?></p>
-                    </div>
-                    <?php
+                if("No notifications found" == $invitations){
+                    ?><p>No invitations found</p> <?php
+                }else{
+                    foreach ( $invitations as $invitation ) { ?>
+                        <div class="directory_item">
+                            <p><?php echo $invitations->ID; ?></p>
+                        </div>
+                        <?php
+                    }
                 }
             }
             public function get_notifications($user_id){
@@ -360,12 +364,18 @@
             public function do_notifications($user_id){
                 $notifications =$this->get_notifications($user_id);
 
-			    foreach ( $notifications as $notification ) { ?>
-                    <div class="directory_item">
-                        <p><?php echo $notification->ID; ?></p>
-                    </div>
-                    <?php
+                if("No notifications found" == $notifications){
+                    ?><p>No notifications found</p> <?php
+                }else{
+                    foreach ( $notifications as $notification ) { ?>
+                        <div class="directory_item">
+                            <p><?php echo $notification->ID; ?></p>
+                        </div>
+                        <?php
+                    }
                 }
+
+
             }
 
 
