@@ -347,27 +347,6 @@
 
                 return $obj;
             }
-            public function do_notifications($user_id){
-                $notifications =$this->get_notifications($user_id);
-
-                if("No notifications found" == $notifications){
-                    ?><h3>No notifications found</h3> <?php
-                }else{
-                    foreach ( $notifications as $notification ) {
-                        $friend = $this->load_user_object($notification->friend_id)?>
-                        <div class="notification_item">
-                            <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
-                            <input type="submit" name="accept_notification" value="Accept"/>
-                            <input type="submit" name="delete_notification" value="Delete"/>
-                        </div>
-                        <?php
-                    }
-                }
-
-
-            }
-
-
 		}
 	}
 	
