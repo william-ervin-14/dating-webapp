@@ -24,7 +24,7 @@
 <h1>Notifications</h1>
 <form method="post">
     <div class="content">
-        <?php if("No notifications found" == $invitations): ?>
+        <?php if("No notifications found" == $notifications): ?>
             <h3>No notifications found</h3>
         <?php else : ?>
             <?php foreach ( $notifications as $notification ) : ?>
