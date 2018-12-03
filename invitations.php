@@ -16,11 +16,6 @@
     $logged_user_id = ($user->ID);
     $invitations = $query->get_invitations($logged_user_id);
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if(isset($_POST['accept_invitation'])){
-
-        }
-    }
 ?>
 <html>
     <head>

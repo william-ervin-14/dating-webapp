@@ -84,12 +84,8 @@
             </div>
             <h3>Videos</h3>
             <div class="video-search-results">
-                <?php foreach ($searchResponse['items'] as $searchResult) : ?>
-                <?php $video_url = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
-                <ul>
-                    <li><a href=<?php echo $video_url; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
-                </ul>
-                <?php endforeach; ?>
+                <?php $html = file_get_contents('youtube-search.php'); ?>
+                <?php echo $html; ?>
             </div>
         </form>
         <iframe id="existing-iframe"
