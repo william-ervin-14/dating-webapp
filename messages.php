@@ -22,16 +22,6 @@
     $current_tab_id;
     $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
 
-    if("No chat found" == $chat){
-        if(isset($_SESSION['message_friend_id'])){
-            $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
-            $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
-            $chat_id = ($chat->ID);
-        }
-    }else{
-        $chat_id = ($chat->ID);
-    }
-
     if ( !empty ( $_GET['uid'] ) ) {
         $current_tab_id = $_GET['uid'];
         $_SESSION['message_friend_id'] = $current_tab_id;
