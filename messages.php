@@ -96,7 +96,7 @@
             </div>
             <input>
                 <input type="submit" name="send_invitation" value="Send Invitation"/>
-                <li><a href="youtube.php?uid=<?php echo $chat_id; ?>" name="invitation">Watch Youtube?</a></li>
+                <li><a href="youtube.php?cid=<?php echo $chat_id; ?>" name="invitation">Watch Youtube?</a></li>
             </ul>
         </div>
     </form>

@@ -16,16 +16,7 @@
     $different_friends = $query->get_senders($logged_user_id);
     $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
     $video_url = '';
-
-    if("No chat found" == $chat){
-        if(isset($_SESSION['message_friend_id'])){
-            $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
-            $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
-            $chat_id = ($chat->ID);
-        }
-    }else{
-        $chat_id = ($chat->ID);
-    }
+    $chat_id = $_GET['cid'];
 
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
