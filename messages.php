@@ -20,10 +20,29 @@
     $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
     $different_friends = $query->get_senders($logged_user_id);
     $current_tab_id;
+    $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
+
+    if("No chat found" == $chat){
+        if(isset($_SESSION['message_friend_id'])){
+            $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
+            $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
+            $chat_id = ($chat->ID);
+        }
+    }else{
+        $chat_id = ($chat->ID);
+    }
+
     if ( !empty ( $_GET['uid'] ) ) {
         $current_tab_id = $_GET['uid'];
         $_SESSION['message_friend_id'] = $current_tab_id;
         $current_tab_user = $query->load_user_object($current_tab_id);
+        if("No chat found" == $chat){
+            $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
+            $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
+            $_SESSION['chat_id'] = ($chat->ID);
+        }else{
+            $_SESSION['chat_id'] = ($chat->ID);
+        }
     }
 
     foreach ( $friend_ids as $friend_id ) {
@@ -44,17 +63,7 @@
 
     }
 
-    $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
 
-    if("No chat found" == $chat){
-        if(isset($_SESSION['message_friend_id'])){
-            $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
-            $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
-            $chat_id = ($chat->ID);
-        }
-    }else{
-        $chat_id = ($chat->ID);
-    }
 ?>
 <head>
     <title>Messages</title>
@@ -96,7 +105,7 @@
             </div>
             <input>
                 <input type="submit" name="send_invitation" value="Send Invitation"/>
-                <li><a href="youtube.php?cid=<?php echo $chat_id; ?>" name="invitation">Watch Youtube?</a></li>
+                <li><a href="youtube.php?cid=<?php echo $_SESSION['chat_id']; ?>" name="invitation">Watch Youtube?</a></li>
             </ul>
         </div>
     </form>
