@@ -34,11 +34,12 @@
             <h3>No invitations found</h3>
         <?php else : ?>
             <?php foreach ( $invitations as $invitation ) : ?>
-                <?php $friend = $query->load_user_object($invitation->friend_id)?>
+                <?php $friend = $query->load_user_object($invitation->friend_id);?>
+                <?php $chat = $query->get_chat($friend->ID, $logged_user_id);?>
                 <div class="invitation-item">
                     <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
                     <ul>
-                        <li><a href="youtube.php?<?php echo $logged_user_id; ?>">Accept</a></li>
+                        <li><a href="youtube.php?<?php echo $chat->ID; ?>">Accept</a></li>
                     </ul>
                     <input type="submit" name="delete_invitation" value="Delete"/>
                 </div>
