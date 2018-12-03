@@ -299,8 +299,8 @@
 
                 $query = "
 								SELECT * FROM $table
-								WHERE user_id = '$user_id'
-                                AND friend_id = '$friend_id'
+								WHERE (user_id = '$user_id' OR user_id = '$friend_id')
+                                AND (friend_id = '$friend_id' OR friend_id = '$user_id')
 							";
 
                 $obj = $db->select($query);

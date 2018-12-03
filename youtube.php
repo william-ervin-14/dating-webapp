@@ -60,7 +60,7 @@
         }
     }
     if(isset($_POST['exit_chat'])){
-        $insert->remove_chat($logged_user_id, $_SESSION['message_friend_id']);
+        //$insert->remove_chat($logged_user_id, $_SESSION['message_friend_id']);
         unset($_SESSION['message_friend_id']);
     }
 
