@@ -35,9 +35,10 @@
         <?php else : ?>
             <?php foreach ( $invitations as $invitation ) : ?>
                 <?php $friend = $query->load_user_object($invitation->friend_id);?>
-                <?php $chat = $query->get_chat($friend->ID, $logged_user_id);?>
+                <?php $_SESSION['chat_id'] = $query->get_chat($friend->ID, $logged_user_id);?>
                 <div class="invitation-item">
                     <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
+                    <h3><?php echo $_SESSION['chat_id']; ?></h3>
                     <ul>
                         <li><a href="youtube.php?<?php echo $chat->ID; ?>">Accept</a></li>
                     </ul>
