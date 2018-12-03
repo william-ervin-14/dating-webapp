@@ -16,39 +16,7 @@
     $different_friends = $query->get_senders($logged_user_id);
     $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
     $video_url = '';
-
-
-    if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
-        throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
-    }
-
-    require_once __DIR__ . '/vendor/autoload.php';
-
-    if (isset($_GET['q'])) {
-
-        $DEVELOPER_KEY = 'AIzaSyCDQM84XUFkyA6__WNdffCvmMzYoiaA6og';
-        $client = new Google_Client();
-        $client->setDeveloperKey($DEVELOPER_KEY);
-
-        $youtube = new Google_Service_YouTube($client);
-
-        $searchResponse = $youtube->search->listSearch('id,snippet', array(
-            'type' => 'video',
-            'q' => $_GET['q'],
-            'maxResults' => 25,
-        ));
-
-        $videos = '';
-        $thumbnails = array();
-
-        foreach ($searchResponse['items'] as $searchResult) {
-            $videos .= sprintf('<li>%s (%s)</li>',
-                $searchResult['snippet']['title'], $searchResult['id']['videoId']);
-        }
-        foreach ($searchResponse['items'] as $searchResult) {
-            $thumbnails = $searchResult['snippet']['thumbnails']['default'];
-        }
-    }
+    
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
             $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
@@ -75,10 +43,9 @@
     <h3><?php echo $_SESSION['chat_id']; ?></h3>
     <h3><?php echo $_SESSION['message_friend_id']; ?></h3>
     <div class="row">
-        <form method="GET">
-            <?php $html = file_get_contents('youtube-search.php'); ?>
-            <?php echo $html; ?>
-        </form>
+        <div class="video-search-results">
+            <?php include 'youtube-search.php'; ?>
+        </div>
         <iframe id="existing-iframe"
                 width="640" height="360"
                 src="https://www.youtube.com/embed/<?php echo $current_video_id; ?>?enablejsapi=1"
