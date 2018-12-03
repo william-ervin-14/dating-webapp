@@ -20,7 +20,7 @@
     $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
     $different_friends = $query->get_senders($logged_user_id);
     $current_tab_id;
-    $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
+    $chat = $query->get_chat($logged_user_id, $_GET['uid']);
 
     if ( !empty ( $_GET['uid'] ) ) {
         $current_tab_id = $_GET['uid'];
