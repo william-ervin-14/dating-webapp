@@ -72,7 +72,7 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-    <h3><?php echo $chat_id; ?></h3>
+    <h3><?php echo $_SESSION['chat_id']; ?></h3>
     <h3><?php echo $_SESSION['message_friend_id']; ?></h3>
     <div class="row">
         <form method="GET">
