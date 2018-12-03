@@ -108,7 +108,7 @@
                 style="border: solid 4px #37474F"
         ></iframe>
         <form action="messages.php?uid=<?php echo $_SESSION['message_friend_id']; ?>" method="POST">
-            <input type="submit" name="exit_chat" value="Exit Chat"/>
+            k
         </form>
         <form method="post">
             <div class ="chat-container">

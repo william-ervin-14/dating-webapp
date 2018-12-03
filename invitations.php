@@ -37,7 +37,9 @@
                 <?php $friend = $query->load_user_object($invitation->friend_id)?>
                 <div class="invitation-item">
                     <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
-                    <input type="submit" name="accept_invitation" value="Accept"/>
+                    <ul>
+                        <li><a href="youtube.php?<?php echo $logged_user_id; ?>">Accept</a></li>
+                    </ul>
                     <input type="submit" name="delete_invitation" value="Delete"/>
                 </div>
             <?php endforeach;?>
