@@ -108,7 +108,6 @@
                 style="border: solid 4px #37474F"
         ></iframe>
         <form action="messages.php?uid=<?php echo $_SESSION['message_friend_id']; ?>" method="POST">
-            k
         </form>
         <form method="post">
             <div class ="chat-container">
