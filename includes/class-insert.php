@@ -121,7 +121,7 @@
 
                 $query = "
 								UPDATE $table
-								SET chat_state='$chat_state'
+								SET chat_state = '$chat_state'
 								WHERE ID='$ID'
 							";
 
