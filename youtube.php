@@ -76,17 +76,8 @@
     <h3><?php echo $_SESSION['message_friend_id']; ?></h3>
     <div class="row">
         <form method="GET">
-            <div>
-                Search Term: <input type="search" id="q" name="q" placeholder="Enter Search Term">
-            </div>
-            <div class = "youtube-submit-button">
-                <input type="submit" value="Search">
-            </div>
-            <h3>Videos</h3>
-            <div class="video-search-results">
-                <?php $html = file_get_contents('youtube-search.php'); ?>
-                <?php echo $html; ?>
-            </div>
+            <?php $html = file_get_contents('youtube-search.php'); ?>
+            <?php echo $html; ?>
         </form>
         <iframe id="existing-iframe"
                 width="640" height="360"
