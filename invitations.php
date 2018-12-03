@@ -40,7 +40,7 @@
                     <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
                     <h3><?php echo $chat->ID; ?></h3>
                     <ul>
-                        <li><a href="youtube.php?<?php echo $chat->ID; ?>">Accept</a></li>
+                        <li><a href="youtube.php?cid=<?php echo $chat->ID; ?>">Accept</a></li>
                     </ul>
                     <input type="submit" name="delete_invitation" value="Delete"/>
                 </div>
