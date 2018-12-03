@@ -43,6 +43,18 @@
         }
 
     }
+
+    $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
+
+    if("No chat found" == $chat){
+        if(isset($_SESSION['message_friend_id'])){
+            $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
+            $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
+            $chat_id = ($chat->ID);
+        }
+    }else{
+        $chat_id = ($chat->ID);
+    }
 ?>
 <head>
     <title>Messages</title>
@@ -84,7 +96,7 @@
             </div>
             <input>
                 <input type="submit" name="send_invitation" value="Send Invitation"/>
-                <li><a href="youtube.php?uid=<?php echo $current_tab_user->ID; ?>" name="invitation">Watch Youtube?</a></li>
+                <li><a href="youtube.php?uid=<?php echo $chat_id; ?>" name="invitation">Watch Youtube?</a></li>
             </ul>
         </div>
     </form>
