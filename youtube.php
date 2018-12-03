@@ -11,7 +11,6 @@
     $logged_user_id = ($user->ID);
     $message_received_objects = $query->get_message_received_objects($logged_user_id);
     $message_sent_objects = $query->get_message_sent_objects($logged_user_id);
-    $current_video_id = $_GET['vid'];
     $current_tab_user = $query->load_user_object($_SESSION['message_friend_id']);
     $different_friends = $query->get_senders($logged_user_id);
     $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
@@ -47,6 +46,10 @@
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
     }
+    if(isset($_GET['vid'])){
+        $current_video_id = $_GET['vid'];
+        $insert->update_chat_state($video_url, $_SESSION['chat_id']);
+    }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
             $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
@@ -60,8 +63,6 @@
     if(isset($_POST['exit_chat'])){
         unset($_SESSION['message_friend_id']);
     }
-
-
 ?>
 <html>
     <head>

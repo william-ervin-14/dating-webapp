@@ -114,6 +114,19 @@
 
                 return $db->insert($query);
             }
+            public function update_chat_state($chat_state, $ID ){
+                global $db;
+
+                $table = 'watching';
+
+                $query = "
+								UPDATE $table
+								SET chat_state='$chat_state'
+								WHERE ID='$ID'
+							";
+
+                return $db->update($query);
+            }
 		}
 	}
 	
