@@ -51,7 +51,7 @@
         if($url !== $video_url){
             header('location: '.$url);
         }
-    } elseif ((!isset($_GET['vid']))and (!$url)){
+    } elseif ((!isset($_GET['vid']))and ('' !== $url)){
             header('location: '.$url);
     } else{
         header('location: youtube.php?cid='.$_SESSION['chat_id']);
