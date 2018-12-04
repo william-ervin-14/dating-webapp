@@ -30,6 +30,7 @@
         <?php else : ?>
             <?php foreach ( $invitations as $invitation ) : ?>
                 <?php $friend = $query->load_user_object($invitation->friend_id);?>
+                <?php $_SESSION['message_friend_id'] = $friend->ID;?>
                 <?php $chat = $query->get_chat($friend->ID, $logged_user_id);?>
                 <div class="invitation-item">
                     <h3><?php echo "{$friend->firstname} {$friend->lastname}"; ?></h3>
