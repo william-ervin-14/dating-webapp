@@ -14,7 +14,7 @@
     $current_tab_user = $query->load_user_object($_SESSION['message_friend_id']);
     $different_friends = $query->get_senders($logged_user_id);
     $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
-    $video_url = '';
+    $url = $query->get_chat_video_url($_SESSION['chat_id']);;
     //$insert->update_chat_state($_SESSION['video_url'], $_SESSION['chat_id']);
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
@@ -49,6 +49,11 @@
     }
     if (isset($_GET['vid'])) {
         $current_video_id = $_GET['vid'];
+    } elseif (!isset($_GET['vid'])){
+        if("No video selected" == $url){
+
+        }
+
     }
     /*
     elseif (isset($_GET['vid'])){
@@ -85,7 +90,7 @@
     <body>
     <h3><?php echo $_SESSION['chat_id']; ?></h3>
     <h3><?php echo $_SESSION['message_friend_id']; ?></h3>
-    <h3><?php echo $_SESSION['video_url']; ?></h3>
+    <h3><?php echo $url; ?></h3>
     <div class="row">
         <form method="GET">
             <div class="video-search-results">
