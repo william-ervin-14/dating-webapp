@@ -107,7 +107,7 @@
                 style="border: solid 4px #37474F"
         ></iframe>
         <form method="post">
-            <div class ="chat-container">
+            <div class ="y-chat-container">
                 <?php $messages_temp = $query->do_messages($message_received_objects, $message_sent_objects, $current_tab_user); ?>
                 <div class="top-name"><h4><?php echo "{$current_tab_user->firstname} {$current_tab_user->lastname}" ; ?></h4></div>
                 <?php foreach($messages_temp as $message_temp): ?>
