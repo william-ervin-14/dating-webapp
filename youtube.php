@@ -95,7 +95,7 @@
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
                     <?php $_SESSION['video_url'] = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
                     <ul>
-                        <li><a href='youtube-handler.php?vid='<?php echo $searchResult['id']['videoId']; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
+                        <li><a href='youtube.php?vid='<?php echo $searchResult['id']['videoId']; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
                     </ul>
                 <?php endforeach; ?>
             </div>
