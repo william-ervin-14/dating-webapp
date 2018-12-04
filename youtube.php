@@ -86,7 +86,7 @@
                     <input class="q" type="search" id="q" name="q" placeholder="Enter Search Term">
                 </div>
                 <div class = "youtube-submit-button">
-                    <input class="submit_button" type="submit" value="Search">
+                    <input class="q_submit_button" type="submit" value="Search">
                 </div>
                 <h3>Videos</h3>
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
