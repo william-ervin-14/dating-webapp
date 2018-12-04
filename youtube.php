@@ -77,6 +77,11 @@
     <head>
         <title>Youtube</title>
         <link rel="stylesheet" href="css/style.css" />
+        <style>
+            body {
+                background-color: #37474F;
+            }
+        </style>
     </head>
     <body>
     <div class="row">
