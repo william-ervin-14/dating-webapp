@@ -51,6 +51,10 @@
         if($url !== $video_url){
             header('location: '.$url);
         }
+    } elseif (!isset($_GET['vid'])){
+        if("No video selected" !== $url){
+            header('location: '.$url);
+        }
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
