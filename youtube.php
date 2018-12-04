@@ -14,7 +14,7 @@
     $current_tab_user = $query->load_user_object($_SESSION['message_friend_id']);
     $different_friends = $query->get_senders($logged_user_id);
     $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
-
+    $video_url = '';
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
     }
@@ -55,7 +55,7 @@
     } elseif (!isset($_GET['vid'])){
         $url = $query->get_chat_video_url($_SESSION['chat_id']);
         if("No video selected" == $url){
-            $insert->update_chat_state($_SESSION['video_url'], $_SESSION['chat_id']);
+            $insert->update_chat_state($video_url, $_SESSION['chat_id']);
         }else{
             header('location: '.$url->chat_state);
         }
@@ -67,7 +67,7 @@
             unset($_POST['message_sender_id']);
             unset($_POST['message_recipient_id']);
             unset($_POST['message_content']);
-            //header('location: '.$_SESSION['video_url']);
+            header('location: '.$video_url);
         }
     }
     if(isset($_POST['exit_chat'])){
@@ -111,9 +111,9 @@
                 </div>
                 <h3>Videos</h3>
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
-                    <?php $_SESSION['video_url'] = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
+                    <?php $video_url = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
                     <ul>
-                        <li><a href=<?php echo $_SESSION['video_url']; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
+                        <li><a href=<?php echo $video_url; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
                     </ul>
                 <?php endforeach; ?>
             </div>
