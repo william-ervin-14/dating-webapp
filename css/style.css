@@ -66,12 +66,12 @@
     color: black;
 }
 .chat-container {
-    flex:20%;
+    flex:30%;
     overflow: auto;
     height: 500px;
 }
 .video-search-results {
-    flex:20%;
+    flex:15%;
     overflow: auto;
     height: 500px;
 }
