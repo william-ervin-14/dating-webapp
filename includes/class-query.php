@@ -358,7 +358,7 @@
 								WHERE ID = '$ID'
 							";
 
-                $result = $db->select_one($query);
+                $result = $db->select($query);
 
                 if(!$result){
                     return "No video selected";
