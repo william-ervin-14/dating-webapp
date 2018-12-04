@@ -1,9 +1,9 @@
 # dating-webapp
-## Capstone Project
+## capstone project
 
-### Files included:
+### files included:
   #### friends-directory.php
-  displays all members currently on site. Built for testing purposes
+  displays all members currently on site. built for testing purposes
   #### friends-list.php
   displays friends list
   #### home.php
@@ -36,7 +36,7 @@
   #### youtube-handler.php
   redirects user to page containing youtube video if neccessary
   
-### Folders included:
+### folders included:
   #### css folder
   contains css files used throughout site
   #### images folder
