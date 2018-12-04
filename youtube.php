@@ -47,6 +47,9 @@
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
     }
+    if (isset($_GET['vid'])) {
+        $current_video_id = $_GET['vid'];
+    }
     /*
     elseif (isset($_GET['vid'])){
         $current_video_id = $_GET['vid'];
