@@ -50,9 +50,9 @@ if ( !class_exists('Login') ){
 			return false;
 		}
 		public function register($post) {
-            if (isset($_POST['email']) and isset($_POST['firstname'])
-                and isset($_POST['lastname']) and isset($_POST['password_1'])
-                and isset($_POST['password_2'])) {
+            if (!empty($_POST['email']) and !empty($_POST['firstname'])
+                and !empty($_POST['lastname']) and !empty($_POST['password_1'])
+                and !empty($_POST['password_2'])) {
 
                 $email      = $post['email'];
                 $first_name = $post['firstname'];
@@ -72,10 +72,12 @@ if ( !class_exists('Login') ){
                 $insert = $this->insert->register_user($first_name, $last_name, $email, $password);
 
                 if (false !== $insert) {
-                    return "Account created successfully.";
+                    return "Account created successfully!";
                 }
 
                 return "An unknown error has occurred";
+            }else{
+                return "Please fill out all fields";
             }
         }
 		private function user_exists($email){
