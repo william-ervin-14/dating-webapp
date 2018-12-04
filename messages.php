@@ -93,7 +93,6 @@
                     <button class="submit_button" type="submit" value="Submit">Send</button>
                 </div>
             </div>
-            <input>
                 <input class="submit_button" type="submit" name="send_invitation" value="Send Invitation"/>
                 <li><a href="youtube.php?cid=<?php echo $_SESSION['chat_id']; ?>" name="invitation">Watch Youtube?</a></li>
             </ul>
