@@ -98,7 +98,7 @@
             </div>
         </form>
         <iframe id="existing-iframe"
-                width="50%" height="80%"
+                width="50%" height="80%" align="middle"
                 src="https://www.youtube.com/embed/<?php echo $current_video_id; ?>?enablejsapi=1"
                 frameborder="0"
                 style="border: solid 4px #37474F"
