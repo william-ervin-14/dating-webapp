@@ -17,8 +17,9 @@
     if(!isset($_GET['vid'])){
         $url = $query->get_chat_video_url($_SESSION['chat_id']);
         if("No video selected" == $url){
-            $insert->update_chat_state($video_url, $_SESSION['chat_id']);
-            header('location: '.$video_url);
+            $insert->update_chat_state($_SESSION['video_url'], $_SESSION['chat_id']);
+        }else{
+            header('location: '.$url->chat_state);
         }
     }
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
@@ -110,9 +111,9 @@
                 </div>
                 <h3>Videos</h3>
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
-                    <?php $video_url = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
+                    <?php $_SESSION['video_url'] = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
                     <ul>
-                        <li><a href=<?php echo $video_url; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
+                        <li><a href=<?php echo $_SESSION['video_url']; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
                     </ul>
                 <?php endforeach; ?>
             </div>
