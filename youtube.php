@@ -46,7 +46,9 @@
         foreach ($searchResponse['items'] as $searchResult) {
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
-    }elseif (isset($_GET['vid'])){
+    }
+    /*
+    elseif (isset($_GET['vid'])){
         $current_video_id = $_GET['vid'];
         $url = $query->get_chat_video_url($_SESSION['chat_id']);
         if($current_video_id !== $url->chat_state){
@@ -54,7 +56,7 @@
             header('location: '.$_SESSION['video_url']);
         }
 
-    }
+    }*/
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
             $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
@@ -75,21 +77,7 @@
 
     <head>
         <title>Youtube</title>
-        <link rel="stylesheet" href="css/style.css" />
-        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-        <script language="javascript" type="text/javascript">
-            function loadlink(){
-                $('#chat-container').load('youtube.php',function () {
-                    $(this).unwrap();
-                });
-            }
-
-            loadlink(); // This will run on page load
-            setInterval(function(){
-                loadlink() // this will run after every 5 seconds
-            }, 5000);
-        </script>
-
+        <link rel="stylesheet" href="css/style.css" />l
     </head>
     <body>
     <h3><?php echo $_SESSION['chat_id']; ?></h3>
