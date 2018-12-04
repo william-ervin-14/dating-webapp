@@ -24,7 +24,9 @@
   }
 
 ?>
-
+<head>
+    <title>Home</title>
+</head>
 		<h1>Home</h1>
 		<div class="square">
 		<h3>Profile</h3>
@@ -48,7 +50,5 @@
         </div>
         <div class="square">
 		</div>
-        <h2><?php echo $logged_user_id; ?></h2>
-        <h2><?php echo $email; ?></h2>
 	</body>
 </html>

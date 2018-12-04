@@ -58,7 +58,6 @@
 <head>
     <title>Messages</title>
 </head>
-<h1>Messages</h1>
     <form method="post">
         <div class="row">
             <div id="vertical-navigation">

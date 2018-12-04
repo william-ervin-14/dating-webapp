@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dda1d095-7e6a-4fd6-9b08-2f152731ee88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/messages.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,6 +47,15 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/home.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="765">
+                  <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/invitations.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -56,11 +65,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/youtube.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="55">
-                  <caret line="87" column="18" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="18" />
+                <state relative-caret-position="752">
+                  <caret line="128" column="83" lean-forward="true" selection-start-line="128" selection-start-column="83" selection-end-line="128" selection-end-column="84" />
                 </state>
               </provider>
             </entry>
@@ -72,8 +81,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/messages.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="681">
-                  <caret line="96" column="43" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
+                <state relative-caret-position="106">
+                  <caret line="59" column="7" lean-forward="true" selection-start-line="57" selection-end-line="59" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -163,7 +172,6 @@
         <option value="$PROJECT_DIR$/messages-container.php" />
         <option value="$PROJECT_DIR$/chat.php" />
         <option value="$PROJECT_DIR$/includes/messages-container.php" />
-        <option value="$PROJECT_DIR$/home.php" />
         <option value="$PROJECT_DIR$/messages/youtube.php" />
         <option value="$PROJECT_DIR$/profile-view.php" />
         <option value="$PROJECT_DIR$/profile-edit.php" />
@@ -180,6 +188,7 @@
         <option value="$PROJECT_DIR$/youtube.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/messages.php" />
+        <option value="$PROJECT_DIR$/home.php" />
       </list>
     </option>
   </component>
@@ -288,7 +297,7 @@
       <workItem from="1543439245907" duration="5452000" />
       <workItem from="1543446991959" duration="28000" />
       <workItem from="1543447170470" duration="9808000" />
-      <workItem from="1543522360277" duration="58905000" />
+      <workItem from="1543522360277" duration="59162000" />
     </task>
     <task id="LOCAL-00001" summary="added messages">
       <created>1542062190875</created>
@@ -301,13 +310,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191260000" />
+    <option name="totallyTimeSpent" value="191517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4936351" visible="true" weight="0.11140725" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4936351" visible="true" weight="0.11140725" />
       <window_info id="Structure" order="1" sideWeight="0.50636494" side_tool="true" weight="0.0" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -441,13 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/profilepage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="851">
@@ -487,13 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
@@ -560,17 +555,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/includes/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/youtube.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="87" column="18" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="18" />
+        <state relative-caret-position="752">
+          <caret line="128" column="83" lean-forward="true" selection-start-line="128" selection-start-column="83" selection-end-line="128" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/messages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="96" column="43" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
+        <state relative-caret-position="106">
+          <caret line="59" column="7" lean-forward="true" selection-start-line="57" selection-end-line="59" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
         </state>
       </provider>
     </entry>
