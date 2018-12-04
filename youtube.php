@@ -86,7 +86,6 @@
                     <input class="q" type="search" id="q" name="q" placeholder="Enter Search Term">
                     <input class="q_submit_button" type="submit" value="Search">
                 </div>
-                <h3>Videos</h3>
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
                     <?php $_SESSION['video_url'] = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
                     <ul>
