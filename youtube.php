@@ -85,7 +85,7 @@
         </style>
     </head>
     <body>
-    <div class="row">
+    <div class="y-row">
         <form method="GET">
             <div class="video-search-results">
                 <div>

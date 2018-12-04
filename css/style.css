@@ -61,10 +61,13 @@
     background-color: #ddd;
     color: black;
 }
-.y-chat-container {
+.row{
+    display: flex;
+}
+.chat-container {
     background-color: #ddd;
     float: right;
-    width: 30%;
+    flex: 60%;
     height: 500px;
     overflow: auto;
     border: solid 4px #37474F;
