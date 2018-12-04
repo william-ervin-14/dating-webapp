@@ -41,6 +41,7 @@
 }
 .vertical-navigation{
     flex: 15%;
+    height: 500px
     background-color: #333;
     overflow: auto;
 }
@@ -70,7 +71,7 @@
     flex: 60%;
     height: 500px;
     overflow: auto;
-    border: solid 2px #37474F;
+    border: solid 2px #333;
 }
 
 .y-chat-container {
