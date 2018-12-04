@@ -14,8 +14,7 @@
     $current_tab_user = $query->load_user_object($_SESSION['message_friend_id']);
     $different_friends = $query->get_senders($logged_user_id);
     $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
-    $url = $query->get_chat_video_url($_SESSION['chat_id']);;
-    //$insert->update_chat_state($_SESSION['video_url'], $_SESSION['chat_id']);
+    $url = $query->get_chat_video_url($_SESSION['chat_id']);
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
     }
@@ -51,21 +50,12 @@
         $_SESSION['video_url'] = 'youtube.php?vid='.$current_video_id;
         $insert->update_chat_state($_SESSION['video_url'], $_SESSION['chat_id']);
     } elseif (!isset($_GET['vid'])){
+
         if("No video selected" !== $url){
             $_SESSION['video_url'] = $url;
             header('location: '.$_SESSION['video_url']);
         }
     }
-    /*
-    elseif (isset($_GET['vid'])){
-        $current_video_id = $_GET['vid'];
-        $url = $query->get_chat_video_url($_SESSION['chat_id']);
-        if($current_video_id !== $url->chat_state){
-            $_SESSION['video_url'] = $url->chat_state;
-            header('location: '.$_SESSION['video_url']);
-        }
-
-    }*/
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
             $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
@@ -105,7 +95,7 @@
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
                     <?php $_SESSION['video_url'] = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
                     <ul>
-                        <li><a href=<?php echo $_SESSION['video_url']; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
+                        <li><a href='youtube-handler.php?vid='<?php echo $searchResult['id']['videoId']; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
                     </ul>
                 <?php endforeach; ?>
             </div>
