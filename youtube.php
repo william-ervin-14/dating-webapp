@@ -54,6 +54,8 @@
     } elseif (!isset($_GET['vid'])){
         if("No video selected" !== $url){
             header('location: '.$url);
+        }elseif("No video selected" == $url){
+            header('location: youtube.php?cid='.$_SESSION['chat_id']);
         }
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
