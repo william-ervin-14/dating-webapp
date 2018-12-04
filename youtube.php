@@ -65,6 +65,7 @@
         }
     }
     if(isset($_POST['exit_chat'])){
+        $insert->update_chat_state('', $_SESSION['chat_id']);
         unset($_SESSION['message_friend_id']);
     }
 ?>
