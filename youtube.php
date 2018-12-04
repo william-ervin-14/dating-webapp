@@ -44,8 +44,7 @@
         foreach ($searchResponse['items'] as $searchResult) {
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
-    }
-    if(isset($_GET['vid'])){
+    }elseif(isset($_GET['vid'])){
         $current_video_id = $_GET['vid'];
         $insert->update_chat_state($_SESSION['video_url'], $_SESSION['chat_id']);
     }else{
