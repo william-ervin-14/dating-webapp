@@ -48,6 +48,8 @@
         }
     } elseif (isset($_GET['vid'])) {
         $current_video_id = $_GET['vid'];
+        $_SESSION['video_url'] = 'youtube.php?vid='.$current_video_id;
+        $insert->update_chat_state($_SESSION['video_url'], $_SESSION['chat_id']);
     } elseif (!isset($_GET['vid'])){
         if("No video selected" !== $url){
             $_SESSION['video_url'] = $url;
