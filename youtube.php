@@ -80,6 +80,7 @@
         <style>
             body {
                 background-color: #2A2A2E;
+                margin: 0;
             }
         </style>
     </head>
