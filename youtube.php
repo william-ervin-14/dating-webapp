@@ -51,7 +51,7 @@
     }else{
         $url = $query->get_chat_video_url($_SESSION['chat_id']);
         if("No video selected" !== $url){
-            $_SESSION['video_url'] = $url;
+            $_SESSION['video_url'] = $url->chat_state;
            // header('location: '.$_SESSION['video_url']);
         }
     }
