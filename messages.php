@@ -62,7 +62,6 @@
 <head>
     <title>Messages</title>
 </head>
-<h3><?php echo $chat_state; ?></h3>
     <form method="post">
         <div class="row">
             <div id="vertical-navigation">
