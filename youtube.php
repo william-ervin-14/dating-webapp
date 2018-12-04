@@ -51,12 +51,8 @@
         if($url !== $video_url){
             header('location: '.$url);
         }
-    } elseif (!isset($_GET['vid'])){
-        if("No video selected" !== $url){
+    } elseif ((!isset($_GET['vid']))and ("No video selected" !== $url)){
             header('location: '.$url);
-        }elseif("No video selected" == $url){
-            header('location: youtube.php?cid='.$_SESSION['chat_id']);
-        }
     } else{
         header('location: youtube.php?cid='.$_SESSION['chat_id']);
     }
