@@ -50,10 +50,9 @@
     if (isset($_GET['vid'])) {
         $current_video_id = $_GET['vid'];
     } elseif (!isset($_GET['vid'])){
-        if("No video selected" == $url){
-
+        if("No video selected" !== $url){
+            $_SESSION['video_url'] = url;
         }
-
     }
     /*
     elseif (isset($_GET['vid'])){
