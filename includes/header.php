@@ -33,7 +33,6 @@
 				<li><a href="friends-list.php?uid=<?php echo $logged_user_id; ?>">Friends List</a></li>
                 <li><a href="messages.php?uid=<?php echo $friend_id ?>">Messages</a></li>
                 <li><a href="messages-compose.php">Compose Message</a></li>
-                <li><a href="notifications.php?uid=<?php echo $logged_user_id; ?>">Notifications</a></li>
                 <li><a href="invitations.php?uid=<?php echo $logged_user_id; ?>">Invitations</a></li>
 				<li><a href="login.php" name="logout">Log out</a></li>
 			</ul>
