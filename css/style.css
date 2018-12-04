@@ -64,23 +64,17 @@
 .chat-container {
     float: left;
     width: 25%;
-    padding: 10px;
     height: 80%;
     overflow: auto;
+    border: solid 4px #37474F;
 }
 .video-search-results {
     float: left;
     width: 15%;
-    padding: 10px;
     height: 80%;
     overflow: auto;
+    border: solid 4px #37474F;
 }
- {
-    flex:20%;
-    overflow: auto;
-    height: 500px;
-}
-
 .top-name{
     width: 100%;
     display: inline-block;
