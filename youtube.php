@@ -79,7 +79,7 @@
         <link rel="stylesheet" href="css/style.css" />
         <style>
             body {
-                background-color: #37474F;
+                background-color: #2A2A2E;
             }
         </style>
     </head>
