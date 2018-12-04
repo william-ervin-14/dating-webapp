@@ -70,8 +70,7 @@
     flex: 60%;
     height: 500px;
     overflow: auto;
-    border: solid 4px #37474F;
-    border-left: none;
+    border: solid 2px #37474F;
 }
 
 .y-chat-container {
