@@ -67,7 +67,7 @@
     color: black;
 }
 .chat-container {
-    float: left;
+    float: right;
     width: 25%;
     padding: 10px;
     height: 80%;
