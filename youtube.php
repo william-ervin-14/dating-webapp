@@ -20,7 +20,7 @@
 
     require_once __DIR__ . '/vendor/autoload.php';
 
-    if (isset($_GET['q'])) {
+    if (!empty($_GET['q'])) {
 
         $DEVELOPER_KEY = 'AIzaSyCDQM84XUFkyA6__WNdffCvmMzYoiaA6og';
         $client = new Google_Client();
