@@ -21,7 +21,6 @@
     <title>Friends List</title>
 </head>
 		<h1>Friends List</h1>
-        <h2><?php echo $logged_user_id; ?></h2>
 		<div class="content">
 			<?php $query->do_friends_list($friends); ?>
 		</div>
