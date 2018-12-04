@@ -85,7 +85,7 @@
 
     <head>
         <title>Youtube</title>
-        <link rel="stylesheet" href="css/style.css" />l
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
     <h3><?php echo $_SESSION['chat_id']; ?></h3>

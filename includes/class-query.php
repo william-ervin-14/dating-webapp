@@ -365,7 +365,7 @@
                 }
 
 
-                return $result->chat_state;
+                return $result[0]->chat_state;
             }
 		}
 	}
