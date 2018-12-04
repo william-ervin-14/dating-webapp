@@ -53,11 +53,12 @@
 
     }
 
-
+    $chat_state = $query->get_chat_video_url($_SESSION['chat_id']);
 ?>
 <head>
     <title>Messages</title>
 </head>
+<h3><?php echo $chat_state; ?></h3>
     <form method="post">
         <div class="row">
             <div id="vertical-navigation">
