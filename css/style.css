@@ -133,8 +133,14 @@
     background: #f1f1f1;
     width: 85%;
 }
+.q {
+    padding: 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background: #f1f1f1;
+    width: 85%;
+}
 .submit_button {
-    flex: 15%;
     background-color: #2364af;
     color: white;
     padding: 16px 20px;
@@ -142,13 +148,5 @@
     cursor: pointer;
     float: right;
     width: 10%;
-}
-.q{
-    flex: 85%;
-    padding: 15px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    background: #f1f1f1;
-    width: 85%;
 }
 
