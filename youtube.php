@@ -98,7 +98,7 @@
     <body>
     <h3><?php echo $_SESSION['chat_id']; ?></h3>
     <h3><?php echo $_SESSION['message_friend_id']; ?></h3>
-    <h3><?php echo $video_url; ?></h3>
+    <h3><?php echo $url->chat_state; ?></h3>
     <div class="row">
         <form method="GET">
             <div class="video-search-results">
