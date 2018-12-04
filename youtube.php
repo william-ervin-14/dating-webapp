@@ -14,7 +14,12 @@
     $current_tab_user = $query->load_user_object($_SESSION['message_friend_id']);
     $different_friends = $query->get_senders($logged_user_id);
     $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
-    $insert->update_chat_state($_SESSION['video_url'], $_SESSION['chat_id']);
+    if(!isset($_GET['vid'])){
+        $url = $query->get_chat_video_url($_SESSION['chat_id']);
+        if("No video selected" == $url->chat_state){
+            $insert->update_chat_state($video_url, $_SESSION['chat_id']);
+        }
+    }
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
     }
@@ -45,14 +50,13 @@
         foreach ($searchResponse['items'] as $searchResult) {
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
-    }elseif (isset($_GET['vid'])){
+    } elseif (isset($_GET['vid'])){
         $current_video_id = $_GET['vid'];
         $url = $query->get_chat_video_url($_SESSION['chat_id']);
         if($current_video_id !== $url->chat_state){
-            $_SESSION['video_url'] = $url->chat_state;
-            header('location: '.$_SESSION['video_url']);
+            $video_url = $url->chat_state;
+            header('location: '.$video_url);
         }
-
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
@@ -93,7 +97,7 @@
     <body>
     <h3><?php echo $_SESSION['chat_id']; ?></h3>
     <h3><?php echo $_SESSION['message_friend_id']; ?></h3>
-    <h3><?php echo $_SESSION['video_url']; ?></h3>
+    <h3><?php echo $video_url; ?></h3>
     <div class="row">
         <form method="GET">
             <div class="video-search-results">
@@ -105,9 +109,9 @@
                 </div>
                 <h3>Videos</h3>
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
-                    <?php $_SESSION['video_url'] = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
+                    <?php $video_url = 'youtube.php?vid='.$searchResult['id']['videoId'] ?>
                     <ul>
-                        <li><a href=<?php echo $_SESSION['video_url']; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
+                        <li><a href=<?php echo $video_url; ?>><?php echo $searchResult['snippet']['title']; ?></a></li>
                     </ul>
                 <?php endforeach; ?>
             </div>
