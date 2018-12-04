@@ -48,6 +48,12 @@
     if(isset($_GET['vid'])){
         $current_video_id = $_GET['vid'];
         $insert->update_chat_state($_SESSION['video_url'], $_SESSION['chat_id']);
+    }else{
+        $url = $query->get_chat_video_url($_SESSION['chat_id']);
+        if("No video selected" !== $url){
+            $_SESSION['video_url'] = $url;
+            header('location: '.$_SESSION['video_url']);
+        }
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {

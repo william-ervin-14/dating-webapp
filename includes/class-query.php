@@ -347,6 +347,26 @@
 
                 return $obj;
             }
+            public function get_chat_video_url($ID) {
+                global $db;
+
+                $table = 'watching';
+
+                $query = "
+								SELECT chat_state
+								FROM $table
+								WHERE ID = '$ID'
+							";
+
+                $result = $db->select_one($query);
+
+                if(!$result){
+                    return "No video selected";
+                }
+
+
+                return $result;
+            }
 		}
 	}
 	
