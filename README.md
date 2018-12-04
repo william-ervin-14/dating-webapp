@@ -2,25 +2,57 @@
 ## Capstone Project
 
 ### Files included:
-  #### errors.php,
-  #### feed-post.php,
-  #### feed-view.php,
-  #### friends-directory.php,
-  #### friends-list.php,
-  #### home.php,
-  #### index.php,
-  #### load.php,
-  #### login.php,
-  #### messages.php,
-  #### messages-compose.php,
-  #### messages-inbox.php,
-  #### profile-edit.php,
-  #### profile-view.php,
-  #### register.php,
-  #### server.php.
+  #### friends-directory.php
+  displays all members currently on site. Built for testing purposes
+  #### friends-list.php
+  displays friends list
+  #### home.php
+  home page with links to all other php pages
+  #### index.php
+  login wrapper that either logs user in or redirects user back to login screen
+  #### invitations.php
+  handles invitations to watch YouTube videos with a friend
+  #### load.php
+  helper to include includes/ files
+  #### login.php
+  user login form, handled by class-login.php
+  #### messages.php
+  fully functional chat room with links to send video invitations and to go to youtube.php
+  #### messages-compose.php
+  php page that helped influence messages.php. also still used to compose a message
+  #### messages-inbox.php
+  php page that helped influence messages.php
+  #### profile-edit.php
+  allows users to view profile information
+  #### profile-view.php
+  allows users to edit profile information
+  #### register.php
+  user registration form, handled by class-login.php
+  #### server.php
+  file originally used to make contact with database and to handle login and registration.
+  ss still included for future reference if needed.
+  #### youtube.php
+  holds YouTube search, YouTube iframe and messages container. Allows users to chat while watching a YouTube video
+  #### youtube-handler.php
+  redirects user to page containing youtube video if neccessary
   
 ### Folders included:
-  #### css folder,
-  #### images folder,
-  #### includes folder containing database query files,
-  #### login and register bootstrap folders.
+  #### css folder
+  contains css files used throughout site
+  #### images folder
+  contains various images used throughout site
+  #### includes folder
+  ##### class-db.php
+  makes connection to database and is called by class-insert and class-query to contact database
+  ##### class-insert.php
+  contains functions used to send itmes to database tables
+  ##### class-login.php
+  contains functions used to handle the login and registration system
+  ##### class-query.php
+  contains functions used to retrieve database table items 
+  ##### header.php
+  contains navigation bar used on each php page
+  ##### messages-container.php
+  holds messages container; will possibly be used in the future
+  #### login and register bootstrap folders
+  contains bootstrap css and javascript used on login and registration forms
