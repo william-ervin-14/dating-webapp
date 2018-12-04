@@ -143,4 +143,12 @@
     float: right;
     width: 10%;
 }
+.q{
+    flex: 85%;
+    padding: 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background: #f1f1f1;
+    width: 85%;
+}
 
