@@ -59,7 +59,6 @@
     <title>Messages</title>
 </head>
 <h1>Messages</h1>
-<p><?php echo $current_tab_id; ?></p>
     <form method="post">
         <div class="row">
             <div id="vertical-navigation">
