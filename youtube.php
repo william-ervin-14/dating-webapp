@@ -101,7 +101,7 @@
             </div>
         </form>
         <iframe id="existing-iframe"
-                width="640" height="360"
+                width="640" height="500"
                 src="https://www.youtube.com/embed/<?php echo $current_video_id; ?>?enablejsapi=1"
                 frameborder="0"
                 style="border: solid 4px #37474F"
