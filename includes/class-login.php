@@ -50,7 +50,9 @@ if ( !class_exists('Login') ){
 			return false;
 		}
 		public function register($post) {
-            if (isset($_POST['reg_user'])) {
+            if (isset($_POST['email']) and isset($_POST['firstname'])
+                and isset($_POST['lastname']) and isset($_POST['password_1'])
+                and isset($_POST['password_2'])) {
 
                 $email      = $post['email'];
                 $first_name = $post['firstname'];
