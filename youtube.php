@@ -46,11 +46,11 @@
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
     } elseif (isset($_GET['vid'])){
-        $current_video_id = $_GET['vid'];
+        $_SESSION['chat_id'] = $_GET['vid'];
         $url = $query->get_chat_video_url($_SESSION['chat_id']);
-        if($current_video_id !== $url->chat_state){
+        if($_SESSION['chat_id'] !== $url->chat_state){
             $video_url = $url->chat_state;
-            header('location: '.$video_url);
+            header('location: '.$url->chat_state);
         }
     } elseif (!isset($_GET['vid'])){
         $url = $query->get_chat_video_url($_SESSION['chat_id']);
