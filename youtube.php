@@ -79,9 +79,6 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-    <h3><?php echo $_SESSION['chat_id']; ?></h3>
-    <h3><?php echo $_SESSION['message_friend_id']; ?></h3>
-    <h3><?php echo $url; ?></h3>
     <div class="row">
         <form method="GET">
             <div class="video-search-results">
@@ -101,7 +98,7 @@
             </div>
         </form>
         <iframe id="existing-iframe"
-                width="50%" height="100%"
+                width="50%" height="80%"
                 src="https://www.youtube.com/embed/<?php echo $current_video_id; ?>?enablejsapi=1"
                 frameborder="0"
                 style="border: solid 4px #37474F"
