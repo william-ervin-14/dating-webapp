@@ -42,7 +42,6 @@
 .row{
     display: flex;
     flex-direction: row;
-    height: 500px;
 }
 .vertical-navigation{
     flex: 15%;
@@ -69,6 +68,7 @@
 .chat-container {
     flex:85%;
     overflow: auto;
+    height: 500px;
 }
 
 .top-name{
