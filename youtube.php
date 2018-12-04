@@ -67,7 +67,7 @@
             unset($_POST['message_sender_id']);
             unset($_POST['message_recipient_id']);
             unset($_POST['message_content']);
-            header('location: '.$_SESSION['video_url']);
+            //header('location: '.$_SESSION['video_url']);
         }
     }
     if(isset($_POST['exit_chat'])){
