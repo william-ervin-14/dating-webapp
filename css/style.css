@@ -39,9 +39,10 @@
     width: 100%;
     border: 1px solid #ccc;
 }
-.row{
-    display: flex;
-    flex-direction: row;
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
 }
 .vertical-navigation{
     flex: 15%;
@@ -66,14 +67,18 @@
     color: black;
 }
 .chat-container {
-    flex:30%;
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 100%;
     overflow: auto;
-    height: 500px;
 }
 .video-search-results {
-    flex:15%;
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 100%;
     overflow: auto;
-    height: 500px;
 }
  {
     flex:20%;
