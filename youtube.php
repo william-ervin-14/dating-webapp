@@ -53,7 +53,7 @@
         }
     } elseif ((!isset($_GET['vid']))and ('' !== $url)){
             header('location: '.$url);
-    } 
+    }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_POST['message_content']) && isset($_POST['message_recipient_id'])) {
             $send_message = $insert->send_message($_POST['message_time'], $_POST['message_sender_id'], $_POST['message_recipient_id'], $_POST['message_content']);
