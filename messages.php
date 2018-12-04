@@ -30,8 +30,10 @@
             $insert->add_chat($logged_user_id, $_SESSION['message_friend_id']);
             $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
             $_SESSION['chat_id'] = ($chat->ID);
+            $chat_state = $query->get_chat_video_url($_SESSION['chat_id']);
         }else{
             $_SESSION['chat_id'] = ($chat->ID);
+            $chat_state = $query->get_chat_video_url($_SESSION['chat_id']);
         }
     }
 
@@ -53,7 +55,7 @@
 
     }
 
-    $chat_state = $query->get_chat_video_url($_SESSION['chat_id']);
+
 ?>
 <head>
     <title>Messages</title>
