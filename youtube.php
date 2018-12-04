@@ -52,6 +52,7 @@
     } elseif (!isset($_GET['vid'])){
         if("No video selected" !== $url){
             $_SESSION['video_url'] = url;
+            header('location: '.$_SESSION['video_url']);
         }
     }
     /*
