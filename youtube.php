@@ -46,8 +46,7 @@
         foreach ($searchResponse['items'] as $searchResult) {
             $thumbnails = $searchResult['snippet']['thumbnails']['default'];
         }
-    }
-    if (isset($_GET['vid'])) {
+    } elseif (isset($_GET['vid'])) {
         $current_video_id = $_GET['vid'];
     } elseif (!isset($_GET['vid'])){
         if("No video selected" !== $url){
