@@ -83,10 +83,10 @@
         <form method="GET">
             <div class="video-search-results">
                 <div>
-                    <input type="search" id="q" name="q" placeholder="Enter Search Term">
+                    <input class="message_input" type="search" id="q" name="q" placeholder="Enter Search Term">
                 </div>
                 <div class = "youtube-submit-button">
-                    <input type="submit" value="Search">
+                    <input class="submit_button" type="submit" value="Search">
                 </div>
                 <h3>Videos</h3>
                 <?php foreach ($searchResponse['items'] as $searchResult) : ?>
