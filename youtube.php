@@ -16,8 +16,9 @@
     $chat = $query->get_chat($logged_user_id, $_SESSION['message_friend_id']);
     if(!isset($_GET['vid'])){
         $url = $query->get_chat_video_url($_SESSION['chat_id']);
-        if("No video selected" == $url->chat_state){
+        if("No video selected" == $url){
             $insert->update_chat_state($video_url, $_SESSION['chat_id']);
+            header('location: '.$video_url);
         }
     }
     if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
